@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FooBarFootball.Web", "FooBarFootball.Web\FooBarFootball.Web.csproj", "{70F8CB11-7C5F-4E72-904C-DACEC40F86FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FooBarFootball.Web.Tests", "FooBarFootball.Web.Tests\FooBarFootball.Web.Tests.csproj", "{CDAF35FB-C541-4F0A-9878-9DE011AB0232}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70F8CB11-7C5F-4E72-904C-DACEC40F86FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70F8CB11-7C5F-4E72-904C-DACEC40F86FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70F8CB11-7C5F-4E72-904C-DACEC40F86FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70F8CB11-7C5F-4E72-904C-DACEC40F86FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDAF35FB-C541-4F0A-9878-9DE011AB0232}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDAF35FB-C541-4F0A-9878-9DE011AB0232}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDAF35FB-C541-4F0A-9878-9DE011AB0232}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDAF35FB-C541-4F0A-9878-9DE011AB0232}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
