@@ -65,6 +65,8 @@ C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootb
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\ru\System.Spatial.resources.dll
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\zh-Hans\System.Spatial.resources.dll
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\zh-Hant\System.Spatial.resources.dll
-C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\obj\Debug\FooBarFootball.Web.csprojResolveAssemblyReference.cache
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\obj\Debug\FooBarFootball.Web.dll
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\obj\Debug\FooBarFootball.Web.pdb
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\obj\Debug\FooBarFootball.Web.csprojResolveAssemblyReference.cache
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\FooBarFootball.Models.dll
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\FooBarFootball.Models.pdb
