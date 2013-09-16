@@ -18,8 +18,10 @@ namespace FooBarFootball.Web.Controllers
             vm.Cards = new List<Card>();
             Green card1 = new Green();
             Green card2 = new Green();
+            GaryCahill player1 = new GaryCahill();
             vm.Cards.Add(card1);
             vm.Cards.Add(card2);
+            vm.Cards.Add(player1);
             return Request.CreateResponse(HttpStatusCode.OK, vm);
         }
     }

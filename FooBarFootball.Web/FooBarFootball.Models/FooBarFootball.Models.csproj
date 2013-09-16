@@ -40,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Card.cs" />
+    <Compile Include="GaryCahill.cs" />
     <Compile Include="Red.cs" />
     <Compile Include="Blue.cs" />
     <Compile Include="Green.cs" />
