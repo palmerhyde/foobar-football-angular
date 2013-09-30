@@ -18,9 +18,24 @@ namespace FooBarFootball.Models
             Defence = 3;
         }
 
+        public bool CanPlay(GameState gameState)
+        {
+            if (IsTapped)
+            {
+                return false;
+            }
+
+            if (gameState.BlackTactics < BlackCost)
+            {
+                return false;
+            }
+            
+            return true;
+        }
+
         public override void Play(GameState gameState)
         {
-            if (!IsTapped && gameState.BlackTactics >= BlackCost)
+            if (CanPlay(gameState))
             {
                 IsTapped = true;
             }

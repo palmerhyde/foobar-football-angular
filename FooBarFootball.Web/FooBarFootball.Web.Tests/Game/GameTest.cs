@@ -53,5 +53,18 @@ namespace FooBarFootball.Web.Tests.Game
             green.Play(state);
             Assert.IsTrue(state.GreenTactics == 1, "expected 1 green tactics, actual {0} green tactics", state.GreenTactics);
         }
+
+        [TestMethod]
+        public void GaryCahillCanPlay()
+        {
+            GaryCahill player = new GaryCahill();
+            GameState state = new GameState();
+            Black black = new Black();
+            black.Play(state);
+            Assert.IsFalse(player.CanPlay(state), "requires 2 black tactics, have {0} black tactics", state.BlackTactics);
+            Black black2 = new Black();
+            black2.Play(state);
+            Assert.IsTrue(player.CanPlay(state), "expected 2 black tactics, actual {0} black tactics", state.BlackTactics);
+        }
     }
 }
