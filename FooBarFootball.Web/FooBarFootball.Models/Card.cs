@@ -22,7 +22,7 @@ namespace FooBarFootball.Models
         public bool IsTapped { get; set; }
         public int Attack { get; set; }
         public int Defence { get; set; }
-
+        
         public void UnTap()
         {
             IsTapped = false;
