@@ -13,6 +13,9 @@ namespace FooBarFootball.Models
             CardType = CardType.Player;
         }
 
+        public string Club { get; set; }
+        public string Nation { get; set; }
+        public string League { get; set; }
         public PlayerPosition Position { get; set; }
         public List<PlayerAttributeValue> PlayerAttributes { get; set; }
     }

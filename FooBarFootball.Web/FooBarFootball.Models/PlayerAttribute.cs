@@ -19,6 +19,31 @@ namespace FooBarFootball.Models
         Kicking,
         Positioning,
         Reflexes,
-        OneOnOnes
+        OneOnOnes,
+        // Future attributes
+        BallControl,
+        Crossing,
+        Curve,
+        FreeKickAccuracy,
+        LongPassing,
+        LongShots,
+        Marking,
+        Penalties,
+        ShortPassing,
+        ShotPower,
+        SlidingTackle,
+        StandingTackle,
+        Volleys,
+        Acceleration,
+        Agility,
+        Balance,
+        Jumping,
+        Reactions,
+        SprintSpeed,
+        Stamina,
+        Strength,
+        Aggression,
+        Interceptions,
+        Vision
     }
 }

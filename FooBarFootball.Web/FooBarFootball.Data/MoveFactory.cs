@@ -7,19 +7,19 @@ using System.Threading.Tasks;
 
 namespace FooBarFootball.Data
 {
-    public class PlayerFactory
+    public class MoveFactory
     {
-        public List<PlayerCard> LoadPlayers()
+        public List<MoveCard> LoadMoves()
         {
-            PlayerCardHelper helper = new PlayerCardHelper();
-            List<PlayerCard> Players = new List<PlayerCard>();
-            PlayerCard player1 = new PlayerCard();
-            player1.Id = Guid.NewGuid().ToString();
-            player1.Name = "Frank Lampard";
-            player1.Position = PlayerPosition.Midfielder;
-            player1.PlayerAttributes = helper.SetOutfieldPlayerAttributes(84, 60, 78, 85, 71, 69);
-            Players.Add(player1);
-            return Players;
+            List<MoveCard> moves = new List<MoveCard>();
+            MoveCard move1 = new MoveCard();
+            move1.Id = Guid.NewGuid().ToString();
+            move1.Name = "Short pass from defence";
+            move1.AttackingAttribute = new PlayerAttribute();
+            move1.AttackingAttribute = PlayerAttribute.Passing;
+            move1.DefendingAttribute = new PlayerAttribute();
+            move1.DefendingAttribute = PlayerAttribute.Defending;
+            return moves;
         }
     }
 }
