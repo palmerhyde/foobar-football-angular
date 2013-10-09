@@ -1,0 +1,9 @@
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FoobarFootball.Tests.Automation\bin\Debug\FoobarFootball.Tests.Automation.dll
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FoobarFootball.Tests.Automation\bin\Debug\FoobarFootball.Tests.Automation.pdb
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FoobarFootball.Tests.Automation\bin\Debug\WebDriver.dll
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FoobarFootball.Tests.Automation\bin\Debug\WebDriver.xml
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FoobarFootball.Tests.Automation\obj\Debug\FoobarFootball.Tests.Automation.dll
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FoobarFootball.Tests.Automation\obj\Debug\FoobarFootball.Tests.Automation.pdb
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FoobarFootball.Tests.Automation\obj\Debug\FoobarFootball.Tests.Automation.csprojResolveAssemblyReference.cache
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FoobarFootball.Tests.Automation\bin\Debug\FooBarFootball.Models.dll
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FoobarFootball.Tests.Automation\bin\Debug\FooBarFootball.Models.pdb

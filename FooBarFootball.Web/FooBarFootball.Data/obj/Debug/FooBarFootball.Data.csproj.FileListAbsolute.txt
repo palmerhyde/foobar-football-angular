@@ -1,0 +1,7 @@
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Data\bin\Debug\FooBarFootball.Data.dll
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Data\bin\Debug\FooBarFootball.Data.pdb
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Data\bin\Debug\FooBarFootball.Models.dll
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Data\bin\Debug\FooBarFootball.Models.pdb
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Data\obj\Debug\FooBarFootball.Data.csprojResolveAssemblyReference.cache
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Data\obj\Debug\FooBarFootball.Data.dll
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Data\obj\Debug\FooBarFootball.Data.pdb
