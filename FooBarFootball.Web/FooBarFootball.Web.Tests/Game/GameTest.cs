@@ -15,7 +15,7 @@ namespace FooBarFootball.Web.Tests.Game
         {
             PlayerFactory players = new PlayerFactory();
             var loadedPlayers = players.LoadPlayers();
-            Assert.IsTrue(loadedPlayers.Count == 1);
+            Assert.IsTrue(loadedPlayers.Count == 2);
         }
     }
 }
