@@ -70,3 +70,6 @@ C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootb
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\obj\Debug\FooBarFootball.Web.csprojResolveAssemblyReference.cache
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\obj\Debug\FooBarFootball.Web.dll
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\obj\Debug\FooBarFootball.Web.pdb
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\MockXml\players.xml
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\FooBarFootball.Data.dll
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\FooBarFootball.Data.pdb

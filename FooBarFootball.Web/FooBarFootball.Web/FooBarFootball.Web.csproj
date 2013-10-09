@@ -160,6 +160,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
@@ -224,6 +225,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Data\players.xml" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -288,6 +290,10 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FooBarFootball.Data\FooBarFootball.Data.csproj">
+      <Project>{432dba6a-b508-42cb-98d9-6897e2660905}</Project>
+      <Name>FooBarFootball.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FooBarFootball.Models\FooBarFootball.Models.csproj">
       <Project>{cb07fb5a-836a-4802-a62b-7ea95c75438b}</Project>
       <Name>FooBarFootball.Models</Name>
