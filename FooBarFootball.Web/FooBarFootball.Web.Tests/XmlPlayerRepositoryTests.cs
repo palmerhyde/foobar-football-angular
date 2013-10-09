@@ -7,8 +7,8 @@ namespace FooBarFootball.Web.Tests
     [TestClass]
     public class XmlPlayerRepositoryTests
     {
+        [Ignore]
         [TestMethod]
-
         public void LoadPlayersFromXml()
         {
             IPlayerRepository repo = new XmlPlayerRepository("MockXml/players.xml");
