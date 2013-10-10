@@ -6,8 +6,7 @@ using System.Web;
 
 namespace FooBarFootball.Web.Models
 {
-    public class CardsViewModel
+    public class CardsViewModel:List<Card>
     {
-        public List<Card> Cards { get; set; }
     }
 }

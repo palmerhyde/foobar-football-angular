@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FooBarFootball.Models
 {
-    public abstract class Card
+    public class Card
     {
         public string Id { get; set; }
         public string Name { get; set; }

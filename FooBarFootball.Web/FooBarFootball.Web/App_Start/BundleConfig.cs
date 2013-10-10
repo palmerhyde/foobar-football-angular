@@ -9,19 +9,31 @@ namespace FooBarFootball.Web
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/lib/jquery/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                        "~/Scripts/jquery-ui-{version}.js"));
+                        "~/Scripts/lib/jquery/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.unobtrusive*",
-                        "~/Scripts/jquery.validate*"));
+                        "~/Scripts/lib/jquery/jquery.unobtrusive*",
+                        "~/Scripts/lib/jquery/jquery.validate*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/angular").Include(
+                        "~/Scripts/lib/angular/angular.js*",
+                        "~/Scripts/lib/angular/angular-bootstrap.js*",
+                        "~/Scripts/lib/angular/angular-cookies.js*",
+                        "~/Scripts/lib/angular/angular-loader.js*",
+                        "~/Scripts/lib/angular/angular-resource.js*",
+                        "~/Scripts/lib/angular/angular-santize.js*",
+                        "~/Scripts/lib/angular/angular-scenario.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/app").IncludeDirectory(
+                        "~/Scripts/app/", "*.js", true));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                        "~/Scripts/lib/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 

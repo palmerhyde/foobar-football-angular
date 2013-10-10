@@ -1,0 +1,1 @@
+﻿var fooBarApp = angular.module('fooBarApp', []);
