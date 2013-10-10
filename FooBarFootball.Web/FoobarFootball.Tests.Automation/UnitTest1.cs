@@ -18,6 +18,7 @@ namespace FoobarFootball.Tests.Automation
         List<PlayerCard> cardsList = new List<PlayerCard>();
         FirefoxDriver browser = new FirefoxDriver();
 
+        [Ignore]
         [TestMethod]
         public void GetPlayers()
         {

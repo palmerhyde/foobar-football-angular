@@ -1,17 +1,31 @@
 ﻿<div id="body">
     <section class="cards" ng-controller="CardsController">
-        <div ng-repeat="card in cards" class="card">
+        <div class="search">
+            <label>Search by name: </label>
+            <input type="text" ng-model="searchTerm"/>
+        </div>
+        <div class="clear"></div>
+        <div ng-repeat="card in cards | filter: {name: searchTerm}" class="card" >
+            <div>
+                <img alt="club" class="club" ng-src="{{card.club}}"/>
+                <img alt="nation" class="nation" ng-src="{{card.nation}}"/>
+            </div>
+            <div class="clear"></div>
             <div class="title">
-               {{card.name}}
+                {{card.name}}
             </div>
             <div class="photo">
                 <img alt="picture" ng-src="{{card.pictureUrl}}"/>
             </div>
             <div class="type">
-                {{card.cardType}}
+                {{card.cardType}} - {{card.position}}
             </div>
-            <div class="desc">
-               {{card.description}} 
+            <div class="attrs">
+                <div ng-repeat="(key, value) in card.attributes">
+                    <div>
+                        <span class="key">{{key}}: </span>{{value}}
+                    </div>
+                </div>
             </div>
         </div>
     </section>
