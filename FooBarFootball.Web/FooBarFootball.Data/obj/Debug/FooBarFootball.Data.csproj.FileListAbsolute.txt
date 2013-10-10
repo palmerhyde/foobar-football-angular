@@ -6,3 +6,4 @@ C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootb
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Data\obj\Debug\FooBarFootball.Data.dll
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Data\obj\Debug\FooBarFootball.Data.pdb
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Data\bin\Debug\MockXml\players.xml
+C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Data\bin\Debug\MockXml\moves.xml

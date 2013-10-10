@@ -39,7 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Helpers\XmlHelper.cs" />
+    <Compile Include="Implementations\XmlMoveRepository.cs" />
     <Compile Include="Implementations\XmlPlayerRepository.cs" />
+    <Compile Include="Interfaces\IMoveRepository.cs" />
     <Compile Include="Interfaces\IPlayerRepository.cs" />
     <Compile Include="MoveFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,6 +54,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="MockXml\moves.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="MockXml\players.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -24,7 +24,11 @@ namespace FooBarFootball.Models
         {
             return GenericCost + OrganisedFootballCost + CounterFootballCost + TotalFootballCost + LatinFootballCost + PhysicalFootballCost;
         }
-        
+
+        public string AttackingSuccessCommentry { get; set; }
+        public string DefendingSuccessCommentry { get; set; }
+        public PlayerPosition AttackingPosition { get; set; }
+        public PlayerPosition DefendingPosition { get; set; }
         public PlayerAttribute AttackingAttribute { get; set; }
         public PlayerAttribute DefendingAttribute { get; set; }                           
     }
