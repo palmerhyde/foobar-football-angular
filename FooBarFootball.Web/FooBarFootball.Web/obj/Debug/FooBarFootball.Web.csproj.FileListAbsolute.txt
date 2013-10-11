@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\FooBarFootball.Web.dll
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\FooBarFootball.Web.pdb
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\Antlr3.Runtime.dll
@@ -70,10 +71,17 @@ C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootb
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\obj\Debug\FooBarFootball.Web.csprojResolveAssemblyReference.cache
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\obj\Debug\FooBarFootball.Web.dll
 C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\obj\Debug\FooBarFootball.Web.pdb
+=======
+C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\MockXml\players.xml
+>>>>>>> c2f75e6cc614383e4bb8b0cb58227b9cba1a6f66
 C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\FooBarFootball.Web.dll
 C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\FooBarFootball.Web.pdb
 C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\Antlr3.Runtime.dll
 C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\EntityFramework.dll
+<<<<<<< HEAD
+=======
+C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\FooBarFootball.Data.dll
+>>>>>>> c2f75e6cc614383e4bb8b0cb58227b9cba1a6f66
 C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\FooBarFootball.Models.dll
 C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\Microsoft.Data.Edm.dll
 C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\Microsoft.Data.OData.dll
@@ -95,6 +103,10 @@ C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootba
 C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\System.Web.WebPages.dll
 C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\System.Web.WebPages.Razor.dll
 C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\WebGrease.dll
+<<<<<<< HEAD
+=======
+C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\FooBarFootball.Data.pdb
+>>>>>>> c2f75e6cc614383e4bb8b0cb58227b9cba1a6f66
 C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\FooBarFootball.Models.pdb
 C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\EntityFramework.xml
 C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Web\bin\Newtonsoft.Json.xml
