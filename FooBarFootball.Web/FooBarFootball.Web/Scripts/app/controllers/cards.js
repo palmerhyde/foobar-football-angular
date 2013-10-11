@@ -1,5 +1,4 @@
-﻿
-function CardsController($scope, $http) {
+﻿fooBarApp.controller('CardsController', ['$scope', '$http', function($scope, $http) {
     $scope.title = "Test title";
     $scope.searchTerm = "";
     $scope.cards = [];
@@ -12,4 +11,4 @@ function CardsController($scope, $http) {
 
         $scope.cards = cardArr;
     });
-}
+}]);
