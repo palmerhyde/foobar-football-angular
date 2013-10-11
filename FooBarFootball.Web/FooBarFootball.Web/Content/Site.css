@@ -204,61 +204,16 @@ ul#menu {
             text-decoration: none;
         }
 
-<<<<<<< HEAD
-=======
+
 .clear {
     clear: both;
 }
->>>>>>> c2f75e6cc614383e4bb8b0cb58227b9cba1a6f66
 
 /* Cards
 ----------------------------------------------------------*/
 .cards .card {
     float: left;
     margin: 20px; 
-<<<<<<< HEAD
-}
-
-.card {
-    height: 400px;
-    width: 220px;
-    border: 10px solid black;
-    border-radius: 10px;
-    background-color: #777;
-    padding: 10px;
-}
-
-.card .title, .card .type,
-.card .photo, .card .desc {
-    background-color: #999;
-}
-
-.card .title, .card .type {
-    border: 2px solid black;
-    border-radius: 5px;
-    padding: 10px;
-    font-weight: 700;
-    font-size: 14px;
-}
-
-.card .photo, .card .desc {
-    margin: 0px 10px;
-}
-
-.card .photo img {
-    width: 200px;
-}
-
-.card .type {
-    margin-top: -4px;
-}
-
-.card .desc {
-    border: 2px solid black;
-    padding: 10px;
-    margin-top: -2px;
-}
-=======
 }
 
 .card {
@@ -326,4 +281,3 @@ ul#menu {
 }
 
 .search label { font-weight: 700; }
->>>>>>> c2f75e6cc614383e4bb8b0cb58227b9cba1a6f66

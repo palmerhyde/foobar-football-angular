@@ -7,8 +7,6 @@
         4: 'Manager'
     };
 
-<<<<<<< HEAD
-=======
     var position = {
         0: 'Goalkeeper',
         1: 'Defender',
@@ -36,20 +34,15 @@
         atts[attribute[params.PlayerAttributes[i].Attribute]] = params.PlayerAttributes[i].Value;
     }
 
->>>>>>> c2f75e6cc614383e4bb8b0cb58227b9cba1a6f66
     this.id = params.Id;
     this.name = params.Name;
     this.shortName = params.ShortName;
     this.description = params.Description;
     this.cardType = types[params.CardType];
     this.rarity = params.Rarity;
-<<<<<<< HEAD
-    this.pictureUrl = "Content/images/" + types[params.CardType] +"/" + params.PictureUrl;
-=======
     this.pictureUrl = params.PictureUrl;
     this.club = params.Club;
     this.nation = params.Nation;
     this.position = position[params.Position];
     this.attributes = atts;
->>>>>>> c2f75e6cc614383e4bb8b0cb58227b9cba1a6f66
 }

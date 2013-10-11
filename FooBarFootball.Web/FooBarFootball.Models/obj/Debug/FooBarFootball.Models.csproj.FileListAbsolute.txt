@@ -1,8 +1,0 @@
-C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Models\bin\Debug\FooBarFootball.Models.dll
-C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Models\bin\Debug\FooBarFootball.Models.pdb
-C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Models\obj\Debug\FooBarFootball.Models.dll
-C:\Users\lmolloy\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Models\obj\Debug\FooBarFootball.Models.pdb
-C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Models\bin\Debug\FooBarFootball.Models.dll
-C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Models\bin\Debug\FooBarFootball.Models.pdb
-C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Models\obj\Debug\FooBarFootball.Models.dll
-C:\Users\sburke\Documents\GitHub\FooBar-Football\FooBarFootball.Web\FooBarFootball.Models\obj\Debug\FooBarFootball.Models.pdb
