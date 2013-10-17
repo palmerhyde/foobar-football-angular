@@ -1,5 +1,8 @@
-﻿fooBarApp.controller('CardsController', ['$scope', '$http', function($scope, $http) {
+fooBarApp.controller('CardsController', ['$scope', '$http', function($scope, $http) {
     $scope.title = "Test title";
+﻿
+function CardsController($scope, $http) {
+    $scope.title = "FooBar Football - Cards";
     $scope.searchTerm = "";
     $scope.cards = [];
     $http.get('/api/players').then(function (data) {

@@ -18,8 +18,13 @@ namespace FooBarFootball.Web.Controllers
         {
             // TODO: Set up DI
             IPlayerRepository repo = new XmlPlayerRepository(BaseSiteUrl + "Data/players.xml");
+            IMoveRepository repo2 = new XmlMoveRepository(BaseSiteUrl + "Data/moves.xml");
             var cards = repo.Get();
-            return Request.CreateResponse(HttpStatusCode.OK, cards);
+            var cards2 = repo2.Get();
+            List<Card> card = new List<Card>();
+            card.AddRange(cards);
+            card.AddRange(cards2);
+            return Request.CreateResponse(HttpStatusCode.OK, card);
         }
 
         // TODO: move to utility method somewhere.
