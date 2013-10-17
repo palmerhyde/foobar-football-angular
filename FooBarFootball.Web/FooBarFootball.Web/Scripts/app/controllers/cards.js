@@ -1,6 +1,6 @@
 ﻿
 function CardsController($scope, $http) {
-    $scope.title = "Test title";
+    $scope.title = "FooBar Football - Cards";
     $scope.searchTerm = "";
     $scope.cards = [];
     $http.get('/api/players').then(function (data) {
