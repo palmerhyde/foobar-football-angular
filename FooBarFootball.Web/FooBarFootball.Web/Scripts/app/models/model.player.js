@@ -1,12 +1,4 @@
-﻿function ModelCard(params) {
-    var types = {
-        0: 'Tactic',
-        1: 'Player',
-        2: 'Move',
-        3: 'Stadium',
-        4: 'Manager'
-    };
-
+﻿function ModelPlayer(params) {
     var position = {
         0: 'Goalkeeper',
         1: 'Defender',
@@ -34,13 +26,7 @@
         atts[attribute[params.PlayerAttributes[i].Attribute]] = params.PlayerAttributes[i].Value;
     }
 
-    this.id = params.Id;
-    this.name = params.Name;
-    this.shortName = params.ShortName;
-    this.description = params.Description;
-    this.cardType = types[params.CardType];
-    this.rarity = params.Rarity;
-    this.pictureUrl = params.PictureUrl;
+    this.prototype = new ModelBaseCard(params);
     this.club = params.Club;
     this.nation = params.Nation;
     this.position = position[params.Position];

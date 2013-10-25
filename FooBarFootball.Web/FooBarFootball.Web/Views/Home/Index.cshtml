@@ -5,25 +5,57 @@
             <input type="text" ng-model="searchTerm"/>
         </div>
         <div class="clear"></div>
-        <div ng-repeat="card in cards | filter: {name: searchTerm}" class="card" >
+        <div ng-repeat="player in players | filter: {name: searchTerm}" class="card" >
             <div>
-                <img alt="club" class="club" ng-src="{{card.club}}"/>
-                <img alt="nation" class="nation" ng-src="{{card.nation}}"/>
+                <img alt="club" class="club" ng-src="{{player.club}}"/>
+                <img alt="nation" class="nation" ng-src="{{player.nation}}"/>
             </div>
             <div class="clear"></div>
             <div class="title">
-                {{card.name}}
+                {{player.prototype.name}}
             </div>
             <div class="photo">
-                <img alt="picture" ng-src="{{card.pictureUrl}}"/>
+                <img alt="picture" ng-src="{{player.prototype.pictureUrl}}"/>
             </div>
             <div class="type">
-                {{card.cardType}} - {{card.position}}
+                {{player.prototype.cardType}} - {{player.position}}
             </div>
             <div class="attrs">
-                <div ng-repeat="(key, value) in card.attributes">
+                <div ng-repeat="(key, value) in player.attributes">
                     <div>
                         <span class="key">{{key}}: </span>{{value}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-repeat="move in moves | filter: {name: searchTerm}" class="card" >
+            <div>
+                @*<img alt="club" class="club" ng-src="{{move.club}}"/>
+                <img alt="nation" class="nation" ng-src="{{move.nation}}"/>*@
+            </div>
+            <div class="clear"></div>
+            <div class="title">
+                {{move.prototype.name}}
+            </div>
+            <div class="photo">
+                <img alt="picture" ng-src="{{move.prototype.pictureUrl}}"/>
+            </div>
+            <div class="type">
+                {{move.prototype.cardType}}
+            </div>
+            <div class="attrs">
+                <div >
+                    <div>
+                        <span class="key">Attacking Position: </span>{{move.attackingPosition}}
+                    </div>
+                    <div>
+                        <span class="key">Defending Position: </span>{{move.defendingPosition}}
+                    </div>
+                    <div>
+                        <span class="key">Attacking Attribute: </span>{{move.attackingAttribute}}
+                    </div>
+                    <div>
+                        <span class="key">Defending Attribute: </span>{{move.defendingPosition}}
                     </div>
                 </div>
             </div>

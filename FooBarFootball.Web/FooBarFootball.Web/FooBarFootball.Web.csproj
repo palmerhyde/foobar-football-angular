@@ -163,7 +163,6 @@
     <Compile Include="Controllers\MovesController.cs" />
     <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -250,7 +249,9 @@
     <None Include="Scripts\lib\jquery\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\app\app-init.js" />
     <Content Include="Scripts\app\controllers\cards.js" />
-    <Content Include="Scripts\app\models\model.card.js" />
+    <Content Include="Scripts\app\models\model.baseCard.js" />
+    <Content Include="Scripts\app\models\model.player.js" />
+    <Content Include="Scripts\app\models\model.moves.js" />
     <Content Include="Scripts\lib\angular\angular-bootstrap-prettify.js" />
     <Content Include="Scripts\lib\angular\angular-bootstrap-prettify.min.js" />
     <Content Include="Scripts\lib\angular\angular-bootstrap.js" />
