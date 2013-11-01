@@ -23,5 +23,10 @@ namespace FooBarFootball.Data.Implementations
             List<MoveCard> cards = XmlHelper.Deserialize<List<MoveCard>>(xml);
             return cards;
         }
+
+        public MoveCard Get(string id)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

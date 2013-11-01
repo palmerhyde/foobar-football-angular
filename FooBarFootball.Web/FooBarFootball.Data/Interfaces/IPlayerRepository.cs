@@ -10,5 +10,6 @@ namespace FooBarFootball.Data.Interfaces
     public interface IPlayerRepository
     {
         IList<PlayerCard> Get();
+        PlayerCard Get(string id);
     }
 }
