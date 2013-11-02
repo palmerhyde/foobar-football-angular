@@ -253,6 +253,9 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Images\Cards\Moves\handofgod.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Scripts\app\controllers\wiki.js" />
     <Content Include="Scripts\app\controllers\home.js" />
     <Content Include="Scripts\app\views\cards.html" />
@@ -626,7 +629,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Images\Cards\Moves\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
