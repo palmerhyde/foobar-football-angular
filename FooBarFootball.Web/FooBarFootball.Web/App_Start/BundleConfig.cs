@@ -18,14 +18,18 @@ namespace FooBarFootball.Web
                         "~/Scripts/lib/jquery/jquery.unobtrusive*",
                         "~/Scripts/lib/jquery/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                        "~/Scripts/lib/bootstrap/bootstrap.min.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                         "~/Scripts/lib/angular/angular.js*",
+                        "~/Scripts/lib/angular/angular-route.js*",
                         "~/Scripts/lib/angular/angular-bootstrap.js*",
                         "~/Scripts/lib/angular/angular-cookies.js*",
                         "~/Scripts/lib/angular/angular-loader.js*",
                         "~/Scripts/lib/angular/angular-resource.js*",
-                        "~/Scripts/lib/angular/angular-santize.js*",
-                        "~/Scripts/lib/angular/angular-scenario.js"));
+                        "~/Scripts/lib/angular/angular-santize.js*"
+                        /*"~/Scripts/lib/angular/angular-scenario.js"*/));
 
             bundles.Add(new ScriptBundle("~/bundles/app").IncludeDirectory(
                         "~/Scripts/app/", "*.js", true));
@@ -35,7 +39,11 @@ namespace FooBarFootball.Web
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/lib/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include( "~/Content/site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
+                        "~/Content/bootstrap/bootstrap.min.css",
+                        "~/Content/bootstrap/bootstrap-theme.min.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",
