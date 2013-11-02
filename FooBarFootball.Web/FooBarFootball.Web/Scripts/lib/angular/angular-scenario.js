@@ -1,6 +1,4 @@
-/*!
- * jQuery JavaScript Library v1.8.3
- * http://jquery.com/
+/**
  *
  * Includes Sizzle.js
  * http://sizzlejs.com/

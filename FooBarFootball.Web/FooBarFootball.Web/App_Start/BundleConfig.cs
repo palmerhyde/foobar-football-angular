@@ -28,8 +28,8 @@ namespace FooBarFootball.Web
                         "~/Scripts/lib/angular/angular-cookies.js*",
                         "~/Scripts/lib/angular/angular-loader.js*",
                         "~/Scripts/lib/angular/angular-resource.js*",
-                        "~/Scripts/lib/angular/angular-santize.js*",
-                        "~/Scripts/lib/angular/angular-scenario.js"));
+                        "~/Scripts/lib/angular/angular-santize.js*"
+                        /*"~/Scripts/lib/angular/angular-scenario.js"*/));
 
             bundles.Add(new ScriptBundle("~/bundles/app").IncludeDirectory(
                         "~/Scripts/app/", "*.js", true));
