@@ -24,7 +24,9 @@ namespace FooBarFootball.Models
         BallControl,
         Crossing,
         Curve,
+        Finishing,
         FreeKickAccuracy,
+        HeadingAccuracy,
         LongPassing,
         LongShots,
         Marking,
@@ -44,6 +46,7 @@ namespace FooBarFootball.Models
         Strength,
         Aggression,
         Interceptions,
-        Vision
+        Vision,
+        Unknown
     }
 }

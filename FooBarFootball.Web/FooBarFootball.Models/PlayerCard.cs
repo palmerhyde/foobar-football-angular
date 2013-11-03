@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace FooBarFootball.Models
 {
@@ -13,10 +9,14 @@ namespace FooBarFootball.Models
             CardType = CardType.Player;
         }
 
+        public int OverallRating { get; set; }
+        public int AttackingRating { get; set; }
+        public int CreativeRating { get; set; }
         public string Club { get; set; }
         public string Nation { get; set; }
         public string League { get; set; }
         public PlayerPosition Position { get; set; }
         public List<PlayerAttributeValue> PlayerAttributes { get; set; }
+        public string PlayerDataUrl { get; set; }
     }
 }

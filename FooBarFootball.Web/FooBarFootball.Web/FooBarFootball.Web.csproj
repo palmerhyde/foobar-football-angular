@@ -235,7 +235,9 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Data\moves.xml" />
+    <Content Include="Data\moves.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Data\players.xml" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -598,7 +600,9 @@
     <Content Include="Scripts\lib\jquery\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\lib\jquery\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\lib\modernizr-2.6.2.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
