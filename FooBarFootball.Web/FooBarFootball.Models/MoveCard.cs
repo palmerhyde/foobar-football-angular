@@ -1,4 +1,5 @@
-﻿namespace FooBarFootball.Models
+﻿using System.Collections.Generic;
+namespace FooBarFootball.Models
 {
     public class MoveCard : Card
     {
@@ -26,8 +27,8 @@
         public string DefendingSuccessCommentry { get; set; }
         public PlayerPosition AttackingPosition { get; set; }
         public PlayerPosition DefendingPosition { get; set; }
-        // TODO: Add the ability to support multiple attributes
-        public PlayerAttribute AttackingAttribute { get; set; }
-        public PlayerAttribute DefendingAttribute { get; set; }                           
+
+        public List<PlayerAttribute> AttackingAttributes { get; set; }
+        public List<PlayerAttribute> DefendingAttributes { get; set; }                         
     }
 }

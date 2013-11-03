@@ -91,8 +91,11 @@ namespace FooBarFootball.Web.Tests
             input.DefendingPlayer.PlayerAttributes.Add(new PlayerAttributeValue() { Attribute = PlayerAttribute.Marking, Value = 50 });
             input.DefendingPlayer.PlayerAttributes.Add(new PlayerAttributeValue() { Attribute = PlayerAttribute.Defending, Value = 99 });
             input.Move = new MoveCard();
-            input.Move.AttackingAttribute = PlayerAttribute.Passing;
-            input.Move.DefendingAttribute = PlayerAttribute.Defending;
+            input.Move.AttackingAttributes = new List<PlayerAttribute>();
+            input.Move.AttackingAttributes.Add(PlayerAttribute.Passing);
+            input.Move.AttackingAttributes.Add(PlayerAttribute.Shooting);
+            input.Move.DefendingAttributes = new List<PlayerAttribute>();
+            input.Move.DefendingAttributes.Add(PlayerAttribute.Defending);
             var logic = new PlayLogic();
             var output = logic.Play(input);
             Assert.IsNotNull(output, "Output cannot be null");

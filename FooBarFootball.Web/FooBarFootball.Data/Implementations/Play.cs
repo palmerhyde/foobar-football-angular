@@ -1,6 +1,7 @@
 ﻿using FooBarFootball.Data.Interfaces;
 using FooBarFootball.Models;
 using System;
+using System.Collections.Generic;
 
 namespace FooBarFootball.Data.Implementations
 {
@@ -10,8 +11,8 @@ namespace FooBarFootball.Data.Implementations
         {
             ParameterGuard(input);
 
-            var attackingValue = ExtractAttributeValue(input.Move.AttackingAttribute, input.AttackingPlayer);
-            var defendingValue = ExtractAttributeValue(input.Move.DefendingAttribute, input.DefendingPlayer);
+            var attackingValue = ExtractAttributeValues(input.Move.AttackingAttributes, input.AttackingPlayer);
+            var defendingValue = ExtractAttributeValues(input.Move.DefendingAttributes, input.DefendingPlayer);
             var max = attackingValue + defendingValue;
             var result = RandomSeed().Next(0, max);
             var output = new PlayOutputModel();
@@ -51,17 +52,19 @@ namespace FooBarFootball.Data.Implementations
             }
         }
 
-        private int ExtractAttributeValue(PlayerAttribute attribute, PlayerCard player)
+        private int ExtractAttributeValues(List<PlayerAttribute> attributes, PlayerCard player)
         {
+            int value = 0;
+            
             foreach(var a in player.PlayerAttributes)
             {
-                if (a.Attribute == attribute)
+                if (attributes.Contains(a.Attribute))
                 {
-                    return a.Value;
+                    value = value + a.Value;
                 }
             }
 
-            return 0;
+            return value;
         }
 
         private static Random RandomSeed()
