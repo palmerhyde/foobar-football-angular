@@ -255,6 +255,9 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Images\Cards\Moves\goalofthecentery.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Cards\Moves\handofgod.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
