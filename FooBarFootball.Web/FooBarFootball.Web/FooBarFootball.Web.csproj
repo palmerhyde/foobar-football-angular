@@ -275,9 +275,13 @@
     <Content Include="Images\Cards\Tactics\total1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\app\controllers\players.js" />
+    <Content Include="Scripts\app\controllers\moves.js" />
     <Content Include="Scripts\app\controllers\wiki.js" />
     <Content Include="Scripts\app\controllers\home.js" />
     <Content Include="Scripts\app\views\cards.html" />
+    <Content Include="Scripts\app\views\move-cards.html" />
+    <Content Include="Scripts\app\views\player-cards.html" />
     <Content Include="Scripts\app\views\home.html" />
     <Content Include="Scripts\app\views\wiki.html" />
     <Content Include="Scripts\lib\angular\angular-route.js" />

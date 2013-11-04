@@ -225,7 +225,7 @@ ul#menu {
 }
 
 .card {
-    /*height: 280px;*/
+    height: 320px;
     width: 193px;
     border: 10px solid black;
     border-radius: 10px;
@@ -234,13 +234,19 @@ ul#menu {
 }
 
 .card .club {
-    float: left;
     width: 22px;
+    left: 11px;
 }
 
 .card .nation {
-    float: right;
     width: 30px;
+    right: -95px;
+}
+
+.card .club, .card .nation {
+    position: relative;
+    z-index: 1000;
+    top: -110px;
 }
 
 .card .title, .card .type,
@@ -297,3 +303,40 @@ ul#menu {
 }
 
 .search label { font-weight: 700; }
+
+.navbar.subnavbar a, .navbar.subnavbar a:visited {
+    color: #fff;
+}
+
+.navbar.subnavbar a:hover {
+    color: #000;
+}
+
+.navbar a, .navbar .nav > li {
+    display: inline-block;
+}
+
+.navbar.subnavbar {
+    min-height: 100%;
+    border-radius: 0;
+}
+
+.navbar.subnavbar .submenu ul {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    background-image: linear-gradient(to bottom,#3c3c3c 0,#222 100%);
+    background-repeat: repeat-x;
+    width: 110px;
+    padding: 5px;
+}
+
+.navbar.subnavbar .submenu ul li a {
+    display: block;
+    padding: 5px 20px;
+}
+
+.navbar.subnavbar .submenu:hover ul {
+    display: block;
+}
+

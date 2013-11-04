@@ -1,0 +1,33 @@
+﻿<div id="body">
+    <br />
+    <section class="cards" ng-controller="PlayerCardsController">
+        <div class="search">
+            <label>Search by name: </label>
+            <input type="text" ng-model="searchTerm"/>
+        </div>
+        <div class="clear"></div>
+        <div ng-repeat="player in players | filter: {prototype.name: searchTerm}" class="card" >
+            <div>
+                <img alt="club" class="club" ng-src="{{player.club}}"/>
+                <img alt="nation" class="nation" ng-src="{{player.nation}}"/>
+            </div>
+            <div class="clear"></div>
+            <div class="title">
+                {{player.prototype.name}}
+            </div>
+            <div class="photo">
+                <img alt="picture" ng-src="{{player.prototype.pictureUrl}}"/>
+            </div>
+            <div class="type">
+                {{player.prototype.cardType}} - {{player.position}}
+            </div>
+            <div class="attrs">
+                <div ng-repeat="(key, value) in player.attributes">
+                    <div>
+                        <span class="key">{{key}}: </span><span class="value">{{value}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
