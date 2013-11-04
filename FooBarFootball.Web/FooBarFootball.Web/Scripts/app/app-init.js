@@ -12,10 +12,18 @@ fooBarApp.config(['$routeProvider',
             templateUrl: 'Scripts/app/views/cards.html',
             controller: 'CardsController'
         }).
-          when('/wiki', {
-              templateUrl: 'Scripts/app/views/wiki.html',
-              controller: 'WikiController'
-          }).
+        when('/cards/players', {
+            templateUrl: 'Scripts/app/views/player-cards.html',
+            controller: 'PlayerCardsController'
+        }).
+        when('/cards/moves', {
+            templateUrl: 'Scripts/app/views/move-cards.html',
+            controller: 'MoveCardsController'
+        }).
+        when('/wiki', {
+            templateUrl: 'Scripts/app/views/wiki.html',
+            controller: 'WikiController'
+        }).
         otherwise({
             redirectTo: '/'
         });
