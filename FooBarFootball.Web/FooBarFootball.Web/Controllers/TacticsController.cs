@@ -2,8 +2,6 @@
 using FooBarFootball.Data.Interfaces;
 using System.Net;
 using System.Net.Http;
-using System.Web;
-using System.Web.Http;
 
 namespace FooBarFootball.Web.Controllers
 {

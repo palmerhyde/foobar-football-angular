@@ -1,0 +1,23 @@
+﻿<div id="body">
+    <br />
+    <section class="cards" ng-controller="TacticCardsController">
+        <!-- Moves -->
+        <div ng-repeat="tactic in tactics | filter: {name: searchTerm}" class="card" >
+            <div class="clear"></div>
+            <div class="title">
+                {{tactic.prototype.name}}
+            </div>
+            <div class="photo">
+                <img alt="picture" ng-src="{{tactic.prototype.pictureUrl}}"/>
+            </div>
+            <div class="type">
+                {{tactic.prototype.cardType}}
+            </div>
+            <div class="attrs">
+                <div >
+                    Tactic modifiers go here.
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
