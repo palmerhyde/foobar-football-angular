@@ -1,1 +1,19 @@
-﻿<div ng-view></div>
+﻿<div class="navbar subnavbar navbar-inverse" bs-navbar>
+  <div class="container">
+    
+    <ul class="nav">
+        <!-- You can use regular expressions -->
+        <li data-match-route="/"><a class="brand" href="/">Home</a></li>
+        <li data-match-route="#/cards" class="submenu"><a href="#/cards">Cards</a>
+            <ul >
+                <li data-match-route="#/cards"><a href="#/cards">All Cards</a></li>
+                <li data-match-route="#/cards/players"><a href="#/cards/players">Players</a></li>
+                <li data-match-route="#/cards/moves"><a href="#/cards/moves">Moves</a></li>
+            </ul>
+        </li>
+      
+      <li data-match-route="#/wiki"><a href="#/wiki">Wiki</a></li>
+    </ul>
+  </div>
+</div>
+<div ng-view></div>
