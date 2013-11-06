@@ -12,7 +12,7 @@ using System.Web.Http;
 
 namespace FooBarFootball.Web.Controllers
 {
-    public class PlayersController : ApiController
+    public class PlayersController : BaseController
     {
         public HttpResponseMessage Get()
         {
@@ -22,17 +22,6 @@ namespace FooBarFootball.Web.Controllers
             List<Card> card = new List<Card>();
             card.AddRange(cards);
             return Request.CreateResponse(HttpStatusCode.OK, card);
-        }
-
-        // TODO: move to utility method somewhere.
-        public static string BaseSiteUrl
-        {
-            get
-            {
-                HttpContext context = HttpContext.Current;
-                string baseUrl = context.Request.Url.Scheme + "://" + context.Request.Url.Authority + context.Request.ApplicationPath.TrimEnd('/') + '/';
-                return baseUrl;
-            }
         }
     }
 }

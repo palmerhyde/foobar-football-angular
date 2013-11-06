@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace FooBarFootball.Web.Controllers
 {
-    public class MovesController : ApiController
+    public class MovesController : BaseController
     {
         public HttpResponseMessage Get()
         {
@@ -15,17 +15,6 @@ namespace FooBarFootball.Web.Controllers
             IMoveRepository repo = new XmlMoveRepository(BaseSiteUrl + "Data/moves.xml");
             var cards = repo.Get();
             return Request.CreateResponse(HttpStatusCode.OK, cards);
-        }
-
-        // TODO: move to utility method somewhere.
-        public static string BaseSiteUrl
-        {
-            get
-            {
-                HttpContext context = HttpContext.Current;
-                string baseUrl = context.Request.Url.Scheme + "://" + context.Request.Url.Authority + context.Request.ApplicationPath.TrimEnd('/') + '/';
-                return baseUrl;
-            }
         }
     }
 }
