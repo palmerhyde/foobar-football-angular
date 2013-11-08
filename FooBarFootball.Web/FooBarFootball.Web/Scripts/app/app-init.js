@@ -24,6 +24,14 @@ fooBarApp.config(['$routeProvider',
             templateUrl: 'Scripts/app/views/tactic-cards.html',
             controller: 'TacticCardsController'
         }).
+          when('/simulator', {
+              templateUrl: 'Scripts/app/views/simulator.html',
+              controller: 'SimulatorController'
+          }).
+        when('/simulator/moves', {
+            templateUrl: 'Scripts/app/views/simulator-moves.html',
+            controller: 'SimulatorMovesController'
+        }).
         when('/wiki', {
             templateUrl: 'Scripts/app/views/wiki.html',
             controller: 'WikiController'

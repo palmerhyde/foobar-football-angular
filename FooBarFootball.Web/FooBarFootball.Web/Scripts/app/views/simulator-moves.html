@@ -1,0 +1,107 @@
+﻿<div class="container">
+
+    <h1>FooBar Football - Simulators</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Select attacking player:</h2>
+            <select ng-model="attackPlayer" ng-options="player as player.prototype.name for player in players"></select>
+            <br />
+            <div class="clear"></div>
+            <div class="card" ng-show="attackPlayer.prototype.name != null" >
+                <div>
+                    <img alt="club" class="club" ng-src="{{attackPlayer.club}}"/>
+                    <img alt="nation" class="nation" ng-src="{{attackPlayer.nation}}"/>
+                </div>
+                <div class="clear"></div>
+                <div class="title">
+                    {{attackPlayer.prototype.name}}
+                </div>
+                <div class="photo">
+                    <img alt="picture" ng-src="{{attackPlayer.prototype.pictureUrl}}"/>
+                </div>
+                <div class="type">
+                    {{attackPlayer.prototype.cardType}} - {{attackPlayer.position}}
+                </div>
+                <div class="attrs">
+                    <div ng-repeat="(key, value) in attackPlayer.attributes">
+                        <div>
+                            <span class="key">{{key}}: </span><span class="value">{{value}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="col-md-4">
+            <h2>Select move:</h2>
+            <select ng-model="playerMove" ng-options="move as move.prototype.name for move in moves"></select>
+            <br />
+            <div class="card" ng-show="playerMove.prototype.name != null">
+                <div class="clear"></div>
+                <div class="title">
+                    {{playerMove.prototype.name}}
+                </div>
+                <div class="photo">
+                    <img alt="picture" ng-src="{{playerMove.prototype.pictureUrl}}"/>
+                </div>
+                <div class="type">
+                    {{playerMove.prototype.cardType}}
+                </div>
+                <div class="attrs">
+                    <div >
+                        <div>
+                            <span class="key">Att Position: </span><span class="value">{{playerMove.attackingPosition}}</span>
+                        </div>
+                        <div>
+                            <span class="key">Def Position: </span><span class="value">{{playerMove.defendingPosition}}</span>
+                        </div>
+                        <div>
+                            <span class="key">Att Attribute: </span><span class="value">{{playerMove.attackingAttribute}}</span>
+                        </div>
+                        <div>
+                            <span class="key">Def Attribute: </span><span class="value">{{playerMove.defendingPosition}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h2>Select defending player:</h2>
+            <select ng-model="defendPlayer" ng-options="player as player.prototype.name for player in players"></select>
+            <br />
+            <div class="clear"></div>
+            <div class="card"  ng-show="defendPlayer.prototype.name != null">
+                <div>
+                    <img alt="club" class="club" ng-src="{{defendPlayer.club}}"/>
+                    <img alt="nation" class="nation" ng-src="{{defendPlayer.nation}}"/>
+                </div>
+                <div class="clear"></div>
+                <div class="title">
+                    {{defendPlayer.prototype.name}}
+                </div>
+                <div class="photo">
+                    <img alt="picture" ng-src="{{defendPlayer.prototype.pictureUrl}}"/>
+                </div>
+                <div class="type">
+                    {{defendPlayer.prototype.cardType}} - {{defendPlayer.position}}
+                </div>
+                <div class="attrs">
+                    <div ng-repeat="(key, value) in defendPlayer.attributes">
+                        <div>
+                            <span class="key">{{key}}: </span><span class="value">{{value}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <button ng-click="simulate(attackPlayer.prototype.id, defendPlayer.prototype.id, playerMove.prototype.id)">Simulate</button>
+    <br />
+    <hr/>
+    <br/>
+    <label>Winner: </label> <h2>{{simResult.winner}}</h2>
+</div>
