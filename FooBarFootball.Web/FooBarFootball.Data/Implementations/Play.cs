@@ -26,6 +26,14 @@ namespace FooBarFootball.Data.Implementations
                 output.Winner = "Defender";
             }
 
+            output.AttackingBaseValue = attackingValue;
+            output.DefendingBaseValue = defendingValue;
+            output.TotalBaseValue = max;
+            output.ResultValue = result;
+            output.AttackingPlayer = input.AttackingPlayer;
+            output.DefendingPlayer = input.DefendingPlayer;
+            output.Move = input.Move;
+
             return output;
         }
 
