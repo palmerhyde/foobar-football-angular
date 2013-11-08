@@ -5,12 +5,13 @@ using FooBarFootball.Web.Models;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
+using System.Web.Http;
 
 namespace FooBarFootball.Web.Controllers
 {
     public class PlayController : BaseController
     {
-        public HttpResponseMessage Get(GetPlayResponseViewModel viewModel)
+        public HttpResponseMessage Get([FromUri] GetPlayResponseViewModel viewModel)
         {
             // TODO: validate requests view model
             
