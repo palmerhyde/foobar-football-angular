@@ -104,6 +104,7 @@ namespace FoobarFootball.Tests.Automation.Pages
         public PlayerCard Card()
         {
             var playerCard = new PlayerCard();
+            playerCard.Id = PlayerCardElement().GetAttribute("data-player-id");
             playerCard.PlayerDataUrl = _driver.Url;
             playerCard.Name = PlayerCardElement().GetAttribute("data-player-full-name");
             playerCard.ShortName = PlayerCardElement().GetAttribute("data-player-short-name");

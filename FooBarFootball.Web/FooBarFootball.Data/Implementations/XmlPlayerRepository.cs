@@ -2,6 +2,7 @@
 using FooBarFootball.Data.Interfaces;
 using FooBarFootball.Models;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.Caching;
 using System.Xml;
 
@@ -21,7 +22,8 @@ namespace FooBarFootball.Data.Implementations
             List<PlayerCard> cards = new List<PlayerCard>();
             if (!cache.Contains("PlayerCards"))
             {
-                cache.Add(new CacheItem("PlayerCards", LoadCards()), new CacheItemPolicy());
+                cards = LoadCards();
+                cache.Add(new CacheItem("PlayerCards", cards), new CacheItemPolicy());
             }
             else
             {
@@ -42,7 +44,11 @@ namespace FooBarFootball.Data.Implementations
 
         public PlayerCard Get(string id)
         {
-            throw new System.NotImplementedException();
+            var player = (from x in Get()
+                         where x.Id == id
+                         select x).FirstOrDefault();
+
+            return player;
         }
 
         public static ObjectCache cache = MemoryCache.Default;

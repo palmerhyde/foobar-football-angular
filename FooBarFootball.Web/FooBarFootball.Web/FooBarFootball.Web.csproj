@@ -161,6 +161,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\PlayController.cs" />
     <Compile Include="Controllers\TacticsController.cs" />
     <Compile Include="Controllers\MovesController.cs" />
     <Compile Include="Controllers\PlayersController.cs" />
@@ -169,6 +170,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CardsViewModel.cs" />
+    <Compile Include="Models\GetPlayResponseViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

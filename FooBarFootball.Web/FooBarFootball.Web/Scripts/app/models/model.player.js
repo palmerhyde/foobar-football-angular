@@ -6,6 +6,8 @@
         3: 'Attacker'
     };
 
+    // TODO: add all attributes
+    // TODO: can we make this array generic or part of the base class?
     var attribute = {
         0: 'Passing',
         1: 'Pace',

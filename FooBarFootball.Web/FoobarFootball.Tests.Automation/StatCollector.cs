@@ -45,6 +45,15 @@ namespace FoobarFootball.Tests.Automation
         public void GetPlayersByTeam()
         {
             List<string> teams = new List<string>();
+            teams.Add("chelsea");
+            teams.Add("liverpool");
+            teams.Add("fc-barcelona");
+            teams.Add("arsenal");
+            teams.Add("real-madrid");
+            teams.Add("bayern-münchen");
+            teams.Add("udinese");
+            teams.Add("juventus");
+            teams.Add("atlético-de-madrid");
             teams.Add("legends");
             
             try
@@ -66,7 +75,7 @@ namespace FoobarFootball.Tests.Automation
             string xml = Serialize(cardsList).ToString();
             XmlDocument xdoc = new XmlDocument();
             xdoc.LoadXml(xml);
-            xdoc.Save("playersLegends.xml");
+            xdoc.Save("playerswithid.xml");
             browser.Close();
         }
 
