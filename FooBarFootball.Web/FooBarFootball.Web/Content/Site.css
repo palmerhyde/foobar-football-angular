@@ -222,6 +222,7 @@ ul#menu {
 .cards .card {
     float: left;
     margin: 20px; 
+    position: relative;
 }
 
 .card {
@@ -231,6 +232,7 @@ ul#menu {
     border-radius: 10px;
     background-color: #777;
     padding: 5px;
+    position: relative;
 }
 
 .card .club {
@@ -240,13 +242,13 @@ ul#menu {
 
 .card .nation {
     width: 30px;
-    right: -95px;
+    right: 15px;
 }
 
 .card .club, .card .nation {
-    position: relative;
+    position: absolute;
     z-index: 1000;
-    top: -110px;
+    top: 40px;
 }
 
 .card .title, .card .type,
