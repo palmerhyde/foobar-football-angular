@@ -222,6 +222,7 @@ ul#menu {
 .cards .card {
     float: left;
     margin: 20px; 
+    position: relative;
 }
 
 .card {
