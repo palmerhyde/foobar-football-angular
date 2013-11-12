@@ -7,13 +7,18 @@ using System.Web.Http;
 
 namespace FooBarFootball.Web.Controllers
 {
-    public class MovesController : BaseController
+    public class MovesController : ApiController
     {
+        private IMoveRepository _moveRepo;
+
+        public MovesController(IMoveRepository moveRepo)
+        {
+            _moveRepo = moveRepo;
+        }
+        
         public HttpResponseMessage Get()
         {
-            // TODO: Set up DI
-            IMoveRepository repo = new XmlMoveRepository(BaseSiteUrl + "Data/moves.xml");
-            var cards = repo.Get();
+            var cards = _moveRepo.Get();
             return Request.CreateResponse(HttpStatusCode.OK, cards);
         }
     }

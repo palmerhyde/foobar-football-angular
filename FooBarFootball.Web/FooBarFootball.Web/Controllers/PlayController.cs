@@ -9,23 +9,28 @@ using System.Web.Http;
 
 namespace FooBarFootball.Web.Controllers
 {
-    public class PlayController : BaseController
+    public class PlayController : ApiController
     {
+        private IPlayLogic _logic;
+        private IPlayerRepository _playerRepo;
+        private IMoveRepository _moveRepo;
+
+        public PlayController(IPlayLogic logic, IPlayerRepository playerRepo, IMoveRepository moveRepo)
+        {
+            _logic = logic;
+            _playerRepo = playerRepo;
+            _moveRepo = moveRepo;
+        }
+
         public HttpResponseMessage Get([FromUri] GetPlayResponseViewModel viewModel)
         {
-            // TODO: validate requests view model
-            
-            // TODO: Set up DI
-            IPlayerRepository playerRepo = new XmlPlayerRepository(BaseSiteUrl + "Data/players.xml");
-            IMoveRepository moveRepo = new XmlMoveRepository(BaseSiteUrl + "Data/moves.xml");
-
             var input = new PlayInputModel();
-            input.AttackingPlayer = playerRepo.Get(viewModel.AttackingPlayerId);
-            input.DefendingPlayer = playerRepo.Get(viewModel.DefendingPlayerId);
-            input.Move = moveRepo.Get(viewModel.MoveId);
+            input.AttackingPlayer = _playerRepo.Get(viewModel.AttackingPlayerId);
+            input.DefendingPlayer = _playerRepo.Get(viewModel.DefendingPlayerId);
+            input.Move = _moveRepo.Get(viewModel.MoveId);
 
             IPlayLogic playLogic = new PlayLogic();
-            var responseViewModel = playLogic.Play(input);
+            var responseViewModel = _logic.Play(input);
             
             return Request.CreateResponse(HttpStatusCode.OK, responseViewModel);
         }

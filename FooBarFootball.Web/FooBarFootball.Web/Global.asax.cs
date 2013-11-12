@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FooBarFootball.Web.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,7 @@ namespace FooBarFootball.Web
     {
         protected void Application_Start()
         {
+            DependencyInjectionConfig.RegisterUnityContainer(GlobalConfiguration.Configuration);
             AreaRegistration.RegisterAllAreas();
 
             WebApiConfig.Register(GlobalConfiguration.Configuration);

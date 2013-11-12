@@ -12,13 +12,18 @@ using System.Web.Http;
 
 namespace FooBarFootball.Web.Controllers
 {
-    public class PlayersController : BaseController
+    public class PlayersController : ApiController
     {
+        private IPlayerRepository _playerRepo;
+
+        public PlayersController(IPlayerRepository playerRepo)
+        {
+            _playerRepo = playerRepo;
+        }
+
         public HttpResponseMessage Get()
         {
-            // TODO: Set up DI
-            IPlayerRepository repo = new XmlPlayerRepository(BaseSiteUrl + "Data/players.xml");
-            var cards = repo.Get();
+            var cards = _playerRepo.Get();
             List<Card> card = new List<Card>();
             card.AddRange(cards);
             return Request.CreateResponse(HttpStatusCode.OK, card);
