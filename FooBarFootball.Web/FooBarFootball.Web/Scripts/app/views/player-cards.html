@@ -13,7 +13,13 @@
             </div>
             <div class="clear"></div>
             <div class="title">
-                {{player.prototype.name}}
+                <span ng-if="player.prototype.name.length <= 16">
+                    {{player.prototype.name}}
+                </span>
+                <span ng-if="player.prototype.name.length > 16">
+                    {{player.prototype.shortName}}
+                </span>
+                <span class="score">{{player.total}}</span>
             </div>
             <div class="photo">
                 <img alt="picture" ng-src="{{player.prototype.pictureUrl}}"/>
