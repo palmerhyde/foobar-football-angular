@@ -175,6 +175,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Controllers\PlayersAttributesController.cs" />
     <Compile Include="Controllers\PlayController.cs" />
     <Compile Include="Controllers\TacticsController.cs" />
     <Compile Include="Controllers\MovesController.cs" />
@@ -293,6 +294,7 @@
     <Content Include="Images\Cards\Tactics\total1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Scripts\app\config\config.player.attributes.js" />
     <Content Include="Scripts\app\controllers\simulator-moves.js" />
     <Content Include="Scripts\app\controllers\simulator.js" />
     <Content Include="Scripts\app\controllers\tactics.js" />

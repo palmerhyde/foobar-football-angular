@@ -13,19 +13,17 @@
             <div class="type">
                 {{move.prototype.cardType}}
             </div>
-            <div class="attrs">
-                <div >
+            <div class="attrs moves">
+                <div class="header">Attacker</div>
+                <div ng-repeat="(key, value) in move.attackingAttributes">
                     <div>
-                        <span class="key">Att Position: </span><span class="value">{{move.attackingPosition}}</span>
+                        <span class="key">{{key}}: </span><span class="value">{{value}}</span>
                     </div>
+                </div>
+                <div class="header last">Defender</div>
+                <div ng-repeat="(key, value) in move.defendingAttributes">
                     <div>
-                        <span class="key">Def Position: </span><span class="value">{{move.defendingPosition}}</span>
-                    </div>
-                    <div>
-                        <span class="key">Att Attribute: </span><span class="value">{{move.attackingAttribute}}</span>
-                    </div>
-                    <div>
-                        <span class="key">Def Attribute: </span><span class="value">{{move.defendingPosition}}</span>
+                        <span class="key">{{key}}: </span><span class="value">{{value}}</span>
                     </div>
                 </div>
             </div>
