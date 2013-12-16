@@ -424,3 +424,49 @@ ul#menu {
     display: block;
 }
 
+
+
+
+/********************************************
+ *   Print Styles
+ ********************************************/
+
+.print-container {
+    position: fixed;
+    top: 162px;
+    left: 320px;
+    z-index: 100000;
+    background-color: #efeeef;
+}
+
+
+body.print {
+    padding-top: 0;
+    border-top: none;
+}
+
+
+
+body.print .cards .card {
+    margin: 0;
+}
+
+@media print {
+    body.print .printspacer {
+        width: 100%;
+        height: 100px;
+        clear: both;
+    }
+
+
+    body.print .cards .card {
+        background-color: #777 !important;
+        -webkit-print-color-adjust: exact; 
+    }
+
+    body.print .card .title, body.print .card .type,
+    body.print .card .photo, body.print .card .attrs {
+        background-color: #999 !important;
+        -webkit-print-color-adjust: exact;
+    }
+}
