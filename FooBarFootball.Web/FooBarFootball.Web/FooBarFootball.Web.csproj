@@ -295,6 +295,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Scripts\app\config\config.player.attributes.js" />
+    <Content Include="Scripts\app\controllers\printcards.js" />
     <Content Include="Scripts\app\controllers\simulator-moves.js" />
     <Content Include="Scripts\app\controllers\simulator.js" />
     <Content Include="Scripts\app\controllers\tactics.js" />
@@ -305,6 +306,7 @@
     <Content Include="Scripts\app\models\model.playMoveResult.js" />
     <Content Include="Scripts\app\models\model.tactics.js" />
     <Content Include="Scripts\app\views\cards.html" />
+    <Content Include="Scripts\app\views\print.html" />
     <Content Include="Scripts\app\views\simulator-moves.html" />
     <Content Include="Scripts\app\views\simulator.html" />
     <Content Include="Scripts\app\views\tactic-cards.html" />
