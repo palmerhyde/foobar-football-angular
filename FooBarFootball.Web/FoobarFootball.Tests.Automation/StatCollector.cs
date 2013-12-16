@@ -40,6 +40,7 @@ namespace FoobarFootball.Tests.Automation
             browser.Close();
         }
 
+        [Ignore]
         [TestMethod]
         public void GetPlayersByTeam()
         {
