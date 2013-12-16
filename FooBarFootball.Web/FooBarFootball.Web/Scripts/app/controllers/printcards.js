@@ -29,11 +29,23 @@ fooBarControllers.controller('PrintCardsController', ['$scope', '$http', 'Config
         var num = 0;
         var html;
         $('input:checked').each(function () {
+            num++;
             html += "<div class='card'>" + $(this).parent().html() + "</div>";
+            if (num % 10 == 0) {
+                html += "<div class='printspacer'></div>";
+            }
         });
 
-        $('section.selectcards').hide();
+        html = html.replace('undefined', '');
+
+        $('body').addClass('print');
+        $('section.selectcards').remove();
+        $('.navbar').remove();
+        $('h1').remove();
+        $('#footer').remove();
         $('.printcards').html(html);
-        $('.printcards').remove('input');
+        $('.printcards input').each(function () {
+            $(this).remove();
+        });
     };
 }]);
