@@ -262,27 +262,32 @@ ul#menu {
 }
 
 .card.generic {
-    background-color: hotpink;
+    background-image:url('/images/cards/genericbg.jpg');
 }
 
 .card.total {
     background-color: #f68b32;
+    background-image:url('/images/cards/totalbg.jpg');
 }
 
 .card.organised {
     background-color: green;
+    background-image:url('/images/cards/organisedbg.jpg');
 }
 
 .card.latin {
-    background-color: yellow;
+    background-color: red;
+    background-image:url('/images/cards/latinbg.jpg');
 }
 
 .card.physical {
-    background-color: white;
+    background-color: purple;
+    background-image:url('/images/cards/physicalbg.jpg');
 }
 
 .card.counter {
     background-color: black;
+    background-image:url('/images/cards/counterbg.jpg');
 }
 
 .card .club {
@@ -469,4 +474,28 @@ body.print .cards .card {
         background-color: #999 !important;
         -webkit-print-color-adjust: exact;
     }
+
+    body.print .cards .card.generic {
+}
+
+ body.print .cards .card.total {
+    background-color: #f68b32 !important;
+}
+
+ body.print .cards .card.organised {
+    background-color: green !important;
+}
+
+ body.print .cards .card.latin {
+    background-color: yellow !important;
+}
+
+ body.print .cards .card.physical {
+    background-color: white !important;
+}
+
+ body.print .cards .card.counter {
+    background-color: black !important;
+}
+
 }

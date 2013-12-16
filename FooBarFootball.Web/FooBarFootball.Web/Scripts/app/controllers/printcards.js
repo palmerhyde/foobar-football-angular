@@ -40,7 +40,8 @@ fooBarControllers.controller('PrintCardsController', ['$scope', '$http', 'Config
         var html;
         $('input:checked').each(function () {
             num++;
-            html += "<div class='card'>" + $(this).parent().html() + "</div>";
+            var cls = $(this).parent().attr('class');
+            html += "<div class='" + cls + "'>" + $(this).parent().html() + "</div>";
             if (num % 10 == 0) {
                 html += "<div class='printspacer'></div>";
             }

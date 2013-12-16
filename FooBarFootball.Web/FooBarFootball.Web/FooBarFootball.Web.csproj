@@ -277,12 +277,19 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Images\Cards\counterbg.jpg" />
+    <Content Include="Images\Cards\genericbg.jpg" />
+    <Content Include="Images\Cards\latinbg.jpg" />
     <Content Include="Images\Cards\Moves\goalofthecentery.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Cards\Moves\handofgod.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Cards\Moves\hog.gif" />
+    <Content Include="Images\Cards\Moves\shortpass.gif" />
+    <Content Include="Images\Cards\organisedbg.jpg" />
+    <Content Include="Images\Cards\physicalbg.jpg" />
     <Content Include="Images\Cards\Tactics\counter1.JPG" />
     <Content Include="Images\Cards\Tactics\latin1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -296,6 +303,7 @@
     <Content Include="Images\Cards\Tactics\total1.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Cards\totalbg.jpg" />
     <Content Include="Scripts\app\config\config.player.attributes.js" />
     <Content Include="Scripts\app\controllers\printcards.js" />
     <Content Include="Scripts\app\controllers\simulator-moves.js" />
