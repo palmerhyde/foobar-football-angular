@@ -1,0 +1,73 @@
+﻿<div id="body">
+    <h1>Select cards you want to print</h1>
+    <br />
+    <section class="cards selectcards" ng-controller="CardsController">
+        <div class="search">
+            <label>Search by name: </label>
+            <input type="text" ng-model="searchTerm"/>
+        </div>
+        <div class="search">
+            <button ng-click="print()">Print</button>
+        </div>
+        <div class="clear"></div>
+        <div ng-repeat="player in players | filter: {prototype.name: searchTerm}" class="card" >
+            <div>
+                
+            </div>
+            <div class="clear"></div>
+            <div class="title">
+                {{player.prototype.name}}
+            </div>
+            <div class="photo">
+                
+                <img alt="picture" ng-src="{{player.prototype.pictureUrl}}"/>
+            </div>
+            <img alt="club" class="club" ng-src="{{player.club}}"/>
+            <img alt="nation" class="nation" ng-src="{{player.nation}}"/>
+            <div class="type">
+                {{player.prototype.cardType}} - {{player.position}}
+            </div>
+            <div class="attrs">
+                <div ng-repeat="(key, value) in player.attributes">
+                    <div>
+                        <span class="key">{{key}}: </span><span class="value">{{value}}</span>
+                    </div>
+                </div>
+            </div>
+            <input type="checkbox" name="card" />
+        </div>
+        <!-- Moves -->
+        <div ng-repeat="move in moves | filter: {name: searchTerm}" class="card" >
+            <div class="clear"></div>
+            <div class="title">
+                {{move.prototype.name}}
+            </div>
+            <div class="photo">
+                <img alt="picture" ng-src="{{move.prototype.pictureUrl}}"/>
+            </div>
+            <div class="type">
+                {{move.prototype.cardType}}
+            </div>
+            <div class="attrs">
+                <div >
+                    <div>
+                        <span class="key">Att Position: </span><span class="value">{{move.attackingPosition}}</span>
+                    </div>
+                    <div>
+                        <span class="key">Def Position: </span><span class="value">{{move.defendingPosition}}</span>
+                    </div>
+                    <div>
+                        <span class="key">Att Attribute: </span><span class="value">{{move.attackingAttribute}}</span>
+                    </div>
+                    <div>
+                        <span class="key">Def Attribute: </span><span class="value">{{move.defendingPosition}}</span>
+                    </div>
+                </div>
+            </div><input type="checkbox" name="card" />
+        </div>
+        
+    </section>
+    <section class="printcards cards">
+        
+    </section>
+</div>

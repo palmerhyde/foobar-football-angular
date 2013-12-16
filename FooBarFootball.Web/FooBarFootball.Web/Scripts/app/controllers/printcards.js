@@ -1,4 +1,4 @@
-fooBarControllers.controller('CardsController', ['$scope', '$http', 'ConfigPlayerAttributes', function ($scope, $http, ConfigPlayerAttributes) {
+fooBarControllers.controller('PrintCardsController', ['$scope', '$http', 'ConfigPlayerAttributes', function ($scope, $http, ConfigPlayerAttributes) {
     var atts = ConfigPlayerAttributes.attributes;
     $scope.title = "FooBar Football - Cards";
     $scope.searchTerm = "";
@@ -24,4 +24,16 @@ fooBarControllers.controller('CardsController', ['$scope', '$http', 'ConfigPlaye
             $scope.moves = movesArr;
         });
     });
+
+    $scope.print = function () {
+        var num = 0;
+        var html;
+        $('input:checked').each(function () {
+            html += "<div class='card'>" + $(this).parent().html() + "</div>";
+        });
+
+        $('section.selectcards').hide();
+        $('.printcards').html(html);
+        $('.printcards').remove('input');
+    };
 }]);
