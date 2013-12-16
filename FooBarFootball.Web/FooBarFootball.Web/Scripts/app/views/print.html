@@ -5,11 +5,11 @@
             <label>Search by name: </label>
             <input type="text" ng-model="searchTerm"/>
         </div>
-        <div class="search">
+        <div class="search print-container">
             <button ng-click="print()">Print</button>
         </div>
         <div class="clear"></div>
-        <<div ng-repeat="player in players | filter: {prototype.name: searchTerm}" class="card" >
+        <div ng-repeat="player in players | filter: {prototype.name: searchTerm}" class="card" >
             <div>
                 <img alt="club" class="club" ng-src="{{player.club}}"/>
                 <img alt="nation" class="nation" ng-src="{{player.nation}}"/>
@@ -62,24 +62,45 @@
             <div class="type">
                 {{move.prototype.cardType}}
             </div>
-            <div class="attrs">
-                <div >
+            <div class="attrs moves">
+                <div class="header">Attacker</div>
+                <div ng-repeat="(key, value) in move.attackingAttributes">
                     <div>
-                        <span class="key">Att Position: </span><span class="value">{{move.attackingPosition}}</span>
-                    </div>
-                    <div>
-                        <span class="key">Def Position: </span><span class="value">{{move.defendingPosition}}</span>
-                    </div>
-                    <div>
-                        <span class="key">Att Attribute: </span><span class="value">{{move.attackingAttribute}}</span>
-                    </div>
-                    <div>
-                        <span class="key">Def Attribute: </span><span class="value">{{move.defendingPosition}}</span>
+                        <span class="key">{{key}}: </span><span class="value">{{value}}</span>
                     </div>
                 </div>
-            </div><input type="checkbox" name="card" />
+                <div class="header last">Defender</div>
+                <div ng-repeat="(key, value) in move.defendingAttributes">
+                    <div>
+                        <span class="key">{{key}}: </span><span class="value">{{value}}</span>
+                    </div>
+                </div>
+            </div>
+            <input type="checkbox" name="card" />
         </div>
         
+        <div ng-repeat="tactic in tactics | filter: {name: searchTerm}" class="card" >
+            <div class="clear"></div>
+            <div class="title">
+                {{tactic.prototype.name}}
+            </div>
+            <div class="photo">
+                <img alt="picture" ng-src="{{tactic.prototype.pictureUrl}}"/>
+            </div>
+            <div class="type">
+                {{tactic.prototype.cardType}}
+            </div>
+            <div class="attrs">
+                <div >
+                    {{tactic.prototype.description}}
+                </div>
+            </div>
+            <input type="checkbox" name="card" />
+        </div>
+        <div class="clear"></div>
+        <div class="search">
+            <button ng-click="print()">Print</button>
+        </div>
     </section>
     <section class="printcards cards">
         

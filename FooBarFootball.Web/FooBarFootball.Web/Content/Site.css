@@ -406,6 +406,16 @@ ul#menu {
 /********************************************
  *   Print Styles
  ********************************************/
+
+.print-container {
+    position: fixed;
+    top: 162px;
+    left: 320px;
+    z-index: 100000;
+    background-color: #efeeef;
+}
+
+
 body.print {
     padding-top: 0;
     border-top: none;

@@ -4,6 +4,16 @@ fooBarControllers.controller('PrintCardsController', ['$scope', '$http', 'Config
     $scope.searchTerm = "";
     $scope.players = [];
     $scope.moves = [];
+    $scope.tactics = [];
+    
+    $http.get('/api/tactics').then(function (data) {
+        var tacticsArr = [];
+        for (var i = 0; i < data.data.length; i++) {
+            var tactic = new ModelTactic(data.data[i]);
+            tacticsArr.push(tactic);
+        }
+        $scope.tactics = tacticsArr;
+    });
     
     atts.then(function (result) {
         $http.get('/api/players').then(function (data) {
