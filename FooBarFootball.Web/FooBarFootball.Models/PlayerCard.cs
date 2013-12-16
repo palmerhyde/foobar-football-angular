@@ -7,6 +7,7 @@ namespace FooBarFootball.Models
         public PlayerCard()
         {
             CardType = CardType.Player;
+            CardStyle = CardStyle.Generic;
         }
 
         public int OverallRating { get; set; }

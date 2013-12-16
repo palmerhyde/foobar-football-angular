@@ -2,7 +2,7 @@
     <br />
     <section class="cards" ng-controller="MoveCardsController">
         <!-- Moves -->
-        <div ng-repeat="move in moves | filter: {name: searchTerm}" class="card" >
+        <div ng-repeat="move in moves | filter: {name: searchTerm}" class="card {{move.prototype.style}}" >
             <div class="clear"></div>
             <div class="title">
                 {{move.prototype.name}}

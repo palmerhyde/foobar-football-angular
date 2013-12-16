@@ -261,6 +261,30 @@ ul#menu {
     position: relative;
 }
 
+.card.generic {
+    background-color: hotpink;
+}
+
+.card.total {
+    background-color: #f68b32;
+}
+
+.card.organised {
+    background-color: green;
+}
+
+.card.latin {
+    background-color: yellow;
+}
+
+.card.physical {
+    background-color: white;
+}
+
+.card.counter {
+    background-color: black;
+}
+
 .card .club {
     width: 22px;
     left: 11px;

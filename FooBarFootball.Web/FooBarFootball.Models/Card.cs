@@ -13,6 +13,7 @@ namespace FooBarFootball.Models
         public string ShortName { get; set; }
         public string Description { get; set; }
         public CardType CardType { get; set; }
+        public CardStyle CardStyle { get; set; }
         public string Rarity { get; set; }
         public string PictureUrl { get; set; }
         public string VideoUrl { get; set; }
