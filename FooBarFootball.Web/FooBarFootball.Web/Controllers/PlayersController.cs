@@ -24,6 +24,7 @@ namespace FooBarFootball.Web.Controllers
         public HttpResponseMessage Get()
         {
             var cards = _playerRepo.Get();
+
             List<Card> card = new List<Card>();
             card.AddRange(cards);
             return Request.CreateResponse(HttpStatusCode.OK, card);

@@ -19,7 +19,10 @@
                 <span ng-if="player.prototype.name.length > 16">
                     {{player.prototype.shortName}}
                 </span>
-                <span class="score">{{player.total}}</span>
+                <span class="score">
+                    {{player.attackingRating}} /
+                    {{player.defensiveRating}}
+                </span>
             </div>
             <div class="photo">
                 <img alt="picture" ng-src="{{player.prototype.pictureUrl}}"/>
@@ -28,9 +31,17 @@
                 {{player.prototype.cardType}} - {{player.position}}
             </div>
             <div class="attrs">
-                <div ng-repeat="(key, value) in player.attributes">
+                    <!--<div>
+                        <span class="key">Overall: </span><span class="value">{{player.overallRating}}</span>
+                    </div>-->
+                <div ng-repeat="(key, value) in player.strengths">
                     <div>
-                        <span class="key">{{key}}: </span><span class="value">{{value}}</span>
+                        <span class="key">{{key}}: </span><span class="value">+ {{value}}</span>
+                    </div>
+                </div>
+                <div ng-repeat="(key, value) in player.weaknesses">
+                    <div>
+                        <span class="key">{{key}}: </span><span class="value">- {{value}}</span>
                     </div>
                 </div>
             </div>

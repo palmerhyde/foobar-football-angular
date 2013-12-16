@@ -15,10 +15,33 @@
         }
     }
 
+    var st = {};
+    for (var i = 0; i < params.Strengths.length; i++) {
+        if (attributes[params.Strengths[i].Attribute] == 'Unknown') {
+            total = params.Strengths[i].Value;
+        } else {
+            st[attributes[params.Strengths[i].Attribute]] = params.Strengths[i].Value;
+        }
+    }
+
+    var wk = {};
+    for (var i = 0; i < params.Weaknesses.length; i++) {
+        if (attributes[params.Weaknesses[i].Attribute] == 'Unknown') {
+            total = params.Weaknesses[i].Value;
+        } else {
+            wk[attributes[params.Weaknesses[i].Attribute]] = params.Weaknesses[i].Value;
+        }
+    }
+
     this.prototype = new ModelBaseCard(params);
     this.club = params.Club;
     this.nation = params.Nation;
     this.position = position[params.Position];
     this.attributes = atts;
+    this.strengths = st;
+    this.weaknesses = wk;
     this.total = total;
+    this.attackingRating = params.AttackingRating;
+    this.defensiveRating = params.DefensiveRating;
+    this.overallRating = params.OverallRating;
 }
