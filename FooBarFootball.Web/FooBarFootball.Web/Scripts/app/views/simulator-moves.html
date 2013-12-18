@@ -23,9 +23,14 @@
                     {{attackPlayer.prototype.cardType}} - {{attackPlayer.position}}
                 </div>
                 <div class="attrs">
-                    <div ng-repeat="(key, value) in attackPlayer.attributes">
+                    <div ng-repeat="(key, value) in attackPlayer.strengths">
                         <div>
-                            <span class="key">{{key}}: </span><span class="value">{{value}}</span>
+                            <span class="key">{{key}}: </span><span class="value">+ {{value}}</span>
+                        </div>
+                    </div>
+                    <div ng-repeat="(key, value) in player.weaknesses">
+                        <div>
+                            <span class="key">{{key}}: </span><span class="value">- {{value}}</span>
                         </div>
                     </div>
                 </div>
@@ -35,35 +40,10 @@
         
         <div class="col-md-4">
             <h2>Select move:</h2>
-            <select ng-model="playerMove" ng-options="move as move.prototype.name for move in moves"></select>
+            <select ng-model="move" ng-options="move as move.prototype.name for move in moves"></select>
             <br />
-            <div class="card" ng-show="playerMove.prototype.name != null">
-                <div class="clear"></div>
-                <div class="title">
-                    {{playerMove.prototype.name}}
-                </div>
-                <div class="photo">
-                    <img alt="picture" ng-src="{{playerMove.prototype.pictureUrl}}"/>
-                </div>
-                <div class="type">
-                    {{playerMove.prototype.cardType}}
-                </div>
-                <div class="attrs">
-                    <div >
-                        <div>
-                            <span class="key">Att Position: </span><span class="value">{{playerMove.attackingPosition}}</span>
-                        </div>
-                        <div>
-                            <span class="key">Def Position: </span><span class="value">{{playerMove.defendingPosition}}</span>
-                        </div>
-                        <div>
-                            <span class="key">Att Attribute: </span><span class="value">{{playerMove.attackingAttribute}}</span>
-                        </div>
-                        <div>
-                            <span class="key">Def Attribute: </span><span class="value">{{playerMove.defendingPosition}}</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="card" ng-show="move.prototype.name != null">
+                <card-move></card-move>
             </div>
         </div>
 
@@ -88,9 +68,14 @@
                     {{defendPlayer.prototype.cardType}} - {{defendPlayer.position}}
                 </div>
                 <div class="attrs">
-                    <div ng-repeat="(key, value) in defendPlayer.attributes">
+                    <div ng-repeat="(key, value) in attackPlayer.strengths">
                         <div>
-                            <span class="key">{{key}}: </span><span class="value">{{value}}</span>
+                            <span class="key">{{key}}: </span><span class="value">+ {{value}}</span>
+                        </div>
+                    </div>
+                    <div ng-repeat="(key, value) in player.weaknesses">
+                        <div>
+                            <span class="key">{{key}}: </span><span class="value">- {{value}}</span>
                         </div>
                     </div>
                 </div>

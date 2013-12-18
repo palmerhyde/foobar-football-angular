@@ -1,0 +1,24 @@
+﻿<div class="clear"></div>
+<div class="title">
+    {{move.prototype.name}}
+</div>
+<div class="photo">
+    <img alt="picture" ng-src="{{move.prototype.pictureUrl}}"/>
+</div>
+<div class="type">
+    {{move.prototype.cardType}}
+</div>
+<div class="attrs moves">
+    <div class="header">Attacker</div>
+    <div ng-repeat="(key, value) in move.attackingAttributes">
+        <div>
+            <span class="key">{{key}}: </span><span class="value">{{value}}</span>
+        </div>
+    </div>
+    <div class="header last">Defender</div>
+    <div ng-repeat="(key, value) in move.defendingAttributes">
+        <div>
+            <span class="key">{{key}}: </span><span class="value">{{value}}</span>
+        </div>
+    </div>
+</div>

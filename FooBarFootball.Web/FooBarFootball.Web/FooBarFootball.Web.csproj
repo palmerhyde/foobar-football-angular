@@ -313,6 +313,12 @@
     <Content Include="Scripts\app\controllers\moves.js" />
     <Content Include="Scripts\app\controllers\wiki.js" />
     <Content Include="Scripts\app\controllers\home.js" />
+    <Content Include="Scripts\app\directives\directive.card.tactic.js" />
+    <Content Include="Scripts\app\directives\directive.card.move.js" />
+    <Content Include="Scripts\app\directives\directive.card.player.js" />
+    <Content Include="Scripts\app\directives\views\card.move.html" />
+    <Content Include="Scripts\app\directives\views\card.player.html" />
+    <Content Include="Scripts\app\directives\views\card.tactic.html" />
     <Content Include="Scripts\app\models\model.playMoveResult.js" />
     <Content Include="Scripts\app\models\model.tactics.js" />
     <Content Include="Scripts\app\views\cards.html" />
