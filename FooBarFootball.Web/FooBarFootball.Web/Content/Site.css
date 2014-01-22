@@ -253,7 +253,7 @@ ul#menu {
 
 .card {
     height: 320px;
-    width: 193px;
+    width: 213px;
     border: 10px solid black;
     border-radius: 10px;
     background-color: #777;
@@ -361,7 +361,7 @@ ul#menu {
     background-color: #777777;
     margin-left: -10px;
     padding: 0 5px;
-    width: 117%;
+    width: 114%;
     color: #fff;
     font-size: 13px;
     font-weight: 700;
@@ -476,26 +476,35 @@ body.print .cards .card {
     }
 
     body.print .cards .card.generic {
+    }
+
+    body.print .cards .card.generic {
+    background-image:url('/images/cards/genericbg.jpg')!important;
 }
 
- body.print .cards .card.total {
-    background-color: #f68b32 !important;
-}
+     body.print .cards .card.total {
+        background-color: #f68b32 !important;
+        background-image:url('/images/cards/totalbg.jpg') !important;
+    }
 
- body.print .cards .card.organised {
-    background-color: green !important;
-}
+     body.print .cards .card.organised {
+        background-color: green !important;
+        background-image:url('/images/cards/organisedbg.jpg') !important;
+    }
 
- body.print .cards .card.latin {
-    background-color: yellow !important;
-}
+     body.print .cards .card.latin {
+        background-color: yellow !important;
+        background-image:url('/images/cards/latinbg.jpg') !important;
+    }
 
- body.print .cards .card.physical {
-    background-color: white !important;
-}
+     body.print .cards .card.physical {
+        background-color: white !important;
+        background-image:url('/images/cards/physicalbg.jpg') !important;
+    }
 
- body.print .cards .card.counter {
-    background-color: black !important;
-}
+     body.print .cards .card.counter {
+        background-color: black !important;
+        background-image:url('/images/cards/counterbg.jpg') !important;
+    }
 
 }
