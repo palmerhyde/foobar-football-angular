@@ -253,7 +253,7 @@ ul#menu {
 
 .card {
     height: 320px;
-    width: 213px;
+    width: 223px;
     border: 10px solid black;
     border-radius: 10px;
     background-color: #777;
@@ -361,7 +361,7 @@ ul#menu {
     background-color: #777777;
     margin-left: -10px;
     padding: 0 5px;
-    width: 114%;
+    width: 113%;
     color: #fff;
     font-size: 13px;
     font-weight: 700;
