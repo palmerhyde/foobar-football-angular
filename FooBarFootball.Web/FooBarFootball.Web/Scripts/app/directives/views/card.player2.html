@@ -1,0 +1,27 @@
+﻿<div>
+    <img alt="club" class="club" ng-src="{{player.club}}"/>
+    <img alt="nation" class="nation" ng-src="{{player.nation}}"/>
+</div>
+<div class="clear"></div>
+<div class="title">
+    <span ng-if="player.prototype.name.length <= 16">
+        {{player.prototype.name}}
+    </span>
+    <span ng-if="player.prototype.name.length > 16">
+        {{player.prototype.shortName}}
+    </span>
+    <span class="score">
+         {{player.cost}} /
+         {{player.attack}} /
+         {{player.stamina}}
+    </span>
+</div>
+<div class="photo">
+    <img alt="picture" ng-src="{{player.prototype.pictureUrl}}"/>
+</div>
+<div class="type">
+    {{player.prototype.cardType}} - {{player.position}}
+</div>
+<div class="attrs">
+    {{player.prototype.description}}
+</div>
