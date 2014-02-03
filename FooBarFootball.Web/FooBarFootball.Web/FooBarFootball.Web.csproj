@@ -337,11 +337,7 @@
     <Content Include="Scripts\app\views\player-cards.html" />
     <Content Include="Scripts\app\views\home.html" />
     <Content Include="Scripts\app\views\wiki.html" />
-    <None Include="Scripts\jquery-2.0.3.intellisense.js" />
-    <Content Include="Scripts\jquery-2.0.3.js" />
-    <Content Include="Scripts\jquery-2.0.3.min.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
-    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\lib\angular-mocks\angular-mocks.js" />
     <Content Include="Scripts\lib\angular\angular-route.js" />
     <Content Include="Scripts\lib\angular\angular-route.min.js" />
     <Content Include="Scripts\lib\bootstrap\bootstrap.js" />
@@ -358,7 +354,6 @@
     <Content Include="Scripts\lib\angular\angular-route.min.js.map">
       <DependentUpon>angular-route.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\jquery-2.0.3.min.map" />
     <None Include="Scripts\lib\jquery\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\app\app-init.js" />
     <Content Include="Scripts\app\controllers\cards.js" />
@@ -668,6 +663,10 @@
     <Content Include="Scripts\lib\angular\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\lib\angular\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\lib\angular\i18n\angular-locale_zu.js" />
+    <Content Include="Scripts\lib\jasmine\jasmine-html.js" />
+    <Content Include="Scripts\lib\jasmine\jasmine-intellisense.js" />
+    <Content Include="Scripts\lib\jasmine\jasmine-runner.js" />
+    <Content Include="Scripts\lib\jasmine\jasmine.min.js" />
     <Content Include="Scripts\lib\jquery\jquery-1.8.2.js" />
     <Content Include="Scripts\lib\jquery\jquery-1.8.2.min.js" />
     <None Include="Scripts\lib\jquery\jquery.validate-vsdoc.js" />
@@ -680,6 +679,9 @@
     <Content Include="Scripts\lib\jquery\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\lib\jquery\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\lib\modernizr-2.6.2.js" />
+    <Content Include="karma.unit.conf.js" />
+    <Content Include="Scripts\UnitTests\unit\controller\home.tests.js" />
+    <Content Include="Scripts\UnitTests\unit\runner.htm" />
     <Content Include="Unity.Mvc4.README.txt" />
     <Content Include="Unity.WebAPI.README.txt" />
     <Content Include="Web.config">
@@ -712,6 +714,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\UnitTests\config\package.json" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
