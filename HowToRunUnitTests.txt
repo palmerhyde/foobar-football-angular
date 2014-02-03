@@ -1,0 +1,24 @@
+Install nodeJS from http://www.nodejs.org
+
+Install Karma by running the command line
+npm install -g karma
+
+Install Jasmine Testing Framework for KarmaJS by running the command line
+npm install -g karma-jasmine
+
+Install JUnit Reporter for KarmaJS by running the command line
+npm install -g karma-junit-reporter
+
+Install Angular Scenario Test Adapter for KarmaJS by running the command line
+npm install -g karma-ng-scenario
+
+Install Angular HTML 2 JS Preprocessor for KarmaJS by running the command line
+npm install -g karma-ng-html2js-preprocessor
+
+Install the VSIX built by your own or from http://visualstudiogallery.msdn.microsoft.com/02f47876-0e7a-4f6c-93f8-1af5d5189225
+
+When Visual Studio loads the solution, the Karma extension looks for the karma.unit.conf.js file, 
+and automatically starts running the tests in the output window.
+
+You can browse to http://localhost:8080, a socket is set up between the nodejs server and the JS unit test file, 
+so once you save a js unit test file, the nodejs server is automatically notified and executes all the unit tests again.
