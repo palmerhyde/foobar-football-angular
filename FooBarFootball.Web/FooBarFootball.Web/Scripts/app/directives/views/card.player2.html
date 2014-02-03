@@ -11,13 +11,13 @@
         {{player.prototype.shortName}}
     </span>
     <span class="score">
-         {{player.cost}} /
-         {{player.attack}} /
-         {{player.stamina}}
+         {{player.cost}}  
     </span>
 </div>
 <div class="photo">
     <img alt="picture" ng-src="{{player.prototype.pictureUrl}}"/>
+    <span class="attack">{{player.attack}}</span>
+    <span class="defence">{{player.stamina}}</span>
 </div>
 <div class="type">
     {{player.prototype.cardType}} - {{player.position}}

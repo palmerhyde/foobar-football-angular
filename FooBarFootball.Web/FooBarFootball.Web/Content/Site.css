@@ -292,12 +292,12 @@ ul#menu {
 
 .card .club {
     width: 22px;
-    left: 11px;
+    left: 17px;
 }
 
 .card .nation {
     width: 30px;
-    right: 15px;
+    right: 17px;
 }
 
 .card .club, .card .nation {
@@ -341,6 +341,32 @@ ul#menu {
     margin-right: auto;
 }
 
+.card .attack, .card .defence {
+    background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
+    background-color: red;
+    border: 2px solid white;
+    border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
+    box-shadow: 1px 1px 1px black;
+    color: white;
+    font: bold 15px/13px Helvetica, Verdana, Tahoma;
+    height: 23px; 
+    min-width: 14px;
+    padding: 4px 5px 0 5px;
+    text-align: center;
+    top: 122px;
+    position: absolute;
+}
+
+.card .attack {
+    background-color: green;
+    left: 17px;
+}
+
+.card .defence {
+    background-color: red;
+    right: 17px;
+}
+
 .card .type {
     /*margin-top: -4px;*/
 }
@@ -357,6 +383,7 @@ ul#menu {
 .card .attrs.moves {
     height: 150px;
 }
+
 .card .attrs .header {
     background-color: #777777;
     margin-left: -10px;
