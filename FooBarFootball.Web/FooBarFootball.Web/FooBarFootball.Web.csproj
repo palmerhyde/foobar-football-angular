@@ -177,7 +177,6 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controllers\Players2Controller.cs" />
     <Compile Include="Controllers\PlayersAttributesController.cs" />
-    <Compile Include="Controllers\PlayController.cs" />
     <Compile Include="Controllers\TacticsController.cs" />
     <Compile Include="Controllers\MovesController.cs" />
     <Compile Include="Controllers\PlayersController.cs" />
