@@ -49,10 +49,12 @@
   <ItemGroup>
     <Compile Include="DataContext.cs" />
     <Compile Include="Helpers\XmlHelper.cs" />
+    <Compile Include="Implementations\XmlManagerRepository.cs" />
     <Compile Include="Implementations\XmlPlayer2Repository.cs" />
     <Compile Include="Implementations\XmlTacticRepository.cs" />
     <Compile Include="Implementations\XmlMoveRepository.cs" />
     <Compile Include="Implementations\XmlPlayerRepository.cs" />
+    <Compile Include="Interfaces\IManagerRepository.cs" />
     <Compile Include="Interfaces\IPlayer2Repository.cs" />
     <Compile Include="Interfaces\ITacticRepository.cs" />
     <Compile Include="Interfaces\IMoveRepository.cs" />

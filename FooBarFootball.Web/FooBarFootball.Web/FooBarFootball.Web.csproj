@@ -175,6 +175,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="Controllers\ManagersController.cs" />
     <Compile Include="Controllers\Players2Controller.cs" />
     <Compile Include="Controllers\PlayersAttributesController.cs" />
     <Compile Include="Controllers\TacticsController.cs" />
@@ -254,8 +255,11 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="Data\players2.xml" />
     <Content Include="Data\moves.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Data\players2.xml" />
+    <Content Include="Data\managers.xml">
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Data\players.xml" />
@@ -306,6 +310,7 @@
     </Content>
     <Content Include="Images\Cards\totalbg.jpg" />
     <Content Include="Scripts\app\config\config.player.attributes.js" />
+    <Content Include="Scripts\app\controllers\managers.js" />
     <Content Include="Scripts\app\controllers\players2.js" />
     <Content Include="Scripts\app\controllers\printcards.js" />
     <Content Include="Scripts\app\controllers\simulator-moves.js" />
@@ -315,6 +320,7 @@
     <Content Include="Scripts\app\controllers\moves.js" />
     <Content Include="Scripts\app\controllers\wiki.js" />
     <Content Include="Scripts\app\controllers\home.js" />
+    <Content Include="Scripts\app\directives\directive.card.manager.js" />
     <Content Include="Scripts\app\directives\directive.card.player2.js" />
     <Content Include="Scripts\app\directives\directive.card.tactic.js" />
     <Content Include="Scripts\app\directives\directive.card.move.js" />
@@ -323,10 +329,13 @@
     <Content Include="Scripts\app\directives\views\card.player.html" />
     <Content Include="Scripts\app\directives\views\card.tactic.html" />
     <Content Include="Scripts\app\directives\views\card.player2.html" />
+    <Content Include="Scripts\app\directives\views\card.manager.html" />
+    <Content Include="Scripts\app\models\model.manager.js" />
     <Content Include="Scripts\app\models\model.player2.js" />
     <Content Include="Scripts\app\models\model.playMoveResult.js" />
     <Content Include="Scripts\app\models\model.tactics.js" />
     <Content Include="Scripts\app\views\cards.html" />
+    <Content Include="Scripts\app\views\manager-cards.html" />
     <Content Include="Scripts\app\views\player2-cards.html" />
     <Content Include="Scripts\app\views\print.html" />
     <Content Include="Scripts\app\views\simulator-moves.html" />

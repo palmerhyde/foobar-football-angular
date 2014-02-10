@@ -18,6 +18,7 @@ namespace FooBarFootball.Web.App_Start
             container.RegisterType<IPlayerRepository>(new InjectionFactory((c) => new XmlPlayerRepository(BaseSiteUrl + "Data/players.xml")));
             container.RegisterType<IPlayer2Repository>(new InjectionFactory((c) => new XmlPlayer2Repository(BaseSiteUrl + "Data/players2.xml")));
             container.RegisterType<IMoveRepository>(new InjectionFactory((c) => new XmlMoveRepository(BaseSiteUrl + "Data/moves.xml")));
+            container.RegisterType<IManagerRepository>(new InjectionFactory((c) => new XmlManagerRepository(BaseSiteUrl + "Data/managers.xml")));
             container.RegisterType<ITacticRepository>(new InjectionFactory((c) => new XmlTacticRepository(BaseSiteUrl + "Data/tactics.xml")));
             httpConfiguration.DependencyResolver = new Unity.WebApi.UnityDependencyResolver(container);
         }
