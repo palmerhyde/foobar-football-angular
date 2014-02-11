@@ -53,7 +53,7 @@ fooBarControllers.controller('PrintCardsController', ['$scope', '$http', 'Config
             num++;
             var cls = $(this).parent().attr('class');
             html += "<div class='" + cls + "'>" + $(this).parent().html() + "</div>";
-            if (num % 10 == 0) {
+            if (num % 8 == 0) {
                 html += "<div class='printspacer'></div>";
             }
         });
