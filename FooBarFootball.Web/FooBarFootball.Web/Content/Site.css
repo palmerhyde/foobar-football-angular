@@ -319,16 +319,7 @@ ul#menu {
     font-size: 12px;
 }
 
-.card .title .score {
-    background-color: #777;
-    color: #fff;
-    font-weight: 700;
-    padding: 0px 4px;
-    position: absolute;
-    border-radius: 5px;
-    right: 10px;
-    top: 10px;
-}
+
 
 .card .photo, .card .attrs {
     margin: 0px 10px;
@@ -341,7 +332,9 @@ ul#menu {
     margin-right: auto;
 }
 
-.card .attack, .card .defence {
+
+
+.card .attack, .card .defence, .card .title .score {
     background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
     background-color: red;
     border: 2px solid white;
@@ -353,18 +346,24 @@ ul#menu {
     min-width: 14px;
     padding: 4px 5px 0 5px;
     text-align: center;
-    top: 122px;
+    bottom: 0px;
     position: absolute;
+}
+
+.card .title .score {
+    background-color: blue;
+    right: 7px;
+    top: 7px;
 }
 
 .card .attack {
     background-color: green;
-    left: 17px;
+    left: 0px;
 }
 
 .card .defence {
     background-color: red;
-    right: 17px;
+    right: 0px;
 }
 
 .card .type {
