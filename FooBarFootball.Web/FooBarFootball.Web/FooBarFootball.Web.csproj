@@ -177,10 +177,8 @@
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Controllers\ManagersController.cs" />
     <Compile Include="Controllers\Players2Controller.cs" />
-    <Compile Include="Controllers\PlayersAttributesController.cs" />
     <Compile Include="Controllers\TacticsController.cs" />
     <Compile Include="Controllers\MovesController.cs" />
-    <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

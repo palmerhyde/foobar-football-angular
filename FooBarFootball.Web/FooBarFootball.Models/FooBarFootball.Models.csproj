@@ -44,20 +44,10 @@
     <Compile Include="Card.cs" />
     <Compile Include="CardType.cs" />
     <Compile Include="CardStyle.cs" />
-    <Compile Include="ManagerCard.cs" />
+    <Compile Include="CardRarity.cs" />
     <Compile Include="PlayerEffects.cs" />
-    <Compile Include="PlayerCard.cs" />
-    <Compile Include="Game.cs" />
-    <Compile Include="PlayerCardHelper.cs" />
     <Compile Include="PlayerPosition.cs" />
-    <Compile Include="MoveCard.cs" />
-    <Compile Include="PlayerAttribute.cs" />
-    <Compile Include="PlayerAttributeValue.cs" />
-    <Compile Include="Player2Card.cs" />
-    <Compile Include="PlayInputModel.cs" />
-    <Compile Include="PlayOutputModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TacticCard.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

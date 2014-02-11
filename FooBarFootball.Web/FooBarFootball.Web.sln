@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FooBarFootball.Models", "Fo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FooBarFootball.Data", "FooBarFootball.Data\FooBarFootball.Data.csproj", "{432DBA6A-B508-42CB-98D9-6897E2660905}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoobarFootball.Tests.Automation", "FoobarFootball.Tests.Automation\FoobarFootball.Tests.Automation.csproj", "{A8C16DA7-1F28-40BF-B533-F3C718F1590B}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,10 +31,6 @@ Global
 		{432DBA6A-B508-42CB-98D9-6897E2660905}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{432DBA6A-B508-42CB-98D9-6897E2660905}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{432DBA6A-B508-42CB-98D9-6897E2660905}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A8C16DA7-1F28-40BF-B533-F3C718F1590B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A8C16DA7-1F28-40BF-B533-F3C718F1590B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A8C16DA7-1F28-40BF-B533-F3C718F1590B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A8C16DA7-1F28-40BF-B533-F3C718F1590B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

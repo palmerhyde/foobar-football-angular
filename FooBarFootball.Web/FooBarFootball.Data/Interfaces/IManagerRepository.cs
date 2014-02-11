@@ -5,7 +5,7 @@ namespace FooBarFootball.Data.Interfaces
 {
     public interface IManagerRepository
     {
-        IList<ManagerCard> Get();
-        ManagerCard Get(string id);
+        IList<Card> Get();
+        Card Get(string id);
     }
 }

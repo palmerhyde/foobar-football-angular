@@ -17,9 +17,9 @@ namespace FooBarFootball.Data.Implementations
             managerEndPoint = url;
         }
 
-        public IList<ManagerCard> Get()
+        public IList<Card> Get()
         {
-            List<ManagerCard> cards = new List<ManagerCard>();
+            List<Card> cards = new List<Card>();
             if (!cache.Contains("ManagerCards"))
             {
                 cards = LoadCards();
@@ -27,22 +27,22 @@ namespace FooBarFootball.Data.Implementations
             }
             else
             {
-                cards = (List<ManagerCard>)cache.Get("ManagerCards");
+                cards = (List<Card>)cache.Get("ManagerCards");
             }
 
             return cards;
         }
 
-        private List<ManagerCard> LoadCards()
+        private List<Card> LoadCards()
         {
             XmlDocument document = new XmlDocument();
             document.Load(managerEndPoint);
             string xml = document.InnerXml;
-            List<ManagerCard> cards = XmlHelper.Deserialize<List<ManagerCard>>(xml);
+            List<Card> cards = XmlHelper.Deserialize<List<Card>>(xml);
             return cards;
         }
 
-        public ManagerCard Get(string id)
+        public Card Get(string id)
         {
             var manager = (from x in Get()
                           where x.Id == id

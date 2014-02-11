@@ -9,7 +9,7 @@ namespace FooBarFootball.Data.Interfaces
 {
     public interface IPlayer2Repository
     {
-        IList<PlayerCard2> Get();
-        PlayerCard2 Get(string id);
+        IList<Card> Get();
+        Card Get(string id);
     }
 }

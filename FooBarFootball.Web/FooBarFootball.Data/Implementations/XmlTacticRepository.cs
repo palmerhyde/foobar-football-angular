@@ -15,16 +15,16 @@ namespace FooBarFootball.Data.Implementations
             endpoint = url;
         }
         
-        public IList<TacticCard> Get()
+        public IList<Card> Get()
         {
             XmlDocument document = new XmlDocument();
             document.Load(endpoint);
             string xml = document.InnerXml;
-            List<TacticCard> cards = XmlHelper.Deserialize<List<TacticCard>>(xml);
+            List<Card> cards = XmlHelper.Deserialize<List<Card>>(xml);
             return cards;
         }
 
-        public TacticCard Get(string id)
+        public Card Get(string id)
         {
             throw new System.NotImplementedException();
         }

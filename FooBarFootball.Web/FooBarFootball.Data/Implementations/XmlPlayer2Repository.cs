@@ -17,9 +17,9 @@ namespace FooBarFootball.Data.Implementations
             playerEndPoint = url;
         }
         
-        public IList<PlayerCard2> Get()
+        public IList<Card> Get()
         {
-            List<PlayerCard2> cards = new List<PlayerCard2>();
+            List<Card> cards = new List<Card>();
             if (!cache.Contains("Player2Cards"))
             {
                 cards = LoadCards();
@@ -27,22 +27,22 @@ namespace FooBarFootball.Data.Implementations
             }
             else
             {
-                cards = (List<PlayerCard2>)cache.Get("Player2Cards");
+                cards = (List<Card>)cache.Get("Player2Cards");
             }
 
             return cards;
         }
 
-        private List<PlayerCard2> LoadCards()
+        private List<Card> LoadCards()
         {
             XmlDocument document = new XmlDocument();
             document.Load(playerEndPoint);
             string xml = document.InnerXml;
-            List<PlayerCard2> cards = XmlHelper.Deserialize<List<PlayerCard2>>(xml);
+            List<Card> cards = XmlHelper.Deserialize<List<Card>>(xml);
             return cards;
         }
 
-        public PlayerCard2 Get(string id)
+        public Card Get(string id)
         {
             var player = (from x in Get()
                          where x.Id == id

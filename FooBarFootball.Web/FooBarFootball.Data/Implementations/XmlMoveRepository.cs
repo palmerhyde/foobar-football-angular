@@ -17,9 +17,9 @@ namespace FooBarFootball.Data.Implementations
             moveEndPoint = url;
         }
 
-        public IList<MoveCard> Get()
+        public IList<Card> Get()
         {
-            List<MoveCard> cards = new List<MoveCard>();
+            List<Card> cards = new List<Card>();
             if (!cache.Contains("MoveCards"))
             {
                 cards = LoadCards();
@@ -27,22 +27,22 @@ namespace FooBarFootball.Data.Implementations
             }
             else
             {
-                cards = (List<MoveCard>)cache.Get("MoveCards");
+                cards = (List<Card>)cache.Get("MoveCards");
             }
 
             return cards;
         }
 
-        private List<MoveCard> LoadCards()
+        private List<Card> LoadCards()
         {
             XmlDocument document = new XmlDocument();
             document.Load(moveEndPoint);
             string xml = document.InnerXml;
-            List<MoveCard> cards = XmlHelper.Deserialize<List<MoveCard>>(xml);
+            List<Card> cards = XmlHelper.Deserialize<List<Card>>(xml);
             return cards;
         }
 
-        public MoveCard Get(string id)
+        public Card Get(string id)
         {
             var move = (from x in Get()
                           where x.Id == id

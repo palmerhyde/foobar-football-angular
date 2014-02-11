@@ -13,6 +13,6 @@ namespace FooBarFootball.Models
         Organised,
         Counter,
         Latin,
-        Physical
+        Physical,
     }
 }

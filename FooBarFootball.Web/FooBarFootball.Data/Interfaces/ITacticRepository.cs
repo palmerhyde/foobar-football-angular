@@ -5,7 +5,7 @@ namespace FooBarFootball.Data.Interfaces
 {
     public interface ITacticRepository
     {
-        IList<TacticCard> Get();
-        TacticCard Get(string id);
+        IList<Card> Get();
+        Card Get(string id);
     }
 }

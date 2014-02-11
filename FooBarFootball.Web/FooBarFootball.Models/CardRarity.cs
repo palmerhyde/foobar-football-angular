@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace FooBarFootball.Models
 {
-    public class PlayerAttributeValue
+    public enum CardRarity
     {
-        public PlayerAttribute Attribute { get; set; }
-        public int Value;
+        Common,
+        Rare,
+        Epic,
+        Legendary,
     }
 }
