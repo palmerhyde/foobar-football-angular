@@ -2,9 +2,10 @@ fooBarControllers.controller('PrintCardsController', ['$scope', '$http', 'Config
     var atts = ConfigPlayerAttributes.attributes;
     $scope.title = "FooBar Football - Cards";
     $scope.searchTerm = "";
-    $scope.players = [];
+    $scope.players2 = [];
     $scope.moves = [];
     $scope.tactics = [];
+    $scope.managers = [];
     
     $http.get('/api/tactics').then(function (data) {
         var tacticsArr = [];
@@ -16,15 +17,6 @@ fooBarControllers.controller('PrintCardsController', ['$scope', '$http', 'Config
     });
     
     atts.then(function (result) {
-        $http.get('/api/players').then(function (data) {
-            var playerArr = [];
-            for (var i = 0; i < data.data.length; i++) {
-                var player = new ModelPlayer(data.data[i], result);
-                playerArr.push(player); 
-            }
-
-            $scope.players = playerArr;
-        });
         $http.get('/api/moves').then(function (data) {
             var movesArr = [];
             for (var i = 0; i < data.data.length; i++) {
@@ -33,6 +25,25 @@ fooBarControllers.controller('PrintCardsController', ['$scope', '$http', 'Config
             }
             $scope.moves = movesArr;
         });
+    });
+    
+    $http.get('/api/players2').then(function (data) {
+        var playerArr = [];
+        for (var i = 0; i < data.data.length; i++) {
+            var player = new ModelPlayer2(data.data[i]);
+            playerArr.push(player);
+        }
+
+        $scope.players2 = playerArr;
+    });
+    
+    $http.get('/api/managers').then(function (data) {
+        var managersArr = [];
+        for (var i = 0; i < data.data.length; i++) {
+            var manager = new ModelManager(data.data[i]);
+            managersArr.push(manager);
+        }
+        $scope.managers = managersArr;
     });
 
     $scope.print = function () {

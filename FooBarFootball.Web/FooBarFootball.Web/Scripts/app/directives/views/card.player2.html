@@ -10,14 +10,11 @@
     <span ng-if="player.prototype.name.length > 16">
         {{player.prototype.shortName}}
     </span>
-    <span class="score">
-         {{player.cost}}  
-    </span>
+    <span class="score total">{{player.cost}}</span>
 </div>
 <div class="photo">
     <img alt="picture" ng-src="{{player.prototype.pictureUrl}}"/>
-    <span class="attack">{{player.attack}}</span>
-    <span class="defence">{{player.stamina}}</span>
+    
 </div>
 <div class="type">
     {{player.prototype.cardType}} - {{player.position}}
@@ -25,3 +22,5 @@
 <div class="attrs">
     {{player.prototype.description}}
 </div>
+<span class="attack">{{player.attack}}</span>
+<span class="defence">{{player.stamina}}</span>
