@@ -533,4 +533,27 @@ body.print .cards .card {
         background-image:url('/images/cards/counterbg.jpg') !important;
     }
 
+      body.print  .card .attack,  body.print  .card .defence,  body.print  .card .title .score {
+        background: radial-gradient( 5px -9px, circle, white 8%, red 26px )!important;
+        background-color: red!important;
+        border: 2px solid white!important;
+        box-shadow: 1px 1px 1px black!important;
+        color: white!important;
+    }
+
+     body.print .card .title .score {
+        background-color: blue!important;
+        right: 7px;
+        top: 7px;
+    }
+
+     body.print .card .attack {
+        background-color: green!important;
+        left: 0px;
+    }
+
+     body.print .card .defence {
+        background-color: red!important;
+        right: 0px;
+    }
 }
