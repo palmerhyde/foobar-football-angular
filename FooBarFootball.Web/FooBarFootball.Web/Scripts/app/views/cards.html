@@ -7,11 +7,11 @@
         </div>
         <div class="clear"></div>
         <div ng-repeat="player in players | filter: {prototype.name: searchTerm}" class="card" >
-            <card-player></card-player>
+            <card-player data="player"></card-player>
         </div>
         <!-- Moves -->
         <div ng-repeat="move in moves | filter: {name: searchTerm}" class="card" >
-            <card-move></card-move>
+            <card-move data="move"></card-move>
         </div>
     </section>
 </div>

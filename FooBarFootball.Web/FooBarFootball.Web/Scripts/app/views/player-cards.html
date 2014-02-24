@@ -7,7 +7,7 @@
         </div>
         <div class="clear"></div>
         <div ng-repeat="player in players | filter: {prototype.name: searchTerm}" class="card {{player.prototype.style}}" >
-            <card-player></card-player>
+            <card-player data="player"></card-player>
         </div>
     </section>
 </div>
