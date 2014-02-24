@@ -3,7 +3,7 @@
     <section class="cards" ng-controller="ManagerCardsController">
         <!-- Manager -->
         <div ng-repeat="manager in managers | filter: {name: searchTerm}" class="card {{manager.prototype.style}}" >
-            <card-manager></card-manager>
+            <card-manager data="manager"></card-manager>
         </div>
     </section>
 </div>

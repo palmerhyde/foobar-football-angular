@@ -455,7 +455,21 @@ ul#menu {
     display: block;
 }
 
+.left {
+    display: inline-block;
+    margin: 20px;
+    vertical-align: top;
+}
 
+.card.facedown {
+    background-color: #000;
+}
+
+.card.facedown .num {
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+}
 
 
 /********************************************

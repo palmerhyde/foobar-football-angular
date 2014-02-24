@@ -7,43 +7,18 @@
             <select ng-model="attackPlayer" ng-options="player as player.prototype.name for player in players"></select>
             <br />
             <div class="clear"></div>
-            <div class="card" ng-show="attackPlayer.prototype.name != null" >
-                <div>
-                    <img alt="club" class="club" ng-src="{{attackPlayer.club}}"/>
-                    <img alt="nation" class="nation" ng-src="{{attackPlayer.nation}}"/>
-                </div>
-                <div class="clear"></div>
-                <div class="title">
-                    {{attackPlayer.prototype.name}}
-                </div>
-                <div class="photo">
-                    <img alt="picture" ng-src="{{attackPlayer.prototype.pictureUrl}}"/>
-                </div>
-                <div class="type">
-                    {{attackPlayer.prototype.cardType}} - {{attackPlayer.position}}
-                </div>
-                <div class="attrs">
-                    <div ng-repeat="(key, value) in attackPlayer.strengths">
-                        <div>
-                            <span class="key">{{key}}: </span><span class="value">+ {{value}}</span>
-                        </div>
-                    </div>
-                    <div ng-repeat="(key, value) in player.weaknesses">
-                        <div>
-                            <span class="key">{{key}}: </span><span class="value">- {{value}}</span>
-                        </div>
-                    </div>
-                </div>
+            
+            <div class="card {{attackPlayer.prototype.style}}" >
+                <card-player2 data="attackPlayer"></card-player2>
             </div>
         </div>
-        
         
         <div class="col-md-4">
             <h2>Select move:</h2>
             <select ng-model="move" ng-options="move as move.prototype.name for move in moves"></select>
             <br />
             <div class="card" ng-show="move.prototype.name != null">
-                <card-move></card-move>
+                <card-move data="move"></card-move>
             </div>
         </div>
 
@@ -52,33 +27,9 @@
             <select ng-model="defendPlayer" ng-options="player as player.prototype.name for player in players"></select>
             <br />
             <div class="clear"></div>
-            <div class="card"  ng-show="defendPlayer.prototype.name != null">
-                <div>
-                    <img alt="club" class="club" ng-src="{{defendPlayer.club}}"/>
-                    <img alt="nation" class="nation" ng-src="{{defendPlayer.nation}}"/>
-                </div>
-                <div class="clear"></div>
-                <div class="title">
-                    {{defendPlayer.prototype.name}}
-                </div>
-                <div class="photo">
-                    <img alt="picture" ng-src="{{defendPlayer.prototype.pictureUrl}}"/>
-                </div>
-                <div class="type">
-                    {{defendPlayer.prototype.cardType}} - {{defendPlayer.position}}
-                </div>
-                <div class="attrs">
-                    <div ng-repeat="(key, value) in attackPlayer.strengths">
-                        <div>
-                            <span class="key">{{key}}: </span><span class="value">+ {{value}}</span>
-                        </div>
-                    </div>
-                    <div ng-repeat="(key, value) in player.weaknesses">
-                        <div>
-                            <span class="key">{{key}}: </span><span class="value">- {{value}}</span>
-                        </div>
-                    </div>
-                </div>
+            
+            <div class="card {{defendPlayer.prototype.style}}" >
+                <card-player2 data="defendPlayer"></card-player2>
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@
     <section class="cards" ng-controller="TacticCardsController">
         <!-- Moves -->
         <div ng-repeat="tactic in tactics | filter: {name: searchTerm}" class="card {{tactic.prototype.style}}" >
-            <card-tactic></card-tactic>
+            <card-tactic data="tactic"></card-tactic>
         </div>
     </section>
 </div>

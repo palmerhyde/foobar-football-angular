@@ -48,6 +48,10 @@ fooBarApp.config(['$routeProvider',
             templateUrl: 'Scripts/app/views/wiki.html',
             controller: 'WikiController'
         }).
+          when('/demo', {
+              templateUrl: 'Scripts/app/views/demo.html',
+              controller: 'DemoController'
+          }).
         otherwise({
             redirectTo: '/'
         });

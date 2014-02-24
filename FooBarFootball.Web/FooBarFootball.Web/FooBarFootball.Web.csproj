@@ -307,7 +307,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Cards\totalbg.jpg" />
+    <Content Include="Scripts\app\config\config.game.settings.js" />
     <Content Include="Scripts\app\config\config.player.attributes.js" />
+    <Content Include="Scripts\app\controllers\demo.js" />
     <Content Include="Scripts\app\controllers\managers.js" />
     <Content Include="Scripts\app\controllers\players2.js" />
     <Content Include="Scripts\app\controllers\printcards.js" />
@@ -328,11 +330,13 @@
     <Content Include="Scripts\app\directives\views\card.tactic.html" />
     <Content Include="Scripts\app\directives\views\card.player2.html" />
     <Content Include="Scripts\app\directives\views\card.manager.html" />
+    <Content Include="Scripts\app\extensions\array.js" />
     <Content Include="Scripts\app\models\model.manager.js" />
     <Content Include="Scripts\app\models\model.player2.js" />
     <Content Include="Scripts\app\models\model.playMoveResult.js" />
     <Content Include="Scripts\app\models\model.tactics.js" />
     <Content Include="Scripts\app\views\cards.html" />
+    <Content Include="Scripts\app\views\demo.html" />
     <Content Include="Scripts\app\views\manager-cards.html" />
     <Content Include="Scripts\app\views\player2-cards.html" />
     <Content Include="Scripts\app\views\print.html" />
