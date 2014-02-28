@@ -31,6 +31,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Xml.Linq" />
@@ -51,8 +52,11 @@
     <Compile Include="PlayerCard.cs" />
     <Compile Include="PlayInputModel.cs" />
     <Compile Include="PlayOutputModel.cs" />
+    <Compile Include="CardStyle.cs" />
+    <Compile Include="CardRarity.cs" />
+    <Compile Include="PlayerEffects.cs" />
+    <Compile Include="PlayerPosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TacticCard.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

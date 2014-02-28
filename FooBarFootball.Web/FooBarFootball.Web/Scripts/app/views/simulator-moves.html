@@ -1,0 +1,43 @@
+﻿<div class="container">
+
+    <h1>FooBar Football - Simulators</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Select attacking player:</h2>
+            <select ng-model="attackPlayer" ng-options="player as player.prototype.name for player in players"></select>
+            <br />
+            <div class="clear"></div>
+            
+            <div class="card {{attackPlayer.prototype.style}}" >
+                <card-player2 data="attackPlayer"></card-player2>
+            </div>
+        </div>
+        
+        <div class="col-md-4">
+            <h2>Select move:</h2>
+            <select ng-model="move" ng-options="move as move.prototype.name for move in moves"></select>
+            <br />
+            <div class="card" ng-show="move.prototype.name != null">
+                <card-move data="move"></card-move>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h2>Select defending player:</h2>
+            <select ng-model="defendPlayer" ng-options="player as player.prototype.name for player in players"></select>
+            <br />
+            <div class="clear"></div>
+            
+            <div class="card {{defendPlayer.prototype.style}}" >
+                <card-player2 data="defendPlayer"></card-player2>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <button ng-click="simulate(attackPlayer.prototype.id, defendPlayer.prototype.id, playerMove.prototype.id)">Simulate</button>
+    <br />
+    <hr/>
+    <br/>
+    <label>Winner: </label> <h2>{{simResult.winner}}</h2>
+</div>

@@ -12,6 +12,14 @@ body {
     font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
+    /* Move down content because we have a fixed navbar that is 50px tall */
+    padding-top: 40px;
+}
+
+#footer {
+    height: 60px;
+    background-color: #e2e2e2;
+    padding: 10px 0;
 }
 
 a {
@@ -89,6 +97,32 @@ h5, h6 {
         padding: 0;
         text-decoration: none;
     }
+
+
+    /* Scrollbar
+  ---------------------------------------*/
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(0,0,0,0.5); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(155,155,155,0.9); 
+}
 
 
 /* main layout
@@ -214,25 +248,62 @@ ul#menu {
 .cards .card {
     float: left;
     margin: 20px; 
+    position: relative;
 }
 
 .card {
-    height: 450px;
-    width: 220px;
+    height: 320px;
+    width: 223px;
     border: 10px solid black;
     border-radius: 10px;
     background-color: #777;
-    padding: 10px;
+    padding: 5px;
+    position: relative;
+}
+
+.card.generic {
+    background-image:url('/images/cards/genericbg.jpg');
+}
+
+.card.total {
+    background-color: #f68b32;
+    background-image:url('/images/cards/totalbg.jpg');
+}
+
+.card.organised {
+    background-color: green;
+    background-image:url('/images/cards/organisedbg.jpg');
+}
+
+.card.latin {
+    background-color: red;
+    background-image:url('/images/cards/latinbg.jpg');
+}
+
+.card.physical {
+    background-color: purple;
+    background-image:url('/images/cards/physicalbg.jpg');
+}
+
+.card.counter {
+    background-color: black;
+    background-image:url('/images/cards/counterbg.jpg');
 }
 
 .card .club {
-    float: left;
-    width: 40px;
+    width: 22px;
+    left: 17px;
 }
 
 .card .nation {
-    float: right;
-    width: 65px;
+    width: 30px;
+    right: 17px;
+}
+
+.card .club, .card .nation {
+    position: absolute;
+    z-index: 1000;
+    top: 40px;
 }
 
 .card .title, .card .type,
@@ -243,33 +314,98 @@ ul#menu {
 .card .title, .card .type {
     border: 2px solid black;
     border-radius: 5px;
-    padding: 10px;
+    padding: 3px 10px;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 12px;
 }
+
+
 
 .card .photo, .card .attrs {
     margin: 0px 10px;
 }
 
 .card .photo img {
-    width: 200px;
+    width: 115px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.card .attack, .card .defence, .card .title .score {
+    background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
+    background-color: red;
+    border: 2px solid white;
+    border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
+    box-shadow: 1px 1px 1px black;
+    color: white;
+    font: bold 15px/13px Helvetica, Verdana, Tahoma;
+    height: 23px; 
+    min-width: 14px;
+    padding: 4px 5px 0 5px;
+    text-align: center;
+    bottom: 0px;
+    position: absolute;
+}
+
+.card .title .score {
+    background-color: blue;
+    right: 7px;
+    top: 7px;
+}
+
+.card .attack {
+    background-color: green;
+    left: 0px;
+}
+
+.card .defence {
+    background-color: red;
+    right: 0px;
 }
 
 .card .type {
-    margin-top: -4px;
+    /*margin-top: -4px;*/
 }
 
 .card .attrs {
     border: 2px solid black;
-    padding: 10px;
+    padding: 2px 10px;
     margin-top: -2px;
+    font-size: 11px;
+    height: 120px;
+    overflow: auto;
+}
+
+.card .attrs.moves {
+    height: 150px;
+}
+
+.card .attrs .header {
+    background-color: #777777;
+    margin-left: -10px;
+    padding: 0 5px;
+    width: 113%;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: -2px;
+}
+
+.card .attrs .header.last {
+    margin-top: 10px;
 }
 
 .card .attrs .key {
     font-weight: 700;
-    min-width: 120px;
+    /*min-width: 136px;*/
     display: inline-block;
+}
+
+.card .attrs .value {
+    float: right;
 }
 
 .search {
@@ -281,3 +417,157 @@ ul#menu {
 }
 
 .search label { font-weight: 700; }
+
+.navbar.subnavbar a, .navbar.subnavbar a:visited {
+    color: #fff;
+}
+
+.navbar.subnavbar a:hover {
+    color: #000;
+}
+
+.navbar a, .navbar .nav > li {
+    display: inline-block;
+}
+
+.navbar.subnavbar {
+    min-height: 100%;
+    border-radius: 0;
+}
+
+.navbar.subnavbar .submenu ul {
+    display: none;
+    position: absolute;
+    list-style-type: none;
+    background-image: linear-gradient(to bottom,#3c3c3c 0,#222 100%);
+    background-repeat: repeat-x;
+    width: 110px;
+    padding: 5px;
+    z-index: 10000;
+}
+
+.navbar.subnavbar .submenu ul li a {
+    display: block;
+    padding: 5px 20px;
+}
+
+.navbar.subnavbar .submenu:hover ul {
+    display: block;
+}
+
+.left {
+    display: inline-block;
+    margin: 20px;
+    vertical-align: top;
+}
+
+.card.facedown {
+    background-color: #000;
+}
+
+.card.facedown .num {
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+}
+
+
+/********************************************
+ *   Print Styles
+ ********************************************/
+
+.print-container {
+    position: fixed;
+    top: 162px;
+    left: 320px;
+    z-index: 100000;
+    background-color: #efeeef;
+}
+
+
+body.print {
+    padding-top: 0;
+    border-top: none;
+}
+
+
+
+body.print .cards .card {
+    margin: 0;
+}
+
+@media print {
+    body.print .printspacer {
+        width: 100%;
+        height: 100px;
+        clear: both;
+    }
+
+
+    body.print .cards .card {
+        background-color: #777 !important;
+        -webkit-print-color-adjust: exact; 
+    }
+
+    body.print .card .title, body.print .card .type,
+    body.print .card .photo, body.print .card .attrs {
+        background-color: #999 !important;
+        -webkit-print-color-adjust: exact;
+    }
+
+    body.print .cards .card.generic {
+    }
+
+    body.print .cards .card.generic {
+    background-image:url('/images/cards/genericbg.jpg')!important;
+}
+
+     body.print .cards .card.total {
+        background-color: #f68b32 !important;
+        background-image:url('/images/cards/totalbg.jpg') !important;
+    }
+
+     body.print .cards .card.organised {
+        background-color: green !important;
+        background-image:url('/images/cards/organisedbg.jpg') !important;
+    }
+
+     body.print .cards .card.latin {
+        background-color: yellow !important;
+        background-image:url('/images/cards/latinbg.jpg') !important;
+    }
+
+     body.print .cards .card.physical {
+        background-color: white !important;
+        background-image:url('/images/cards/physicalbg.jpg') !important;
+    }
+
+     body.print .cards .card.counter {
+        background-color: black !important;
+        background-image:url('/images/cards/counterbg.jpg') !important;
+    }
+
+      body.print  .card .attack,  body.print  .card .defence,  body.print  .card .title .score {
+        background: radial-gradient( 5px -9px, circle, white 8%, red 26px )!important;
+        background-color: red!important;
+        border: 2px solid white!important;
+        box-shadow: 1px 1px 1px black!important;
+        color: white!important;
+    }
+
+     body.print .card .title .score {
+        background-color: blue!important;
+        right: 7px;
+        top: 7px;
+    }
+
+     body.print .card .attack {
+        background-color: green!important;
+        left: 0px;
+    }
+
+     body.print .card .defence {
+        background-color: red!important;
+        right: 0px;
+    }
+}

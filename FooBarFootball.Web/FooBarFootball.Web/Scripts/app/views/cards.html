@@ -1,0 +1,17 @@
+﻿<div id="body">
+    <br />
+    <section class="cards" ng-controller="CardsController">
+        <div class="search">
+            <label>Search by name: </label>
+            <input type="text" ng-model="searchTerm"/>
+        </div>
+        <div class="clear"></div>
+        <div ng-repeat="player in players | filter: {prototype.name: searchTerm}" class="card" >
+            <card-player data="player"></card-player>
+        </div>
+        <!-- Moves -->
+        <div ng-repeat="move in moves | filter: {name: searchTerm}" class="card" >
+            <card-move data="move"></card-move>
+        </div>
+    </section>
+</div>

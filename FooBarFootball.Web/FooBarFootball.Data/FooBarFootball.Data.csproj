@@ -30,8 +30,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.0.2\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -39,10 +52,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Card.cs">
+      <DependentUpon>FooBarData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CardClub.cs">
+      <DependentUpon>FooBarData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CardLeague.cs">
+      <DependentUpon>FooBarData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CardNation.cs">
+      <DependentUpon>FooBarData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CardPosition.cs">
+      <DependentUpon>FooBarData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CardRarity.cs">
+      <DependentUpon>FooBarData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CardStyle.cs">
+      <DependentUpon>FooBarData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CardType.cs">
+      <DependentUpon>FooBarData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FooBarData.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FooBarData.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FooBarData.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FooBarData.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FooBarData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FooBarData.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\XmlHelper.cs" />
     <Compile Include="Implementations\Play.cs" />
+    <Compile Include="Implementations\XmlManagerRepository.cs" />
+    <Compile Include="Implementations\XmlPlayer2Repository.cs" />
+    <Compile Include="Implementations\XmlTacticRepository.cs" />
     <Compile Include="Implementations\XmlMoveRepository.cs" />
-    <Compile Include="Implementations\XmlPlayerRepository.cs" />
+    <Compile Include="Interfaces\IManagerRepository.cs" />
+    <Compile Include="Interfaces\IPlayer2Repository.cs" />
+    <Compile Include="Interfaces\ITacticRepository.cs" />
     <Compile Include="Interfaces\IMoveRepository.cs" />
     <Compile Include="Interfaces\IPlay.cs" />
     <Compile Include="Interfaces\IPlayerRepository.cs" />
@@ -62,8 +119,31 @@
     <Content Include="MockXml\players.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Sql\Tables\create_database.sql" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EntityDeploy Include="FooBarData.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FooBarData.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="FooBarData.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FooBarData.edmx</DependentUpon>
+      <LastGenOutput>FooBarData.Context.cs</LastGenOutput>
+    </None>
+    <None Include="FooBarData.edmx.diagram">
+      <DependentUpon>FooBarData.edmx</DependentUpon>
+    </None>
+    <None Include="FooBarData.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FooBarData.edmx</DependentUpon>
+      <LastGenOutput>FooBarData.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

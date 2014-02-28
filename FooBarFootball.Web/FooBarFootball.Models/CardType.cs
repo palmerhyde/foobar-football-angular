@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using System.Collections.Generic;
 namespace FooBarFootball.Models
 {
-    public enum CardType
+    public class CardType
     {
-        Tactic,
-        Player,
-        Move,
-        Stadium,
-        Manager
+        public int Id { get; set; }
+        public string Name { get; set; }
+
+        public virtual ICollection<Card> Cards { get; set; }
     }
 }

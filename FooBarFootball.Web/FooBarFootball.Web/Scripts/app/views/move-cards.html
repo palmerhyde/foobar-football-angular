@@ -1,0 +1,9 @@
+﻿<div id="body">
+    <br />
+    <section class="cards" ng-controller="MoveCardsController">
+        <!-- Manager -->
+        <div ng-repeat="move in moves | filter: {name: searchTerm}" class="card {{move.prototype.style}}" >
+            <card-move data="move"></card-move>
+        </div>
+    </section>
+</div>

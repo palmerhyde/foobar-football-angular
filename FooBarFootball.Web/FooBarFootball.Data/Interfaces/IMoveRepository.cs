@@ -5,6 +5,7 @@ namespace FooBarFootball.Data.Interfaces
 {
     public interface IMoveRepository
     {
-        IList<MoveCard> Get();
+        IList<Card> Get();
+        Card Get(string id);
     }
 }

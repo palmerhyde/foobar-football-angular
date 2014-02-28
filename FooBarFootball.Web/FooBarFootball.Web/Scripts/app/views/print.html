@@ -1,0 +1,39 @@
+﻿<div id="body">
+    <h1>Select cards you want to print</h1>
+    <section class="cards selectcards" ng-controller="CardsController">
+        <div class="search">
+            <label>Search by name: </label>
+            <input type="text" ng-model="searchTerm"/>
+        </div>
+        <div class="search print-container">
+            <button ng-click="print()">Print</button>
+        </div>
+        <div class="clear"></div>
+        <div ng-repeat="player in players2 | filter: {prototype.name: searchTerm}" class="card {{player.prototype.style}}" >
+            <card-player2 data="player"></card-player2>
+            <input type="checkbox" name="card" />
+        </div>
+        <!-- Managers -->
+        <div ng-repeat="manager in managers | filter: {name: searchTerm}" class="card {{manager.prototype.style}}" >
+            <card-manager dat="manager"></card-manager>
+            <input type="checkbox" name="card" />
+        </div>
+        <!-- Moves -->
+        <div ng-repeat="move in moves | filter: {name: searchTerm}" class="card  {{move.prototype.style}}" >
+            <card-move data="move"></card-move>
+            <input type="checkbox" name="card" />
+        </div>
+        
+        <div ng-repeat="tactic in tactics | filter: {name: searchTerm}" class="card {{tactic.prototype.style}}" >
+            <card-tactic data="tactic"></card-tactic>
+            <input type="checkbox" name="card" />
+        </div>
+        <div class="clear"></div>
+        <div class="search">
+            <button ng-click="print()">Print</button>
+        </div>
+    </section>
+    <section class="printcards cards">
+        
+    </section>
+</div>

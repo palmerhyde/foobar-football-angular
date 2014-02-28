@@ -6,29 +6,47 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/bootstrap/bootstrap.css" type="text/css" rel="stylesheet"/>
+    <link href="~/Content/bootstrap/bootstrap-theme.min.css" type="text/css" rel="stylesheet"/>
 </head>
-<body ng-app>
-    <header>
-        <div class="content-wrapper">
-            <div class="float-left">
-                <p class="site-title">
-                    <a href="~/">FooBar Football</a></p>
-            </div>
-            <div class="float-right">
-                <nav>
-                    <ul id="menu">
-                        <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                        <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
-                    </ul>
-                </nav>
-            </div>
+<body ng-app="fooBarApp">
+   <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">FooBar Football</a>
         </div>
-    </header>
+        <div class="navbar-collapse collapse">
+          <form class="navbar-form navbar-right">
+            <div class="form-group">
+              <input type="text" placeholder="Email" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
     @RenderBody()
 
     @Scripts.Render("~/bundles/jquery",
+                    "~/bundles/jqueryui",
+                    "~/bundles/bootstrap",
                     "~/bundles/angular",
                     "~/bundles/app")
     @RenderSection("scripts", required: false)
+    
+    <div id="footer">
+      <div class="container">
+        <p class="text-muted credit">&copy; FooBar Football 2014</p>
+      </div>
+    </div>
+    
 </body>
 </html>

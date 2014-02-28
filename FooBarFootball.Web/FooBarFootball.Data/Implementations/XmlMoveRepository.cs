@@ -1,7 +1,8 @@
 ﻿using FooBarFootball.Data.Helpers;
 using FooBarFootball.Data.Interfaces;
-using FooBarFootball.Models;
 using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Caching;
 using System.Xml;
 
 namespace FooBarFootball.Data.Implementations
@@ -14,14 +15,41 @@ namespace FooBarFootball.Data.Implementations
         {
             moveEndPoint = url;
         }
-        
-        public IList<MoveCard> Get()
+
+        public IList<Card> Get()
+        {
+            List<Card> cards = new List<Card>();
+            if (!cache.Contains("MoveCards"))
+            {
+                cards = LoadCards();
+                cache.Add(new CacheItem("MoveCards", cards), new CacheItemPolicy());
+            }
+            else
+            {
+                cards = (List<Card>)cache.Get("MoveCards");
+            }
+
+            return cards;
+        }
+
+        private List<Card> LoadCards()
         {
             XmlDocument document = new XmlDocument();
             document.Load(moveEndPoint);
             string xml = document.InnerXml;
-            List<MoveCard> cards = XmlHelper.Deserialize<List<MoveCard>>(xml);
+            List<Card> cards = XmlHelper.Deserialize<List<Card>>(xml);
             return cards;
         }
+
+        public Card Get(string id)
+        {
+            var move = (from x in Get()
+                          where x.Id == int.Parse(id)
+                          select x).FirstOrDefault();
+
+            return move;
+        }
+
+        public static ObjectCache cache = MemoryCache.Default;
     }
 }
