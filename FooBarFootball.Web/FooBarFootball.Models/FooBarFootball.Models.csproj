@@ -44,18 +44,9 @@
     <Compile Include="Card.cs" />
     <Compile Include="CardType.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="PlayerCardHelper.cs" />
-    <Compile Include="PlayerPosition.cs" />
-    <Compile Include="MoveCard.cs" />
-    <Compile Include="PlayerAttribute.cs" />
-    <Compile Include="PlayerAttributeValue.cs" />
-    <Compile Include="PlayerCard.cs" />
-    <Compile Include="PlayInputModel.cs" />
-    <Compile Include="PlayOutputModel.cs" />
     <Compile Include="CardStyle.cs" />
     <Compile Include="CardRarity.cs" />
     <Compile Include="PlayerEffects.cs" />
-    <Compile Include="PlayerPosition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

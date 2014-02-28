@@ -92,7 +92,6 @@
       <DependentUpon>FooBarData.edmx</DependentUpon>
     </Compile>
     <Compile Include="Helpers\XmlHelper.cs" />
-    <Compile Include="Implementations\Play.cs" />
     <Compile Include="Implementations\XmlManagerRepository.cs" />
     <Compile Include="Implementations\XmlPlayer2Repository.cs" />
     <Compile Include="Implementations\XmlTacticRepository.cs" />
@@ -101,9 +100,6 @@
     <Compile Include="Interfaces\IPlayer2Repository.cs" />
     <Compile Include="Interfaces\ITacticRepository.cs" />
     <Compile Include="Interfaces\IMoveRepository.cs" />
-    <Compile Include="Interfaces\IPlay.cs" />
-    <Compile Include="Interfaces\IPlayerRepository.cs" />
-    <Compile Include="MoveFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
