@@ -1,6 +1,5 @@
 ﻿using FooBarFootball.Data.Helpers;
 using FooBarFootball.Data.Interfaces;
-using FooBarFootball.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Caching;
@@ -45,7 +44,7 @@ namespace FooBarFootball.Data.Implementations
         public Card Get(string id)
         {
             var manager = (from x in Get()
-                          where x.Id == id
+                          where x.Id == int.Parse(id)
                           select x).FirstOrDefault();
 
             return manager;

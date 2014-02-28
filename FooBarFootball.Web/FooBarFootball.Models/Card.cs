@@ -15,17 +15,18 @@
         public string Name { get; set; }
         public string ShortName { get; set; }
         public string Description { get; set; }
-        public CardType CardType { get; set; }
-        public CardStyle CardStyle { get; set; }
-        public CardRarity CardRarity { get; set; }
+        public int CardType { get; set; }
+        public CardType CardTypeModel { get; set; }
+        //public CardStyle CardStyle { get; set; }
+        //public CardRarity CardRarity { get; set; }
         public string PictureUrl { get; set; }
         public string VideoUrl { get; set; }
         public int Cost { get; set; }
         public int Attack { get; set; }
-        public int Stamina { get; set; }
-        public string Club { get; set; }
-        public string Nation { get; set; }
-        public string League { get; set; }
-        public PlayerPosition Position { get; set; }
+        public int Defense { get; set; }
+        //public string Club { get; set; }
+        //public string Nation { get; set; }
+        //public string League { get; set; }
+        //public PlayerPosition Position { get; set; }
     }
 }

@@ -1,6 +1,8 @@
-﻿using FooBarFootball.Web.App_Start;
+﻿using FooBarFootball.Data;
+using FooBarFootball.Web.App_Start;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -24,6 +26,8 @@ namespace FooBarFootball.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            Database.SetInitializer<FoobarfootballEntities>(null);
+
         }
     }
 }

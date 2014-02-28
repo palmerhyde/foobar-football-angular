@@ -1,6 +1,6 @@
-﻿using FooBarFootball.Data.Implementations;
+﻿using FooBarFootball.Data;
+using FooBarFootball.Data.Implementations;
 using FooBarFootball.Data.Interfaces;
-using FooBarFootball.Models;
 using FooBarFootball.Web.Models;
 using System;
 using System.Collections.Generic;
