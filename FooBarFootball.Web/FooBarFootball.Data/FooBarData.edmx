@@ -4,51 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FoobarfootballModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="FoobarfootballModelStoreContainer">
-          <EntitySet Name="Card" EntityType="FoobarfootballModel.Store.Card" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CardClub" EntityType="FoobarfootballModel.Store.CardClub" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CardLeague" EntityType="FoobarfootballModel.Store.CardLeague" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CardNation" EntityType="FoobarfootballModel.Store.CardNation" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CardPosition" EntityType="FoobarfootballModel.Store.CardPosition" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CardRarity" EntityType="FoobarfootballModel.Store.CardRarity" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CardStyle" EntityType="FoobarfootballModel.Store.CardStyle" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="CardType" EntityType="FoobarfootballModel.Store.CardType" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_Card_CardClub" Association="FoobarfootballModel.Store.FK_Card_CardClub">
-            <End Role="CardClub" EntitySet="CardClub" />
-            <End Role="Card" EntitySet="Card" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Card_CardLeague" Association="FoobarfootballModel.Store.FK_Card_CardLeague">
-            <End Role="CardLeague" EntitySet="CardLeague" />
-            <End Role="Card" EntitySet="Card" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Card_CardNation" Association="FoobarfootballModel.Store.FK_Card_CardNation">
-            <End Role="CardNation" EntitySet="CardNation" />
-            <End Role="Card" EntitySet="Card" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Card_CardPosition" Association="FoobarfootballModel.Store.FK_Card_CardPosition">
-            <End Role="CardPosition" EntitySet="CardPosition" />
-            <End Role="Card" EntitySet="Card" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Card_CardRarity" Association="FoobarfootballModel.Store.FK_Card_CardRarity">
-            <End Role="CardRarity" EntitySet="CardRarity" />
-            <End Role="Card" EntitySet="Card" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Card_CardStyle" Association="FoobarfootballModel.Store.FK_Card_CardStyle">
-            <End Role="CardStyle" EntitySet="CardStyle" />
-            <End Role="Card" EntitySet="Card" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Card_CardType" Association="FoobarfootballModel.Store.FK_Card_CardType">
-            <End Role="CardType" EntitySet="CardType" />
-            <End Role="Card" EntitySet="Card" />
-          </AssociationSet>
-        </EntityContainer>
+    <Schema Namespace="FoobarfootballModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Card">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="ShortName" Type="nvarchar" MaxLength="50" />
           <Property Name="PictureUrl" Type="nvarchar" MaxLength="50" />
@@ -68,54 +30,54 @@
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="CardLeague">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="CardNation">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="CardPosition">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="CardRarity">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="CardStyle">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="CardType">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
-          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_Card_CardClub">
-          <End Role="CardClub" Type="FoobarfootballModel.Store.CardClub" Multiplicity="0..1" />
-          <End Role="Card" Type="FoobarfootballModel.Store.Card" Multiplicity="*" />
+          <End Role="CardClub" Type="Self.CardClub" Multiplicity="0..1" />
+          <End Role="Card" Type="Self.Card" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CardClub">
               <PropertyRef Name="Id" />
@@ -126,8 +88,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Card_CardLeague">
-          <End Role="CardLeague" Type="FoobarfootballModel.Store.CardLeague" Multiplicity="0..1" />
-          <End Role="Card" Type="FoobarfootballModel.Store.Card" Multiplicity="*" />
+          <End Role="CardLeague" Type="Self.CardLeague" Multiplicity="0..1" />
+          <End Role="Card" Type="Self.Card" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CardLeague">
               <PropertyRef Name="Id" />
@@ -138,8 +100,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Card_CardNation">
-          <End Role="CardNation" Type="FoobarfootballModel.Store.CardNation" Multiplicity="0..1" />
-          <End Role="Card" Type="FoobarfootballModel.Store.Card" Multiplicity="*" />
+          <End Role="CardNation" Type="Self.CardNation" Multiplicity="0..1" />
+          <End Role="Card" Type="Self.Card" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CardNation">
               <PropertyRef Name="Id" />
@@ -150,8 +112,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Card_CardPosition">
-          <End Role="CardPosition" Type="FoobarfootballModel.Store.CardPosition" Multiplicity="0..1" />
-          <End Role="Card" Type="FoobarfootballModel.Store.Card" Multiplicity="*" />
+          <End Role="CardPosition" Type="Self.CardPosition" Multiplicity="0..1" />
+          <End Role="Card" Type="Self.Card" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CardPosition">
               <PropertyRef Name="Id" />
@@ -162,8 +124,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Card_CardRarity">
-          <End Role="CardRarity" Type="FoobarfootballModel.Store.CardRarity" Multiplicity="1" />
-          <End Role="Card" Type="FoobarfootballModel.Store.Card" Multiplicity="*" />
+          <End Role="CardRarity" Type="Self.CardRarity" Multiplicity="1" />
+          <End Role="Card" Type="Self.Card" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CardRarity">
               <PropertyRef Name="Id" />
@@ -174,8 +136,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Card_CardStyle">
-          <End Role="CardStyle" Type="FoobarfootballModel.Store.CardStyle" Multiplicity="1" />
-          <End Role="Card" Type="FoobarfootballModel.Store.Card" Multiplicity="*" />
+          <End Role="CardStyle" Type="Self.CardStyle" Multiplicity="1" />
+          <End Role="Card" Type="Self.Card" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CardStyle">
               <PropertyRef Name="Id" />
@@ -186,8 +148,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Card_CardType">
-          <End Role="CardType" Type="FoobarfootballModel.Store.CardType" Multiplicity="1" />
-          <End Role="Card" Type="FoobarfootballModel.Store.Card" Multiplicity="*" />
+          <End Role="CardType" Type="Self.CardType" Multiplicity="1" />
+          <End Role="Card" Type="Self.Card" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="CardType">
               <PropertyRef Name="Id" />
@@ -197,8 +159,45 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+        <EntityContainer Name="FoobarfootballModelStoreContainer">
+          <EntitySet Name="Card" EntityType="Self.Card" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CardClub" EntityType="Self.CardClub" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CardLeague" EntityType="Self.CardLeague" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CardNation" EntityType="Self.CardNation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CardPosition" EntityType="Self.CardPosition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CardRarity" EntityType="Self.CardRarity" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CardStyle" EntityType="Self.CardStyle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CardType" EntityType="Self.CardType" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Card_CardClub" Association="Self.FK_Card_CardClub">
+            <End Role="CardClub" EntitySet="CardClub" />
+            <End Role="Card" EntitySet="Card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_CardLeague" Association="Self.FK_Card_CardLeague">
+            <End Role="CardLeague" EntitySet="CardLeague" />
+            <End Role="Card" EntitySet="Card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_CardNation" Association="Self.FK_Card_CardNation">
+            <End Role="CardNation" EntitySet="CardNation" />
+            <End Role="Card" EntitySet="Card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_CardPosition" Association="Self.FK_Card_CardPosition">
+            <End Role="CardPosition" EntitySet="CardPosition" />
+            <End Role="Card" EntitySet="Card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_CardRarity" Association="Self.FK_Card_CardRarity">
+            <End Role="CardRarity" EntitySet="CardRarity" />
+            <End Role="Card" EntitySet="Card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_CardStyle" Association="Self.FK_Card_CardStyle">
+            <End Role="CardStyle" EntitySet="CardStyle" />
+            <End Role="Card" EntitySet="Card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Card_CardType" Association="Self.FK_Card_CardType">
+            <End Role="CardType" EntitySet="CardType" />
+            <End Role="Card" EntitySet="Card" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FoobarfootballModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -506,9 +505,10 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->
