@@ -77,14 +77,12 @@
             @Html.DisplayFor(modelItem => item.VideoUrl)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Cost)
+            <span class="badge alert-warning">@Html.DisplayFor(modelItem => item.Cost)</span>
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Attack)
-        </td>
+            <span class="badge alert-success"> @Html.DisplayFor(modelItem => item.Attack)</span></td>
         <td>
-            @Html.DisplayFor(modelItem => item.Defense)
-        </td>
+            <span class="badge alert-danger"> @Html.DisplayFor(modelItem => item.Defense)</span></td>
         <td>
             @Html.DisplayFor(modelItem => item.CardClub1.Name)
         </td>
