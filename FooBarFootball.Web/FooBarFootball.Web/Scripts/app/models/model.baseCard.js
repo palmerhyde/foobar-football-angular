@@ -16,7 +16,7 @@
         5: 'physical'
     };
 
-    this.cardType = types[params.CardType];
+    this.cardType = params.CardType.Name;
     this.id = params.Id;
     this.name = params.Name;
     this.pictureUrl = params.PictureUrl;

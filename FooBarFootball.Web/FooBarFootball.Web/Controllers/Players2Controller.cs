@@ -25,9 +25,29 @@ namespace FooBarFootball.Web.Controllers
         {
             var cards = _playerRepo.Get();
 
-            List<Card> card = new List<Card>();
-            card.AddRange(cards);
-            return Request.CreateResponse(HttpStatusCode.OK, card);
+            
+            var dto = cards.Select(x => new
+            {
+                x.Id,
+                x.Name,
+                x.Attack,
+                x.Defense,
+                x.Description,
+                x.Cost,
+                x.PictureUrl,
+                CardType = new
+                {
+                    x.CardType1.Id,
+                    x.CardType1.Name
+                },
+                Position = new
+                {
+                    x.CardPosition1.Id,
+                    x.CardPosition1.Name
+                }
+            });
+
+            return Request.CreateResponse(HttpStatusCode.OK, dto);
         }
     }
 }
