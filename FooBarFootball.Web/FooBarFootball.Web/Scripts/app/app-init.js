@@ -56,3 +56,4 @@ fooBarApp.config(['$routeProvider',
             redirectTo: '/'
         });
   }]);
+

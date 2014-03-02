@@ -93,6 +93,7 @@
     </Compile>
     <Compile Include="Helpers\XmlHelper.cs" />
     <Compile Include="Implementations\XmlManagerRepository.cs" />
+    <Compile Include="Implementations\SqlPlayerRepository.cs" />
     <Compile Include="Implementations\XmlPlayer2Repository.cs" />
     <Compile Include="Implementations\XmlTacticRepository.cs" />
     <Compile Include="Implementations\XmlMoveRepository.cs" />
@@ -122,6 +123,7 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>FooBarData.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="App.Config" />
     <None Include="FooBarData.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>FooBarData.edmx</DependentUpon>

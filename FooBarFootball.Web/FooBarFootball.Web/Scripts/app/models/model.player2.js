@@ -9,8 +9,8 @@
     this.prototype = new ModelBaseCard(params);
     this.club = params.Club;
     this.nation = params.Nation;
-    this.position = position[params.Position];
+    this.position = params.Position.Name;
     this.attack = params.Attack;
-    this.stamina = params.Stamina;
+    this.stamina = params.Defense;
     this.cost = params.Cost;
 }
