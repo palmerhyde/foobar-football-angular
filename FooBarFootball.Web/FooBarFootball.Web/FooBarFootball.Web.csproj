@@ -361,10 +361,10 @@
     <Content Include="Scripts\app\services\service.signalr.js" />
     <Content Include="Scripts\app\views\cards.html" />
     <Content Include="Scripts\app\views\demo.html" />
-    <Content Include="Scripts\app\views\signalr.html" />
     <Content Include="Scripts\app\views\manager-cards.html" />
     <Content Include="Scripts\app\views\player2-cards.html" />
     <Content Include="Scripts\app\views\print.html" />
+    <Content Include="Scripts\app\views\signalr.html" />
     <Content Include="Scripts\app\views\simulator-moves.html" />
     <Content Include="Scripts\app\views\simulator.html" />
     <Content Include="Scripts\app\views\tactic-cards.html" />
