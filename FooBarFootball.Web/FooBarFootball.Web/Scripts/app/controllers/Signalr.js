@@ -1,6 +1,7 @@
 fooBarControllers.controller('SignalrController', ['$scope', '$http', 'signalr', 'facebook', function ($scope, $http, signalr, fb) {
     fb.initialize();
     $scope.game = new ModelGame();
+    signalr.initialize();
     
 
 
