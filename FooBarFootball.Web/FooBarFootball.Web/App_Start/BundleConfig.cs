@@ -21,6 +21,9 @@ namespace FooBarFootball.Web
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Scripts/lib/bootstrap/bootstrap.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/signalr").Include(
+                        "~/Scripts/jquery.signalR-2.0.2.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                         "~/Scripts/lib/angular/angular.js*",
                         "~/Scripts/lib/angular/angular-route.js*",

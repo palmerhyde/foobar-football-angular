@@ -113,8 +113,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MatchStateTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="XmlRepositoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />

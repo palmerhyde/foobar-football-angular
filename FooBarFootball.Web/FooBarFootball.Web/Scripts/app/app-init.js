@@ -1,4 +1,6 @@
-﻿var fooBarControllers = angular.module('fooBarControllers', []);
+﻿
+var fooBarControllers = angular.module('fooBarControllers', []);
+
 var fooBarApp = angular.module('fooBarApp', ['ngRoute', 'fooBarControllers']);
 
 fooBarApp.config(['$routeProvider',
@@ -43,6 +45,10 @@ fooBarApp.config(['$routeProvider',
         when('/simulator/moves', {
             templateUrl: 'Scripts/app/views/simulator-moves.html',
             controller: 'SimulatorMovesController'
+        }).
+        when('/simulator/signalr', {
+            templateUrl: 'Scripts/app/views/signalr.html',
+            controller: 'SignalrController'
         }).
         when('/wiki', {
             templateUrl: 'Scripts/app/views/wiki.html',
