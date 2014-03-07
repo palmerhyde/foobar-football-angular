@@ -1,16 +1,39 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace FooBarFootball.Models
 {
     public class Game
     {
-        public List<Card> Player1Deck { get; set; }
-        public List<Card> Player2Deck { get; set; }
-        public List<Card> Player1Hand { get; set; }
-        public List<Card> Player2Hand { get; set; }
-        public List<Card> Player1Pitch { get; set; }
-        public List<Card> Player2Pitch { get; set; }
-        public int Player1Impact { get; set; }
-        public int Player2Impact { get; set; }
+        private MatchState state;
+
+        public int Id { get; set; }
+        public Team HomeTeam { get; set; }
+        public Team AwayTeam { get; set; }
+        public Pitch Pitch { get; set; }
+        public List<Card> History { get; set; }
+        public DateTime FixtureDate { get; set; }
+        public int WhosTurn { get; set; }
+
+        /// <summary>
+        /// Allows a Match to change from one state to another
+        /// </summary>
+        /// <param name="to">The Match state to change to</param>
+        public void ChangeState(MatchState to)
+        {
+            state = to;
+            state.Turn(this);
+        }
+
+        public MatchState CurrentState
+        {
+            get
+            {
+                return state;
+            }
+        }
     }
 }

@@ -1,0 +1,9 @@
+﻿<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron" data-ng-controller="SignalrController">
+    <div class="container">
+        <h1>SignalR Demo</h1>
+        <p>{{game.message}}</p>
+        <p><a class="btn btn-primary btn-lg" data-ng-click="joinGame()" ng-hide="game.waiting">Join game &raquo;</a></p>
+        <img src="/Content/Images/pitch.jpg" ng-show="game.inGame"/>
+    </div>
+</div>
