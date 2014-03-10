@@ -2,10 +2,6 @@
 fooBarApp.service('signalr', ['$', '$rootScope', function ($, $rootScope) {
     var proxy = null;
 
-    var test = function () {
-        console.log('test called');
-    };
-
     var initialize = function () {
         //Getting the connection object
         connection = $.hubConnection();
@@ -16,7 +12,6 @@ fooBarApp.service('signalr', ['$', '$rootScope', function ($, $rootScope) {
         //Publishing "join" event to the Signalr hub
         this.proxy.on('join', function (data) {
             console.log("callback from hub...");
-            //$rootScope.$emit("join", data);
         });
 
         this.proxy.on('teamExists', function () {
@@ -24,14 +19,9 @@ fooBarApp.service('signalr', ['$', '$rootScope', function ($, $rootScope) {
             $rootScope.$emit("teamExists");
         });
 
-        this.proxy.on('playerJoined', function () {
-            console.log("callback from playerJoined on the hub...");
-            $rootScope.$emit("playerJoined");
-        });
-
-        this.proxy.on('buildBoard', function () {
+        this.proxy.on('buildBoard', function (game) {
             console.log("callback from buildboard on the hub...");
-            $rootScope.$emit("buildBoard");
+            $rootScope.$emit("buildBoard", game);
         });
 
         this.proxy.on('waitingList', function () {
@@ -45,13 +35,13 @@ fooBarApp.service('signalr', ['$', '$rootScope', function ($, $rootScope) {
         });
     };
 
+    // Serverside signalr calls
     var join = function (username) {
         console.log('calling join on the game hub');
         this.proxy.invoke('join', username);
     };
 
     return {
-        test: test,
         join: join,
         initialize: initialize,
     };

@@ -16,7 +16,8 @@ namespace FooBarFootball.Models
         public Pitch Pitch { get; set; }
         public List<Card> History { get; set; }
         public DateTime FixtureDate { get; set; }
-        public int WhosTurn { get; set; }
+        public int WhosTurnId { get; set; }
+        public string Message { get; set; }
 
         /// <summary>
         /// Allows a Match to change from one state to another

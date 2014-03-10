@@ -1,8 +1,9 @@
 fooBarControllers.controller('SignalrController', ['$scope', '$http', 'signalr', 'facebook', function ($scope, $http, signalr, fb) {
+    console.log("signalrController called...");
     fb.initialize();
     $scope.game = new ModelGame();
     signalr.initialize();
-    
+    $scope.$id += '-signalrController'
 
 
     $scope.joinGame = function () {
@@ -12,39 +13,31 @@ fooBarControllers.controller('SignalrController', ['$scope', '$http', 'signalr',
         signalr.join(name);
     }
 
-    updateGreetingMessage = function (message, ingame) {
-        $scope.game.message = message;
-        $scope.game.inGame = ingame;
-    }
-
     $scope.$parent.$on("join", function (e, message) {
-        $scope.message = message
         $scope.$apply(function () {
             updateGreetingMessage(message)
         });
     });
 
-    $scope.$parent.$on("playerJoined", function (e) {
-        $scope.$apply(function () {
-            updateGreetingMessage("Joined game...")
-        });
-    });
-
     $scope.$parent.$on("teamExists", function (e) {
         $scope.$apply(function () {
-            updateGreetingMessage("You are already playing a game.")
+            $scope.game.message = "You are already playing a game.";
         });
     });
 
-    $scope.$parent.$on("buildBoard", function (e) {
+    $scope.$parent.$on("buildBoard", function (e, data) {
         $scope.$apply(function () {
-            updateGreetingMessage("If I knew how the pitch would now be visible.", true)
+            $scope.game.inGame = true;
+            // TODO: this should be part of the $scope.game object.
+            if (data != null) {
+                $scope.game.message = data.HomeTeam.Name + " Vs " + data.AwayTeam.Name + " - At Stamford Bridge";
+            }
         });
     });
 
     $scope.$parent.$on("waitingList", function (e) {
         $scope.$apply(function () {
-            updateGreetingMessage("Waiting for an oppenent...")
+            $scope.game.message = "Waiting for an oppenent...";
         });
     });
 }]);
