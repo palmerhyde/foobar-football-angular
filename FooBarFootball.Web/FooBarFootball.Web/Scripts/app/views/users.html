@@ -1,0 +1,5 @@
+﻿<div data-ng-controller="UsersController">
+    <a class="btn" data-ng-click="login()" data-ng-hide="isLoggedIn">login</a>
+    <a class="btn" data-ng-click="logout()" data-ng-show="isLoggedIn">logout</a>
+    <img src="{{photoUrl}}" data-ng-show="isLoggedIn" style="border-radius: 300px;">
+</div>

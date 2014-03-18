@@ -1,12 +1,12 @@
 ﻿<div id="body">
     <br />
-    <section class="cards" ng-controller="PlayerCardsController">
+    <section class="cards">
         <div class="search">
             <label>Search by name: </label>
             <input type="text" ng-model="searchTerm"/>
         </div>
         <div class="clear"></div>
-        <div ng-repeat="player in players | filter: {prototype.name: searchTerm}" class="card {{player.prototype.style}}" >
+        <div ng-repeat="player in players | filter: {prototype.name: searchTerm}" class="card {{player.Style}}" >
             <card-player data="player"></card-player>
         </div>
     </section>

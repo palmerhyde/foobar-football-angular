@@ -1,7 +1,7 @@
 ﻿
 var fooBarControllers = angular.module('fooBarControllers', []);
 
-var fooBarApp = angular.module('fooBarApp', ['ngRoute', 'fooBarControllers']);
+var fooBarApp = angular.module('fooBarApp', ['ngRoute', 'firebase', 'fooBarControllers']);
 
 fooBarApp.config(['$routeProvider',
   function ($routeProvider) {
@@ -16,12 +16,8 @@ fooBarApp.config(['$routeProvider',
         }).
         when('/cards/players', {
             templateUrl: 'Scripts/app/views/player-cards.html',
-            controller: 'PlayerCardsController'
+            controller: 'PlayersCardsController'
         }).
-        when('/cards/players2', {
-              templateUrl: 'Scripts/app/views/player2-cards.html',
-              controller: 'Player2CardsController'
-          }).
         when('/cards/moves', {
             templateUrl: 'Scripts/app/views/move-cards.html',
             controller: 'MoveCardsController'
@@ -49,6 +45,10 @@ fooBarApp.config(['$routeProvider',
         when('/simulator/signalr', {
             templateUrl: 'Scripts/app/views/signalr.html',
             controller: 'SignalrController'
+        }).
+        when('/simulator/firebase', {
+            templateUrl: 'Scripts/app/views/games.html',
+            controller: 'GamesController'
         }).
         when('/wiki', {
             templateUrl: 'Scripts/app/views/wiki.html',

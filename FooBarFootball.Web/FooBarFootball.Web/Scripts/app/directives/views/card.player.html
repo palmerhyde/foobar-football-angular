@@ -1,38 +1,26 @@
 ﻿<div>
-    <img alt="club" class="club" ng-src="{{player.club}}"/>
-    <img alt="nation" class="nation" ng-src="{{player.nation}}"/>
+    <img alt="club" class="club" ng-src="{{player.Club}}"/>
+    <img alt="nation" class="nation" ng-src="{{player.Nation}}"/>
 </div>
 <div class="clear"></div>
 <div class="title">
-    <span ng-if="player.prototype.name.length <= 16">
-        {{player.prototype.name}}
+    <span ng-if="player.Name.length <= 16">
+        {{player.Name}}
     </span>
-    <span ng-if="player.prototype.name.length > 16">
-        {{player.prototype.shortName}}
+    <span ng-if="player.Name.length > 16">
+        {{player.ShortName}}
     </span>
-    <span class="score">
-        {{player.attackingRating}} /
-        {{player.defensiveRating}}
-    </span>
+    <span class="score total">{{player.Cost}}</span>
 </div>
 <div class="photo">
-    <img alt="picture" ng-src="{{player.prototype.pictureUrl}}"/>
+    <img alt="picture" ng-src="{{player.PictureUrl}}"/>
+    
 </div>
 <div class="type">
-    {{player.prototype.cardType}} - {{player.position}}
+    {{player.CardType}} - {{player.Position}}
 </div>
 <div class="attrs">
-        <!--<div>
-            <span class="key">Overall: </span><span class="value">{{player.overallRating}}</span>
-        </div>-->
-    <div ng-repeat="(key, value) in player.strengths">
-        <div>
-            <span class="key">{{key}}: </span><span class="value">+ {{value}}</span>
-        </div>
-    </div>
-    <div ng-repeat="(key, value) in player.weaknesses">
-        <div>
-            <span class="key">{{key}}: </span><span class="value">- {{value}}</span>
-        </div>
-    </div>
+    {{player.Description}}
 </div>
+<span class="attack">{{player.Attack}}</span>
+<span class="defence">{{player.Stamina}}</span>

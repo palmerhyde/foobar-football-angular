@@ -30,6 +30,13 @@ fooBarControllers.controller('SignalrController', ['$scope', '$http', 'signalr',
             $scope.game.inGame = true;
             // TODO: this should be part of the $scope.game object.
             if (data != null) {
+                var playerArr = [];
+                for (var i = 0; i < data.HomeTeam.Deck.length; i++) {
+                    var player = new ModelPlayer2(data.HomeTeam.Deck[i]);
+                    playerArr.push(player);
+                }
+
+                $scope.game.deck = playerArr;
                 $scope.game.message = data.HomeTeam.Name + " Vs " + data.AwayTeam.Name + " - At Stamford Bridge";
             }
         });
