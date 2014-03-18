@@ -1,5 +1,4 @@
-﻿using FooBarFootball.Data;
-using FooBarFootball.Web.App_Start;
+﻿using FooBarFootball.Web.App_Start;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -27,7 +26,6 @@ namespace FooBarFootball.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            Database.SetInitializer<FoobarfootballEntities>(null);
         }
     }
 }

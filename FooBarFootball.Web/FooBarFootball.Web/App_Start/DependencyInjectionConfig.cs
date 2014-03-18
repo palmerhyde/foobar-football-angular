@@ -1,6 +1,4 @@
-﻿using FooBarFootball.Data.Implementations;
-using FooBarFootball.Data.Interfaces;
-using Microsoft.Practices.Unity;
+﻿using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,10 +13,6 @@ namespace FooBarFootball.Web.App_Start
         {
 
             IUnityContainer container = new UnityContainer();
-            container.RegisterType<IPlayer2Repository>(new InjectionFactory((c) => new SqlPlayerRepository()));
-            container.RegisterType<IMoveRepository>(new InjectionFactory((c) => new XmlMoveRepository(BaseSiteUrl + "Data/moves.xml")));
-            container.RegisterType<IManagerRepository>(new InjectionFactory((c) => new XmlManagerRepository(BaseSiteUrl + "Data/managers.xml")));
-            container.RegisterType<ITacticRepository>(new InjectionFactory((c) => new XmlTacticRepository(BaseSiteUrl + "Data/tactics.xml")));
             httpConfiguration.DependencyResolver = new Unity.WebApi.UnityDependencyResolver(container);
         }
 
