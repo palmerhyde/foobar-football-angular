@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Stateless</id>
+    <version>2.4.0</version>
+    <title>Stateless</title>
+    <authors>Nicholas Blumhardt and Contributors</authors>
+    <owners>Nicholas Blumhardt and Contributors</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>http://stateless.googlecode.com/</projectUrl>
+    <iconUrl>https://code.google.com/p/stateless/logo</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Create state machines and lightweight state machine-based workflows directly in .NET code</description>
+    <releaseNotes />
+    <copyright />
+    <language>en-US</language>
+  </metadata>
+</package>
