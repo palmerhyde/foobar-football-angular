@@ -49,6 +49,8 @@ namespace FooBarFootball.Web.Hubs
                 var game = GameState.Instance.FindGame(you, out opponent);
                 if (game != null)
                 {
+                    // TODO: We want to send back a "GameView" object and send to clients of the group individually
+                    //       we don't want to send data to an opponent which could give them an advantage
                     Clients.Group(you.Group).buildBoard(game);
                     return true;
                 }
@@ -63,6 +65,9 @@ namespace FooBarFootball.Web.Hubs
 
                 game = GameState.Instance.CreateGame(you, opponent);
                 game.WhosTurnId = you.Id;
+                
+                // TODO: We want to send back a "GameView" object and send to clients of the group individually
+                //       we don't want to send data to an opponent which could give them an advantage
                 Clients.Group(you.Group).buildBoard(game);
                 return true;
             }

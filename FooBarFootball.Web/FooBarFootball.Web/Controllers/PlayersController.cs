@@ -1,6 +1,6 @@
-﻿using FooBarFootball.Data.Implementations;
+﻿using FooBarFootball.Data;
+using FooBarFootball.Data.Implementations;
 using FooBarFootball.Data.Interfaces;
-using FooBarFootball.Models;
 using FooBarFootball.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -12,30 +12,42 @@ using System.Web.Http;
 
 namespace FooBarFootball.Web.Controllers
 {
-    public class PlayersController : ApiController
+    public class Players2Controller : ApiController
     {
-        public HttpResponseMessage Get()
+        private IPlayer2Repository _playerRepo;
+
+        public Players2Controller(IPlayer2Repository playerRepo)
         {
-            // TODO: Set up DI
-            IPlayerRepository repo = new XmlPlayerRepository(BaseSiteUrl + "Data/players.xml");
-            IMoveRepository repo2 = new XmlMoveRepository(BaseSiteUrl + "Data/moves.xml");
-            var cards = repo.Get();
-            var cards2 = repo2.Get();
-            List<Card> card = new List<Card>();
-            card.AddRange(cards);
-            card.AddRange(cards2);
-            return Request.CreateResponse(HttpStatusCode.OK, card);
+            _playerRepo = playerRepo;
         }
 
-        // TODO: move to utility method somewhere.
-        public static string BaseSiteUrl
+        public HttpResponseMessage Get()
         {
-            get
+            var cards = _playerRepo.Get();
+
+            
+            var dto = cards.Select(x => new
             {
-                HttpContext context = HttpContext.Current;
-                string baseUrl = context.Request.Url.Scheme + "://" + context.Request.Url.Authority + context.Request.ApplicationPath.TrimEnd('/') + '/';
-                return baseUrl;
-            }
+                x.Id,
+                x.Name,
+                x.Attack,
+                x.Defense,
+                x.Description,
+                x.Cost,
+                x.PictureUrl,
+                CardType = new
+                {
+                    x.CardType1.Id,
+                    x.CardType1.Name
+                },
+                Position = new
+                {
+                    x.CardPosition1.Id,
+                    x.CardPosition1.Name
+                }
+            });
+
+            return Request.CreateResponse(HttpStatusCode.OK, dto);
         }
     }
 }

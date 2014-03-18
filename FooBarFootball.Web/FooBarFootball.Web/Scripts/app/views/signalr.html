@@ -4,6 +4,12 @@
         <h1>SignalR Demo</h1>
         <p>{{game.message}}</p>
         <p><a class="btn btn-primary btn-lg" data-ng-click="joinGame()" ng-hide="game.waiting">Join game &raquo;</a></p>
+        
+        
         <img src="/Content/Images/pitch.jpg" ng-show="game.inGame"/>
+
+        <div ng-repeat="player in game.deck" class="card {{player.prototype.style}}" ng-show="game.inGame">
+            <card-player2 data="player"></card-player2>
+        </div>
     </div>
 </div>

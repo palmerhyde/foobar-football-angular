@@ -1,18 +1,8 @@
-fooBarControllers.controller('PlayerCardsController', ['$scope', '$http', 'ConfigPlayerAttributes', function ($scope, $http, ConfigPlayerAttributes) {
-    var atts = ConfigPlayerAttributes.attributes;
+fooBarControllers.controller('PlayersCardsController', ['$scope', '$http', '$firebase', function ($scope, $http, $firebase) {
     $scope.title = "FooBar Football - Player Cards";
     $scope.searchTerm = "";
-    $scope.players = [];
-    atts.then(function(result) {
-        $http.get('/api/players').then(function (data) {
-                var playerArr = [];
-                for (var i = 0; i < data.data.length; i++) {
-                    var player = new ModelPlayer(data.data[i], result);
-                    playerArr.push(player); 
-                }
 
-                $scope.players = playerArr;
-            });
-    });
-    
+    // TODO: why is there a strongly coupled call to new Firebase when we have a $firebase instance passed by DI?
+    var cardsRef = new Firebase("https://foobarfootball.firebaseio.com/Cards");
+    $scope.players = $firebase(cardsRef);
 }]);

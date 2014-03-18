@@ -16,12 +16,12 @@
         5: 'physical'
     };
 
-    this.cardType = params.CardType.Name;
+    this.cardType = params.CardTypeModel.Name;
     this.id = params.Id;
     this.name = params.Name;
     this.pictureUrl = params.PictureUrl;
     this.rarity = params.Rarity;
     this.shortName = params.ShortName;
     this.description = params.Description;
-    this.style = styles[params.CardStyle];
+    //this.style = styles[params.CardStyle];
 }
