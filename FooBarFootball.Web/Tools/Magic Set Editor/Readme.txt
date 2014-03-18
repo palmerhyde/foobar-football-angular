@@ -1,1 +1,0 @@
-* Install mse-win32-2011-02-05-full.exe (Magic Set Editor) to view/edit the card database.
