@@ -1,9 +1,6 @@
-﻿using FooBarFootball.Data;
-using FooBarFootball.Web.App_Start;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -20,14 +17,10 @@ namespace FooBarFootball.Web
     {
         protected void Application_Start()
         {
-            DependencyInjectionConfig.RegisterUnityContainer(GlobalConfiguration.Configuration);
             AreaRegistration.RegisterAllAreas();
-
-            WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            Database.SetInitializer<FoobarfootballEntities>(null);
         }
     }
 }

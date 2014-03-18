@@ -123,14 +123,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FooBarFootball.Data\FooBarFootball.Data.csproj">
-      <Project>{432dba6a-b508-42cb-98d9-6897e2660905}</Project>
-      <Name>FooBarFootball.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\FooBarFootball.Models\FooBarFootball.Models.csproj">
-      <Project>{cb07fb5a-836a-4802-a62b-7ea95c75438b}</Project>
-      <Name>FooBarFootball.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FooBarFootball.Web\FooBarFootball.Web.csproj">
       <Project>{70F8CB11-7C5F-4E72-904C-DACEC40F86FA}</Project>
       <Name>FooBarFootball.Web</Name>
