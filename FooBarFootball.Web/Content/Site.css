@@ -571,3 +571,38 @@ body.print .cards .card {
         right: 0px;
     }
 }
+
+/**********************************
+ * Pitch styles
+ **********************************/
+.pitch {
+	background: transparent url("images/pitch-960x540.jpg") no-repeat center top;
+	height: 540px;
+	color: #fff;
+}
+
+/**********************************
+ * Comapct cards
+ **********************************/
+.card-compact {
+	width: 120px;
+	display: inline-block;
+	padding-right: 10px;
+	padding-left: 10px;
+	border: 1px solid transparent;
+}
+
+.card-compact:hover {
+	cursor: move;	
+}
+
+.card-compact .right {
+	float: right;
+	padding-top: 4px;
+	margin-top: 2px;
+}
+
+.card-compact img {
+	width:100px;
+	text-align: center;
+}

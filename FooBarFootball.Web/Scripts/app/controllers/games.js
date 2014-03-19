@@ -38,4 +38,9 @@ fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase',
     $scope.playPlayerCardFromHandToPitch = function (card) {
         var cardPlayed = queues.push({ GameId: 1, CardId: card.Id, UserId: userObject });
     };
+    
+    setTimeout(function() {
+    	$( ".draggable" ).draggable({ containment: "#game", scroll: false });
+    }, 1000);
+    
 }]);
