@@ -1,47 +1,89 @@
 {
-    "Id": "152879",
-    "HomeTeamName": "PalmerHyde FC",
-    "AwayTeamName": "Mighty Rovers FC",
-    "HomeTeamScore": "1",
-    "AwayTeamScore": "1",
-    "Mana": "3",
-    "HomeTeamDeckCount": "27",
-    "AwayTeamDeckCount": "27",
-    "HomeTeamHand": [
-  {
-      "Id": "152879",
-      "Name": "Mark Noble",
-      "ShortName": "Noble",
-      "CardType": "Player",
-      "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/152879.png",
-      "Cost": "1",
-      "Attack": "2",
-      "Stamina": "1",
-      "Description": "Manager instructions: Give a player +2 attack this turn.",
-      "Club": "http://fh13.fhcdn.com/static/img/14/clubs/19.png",
-      "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
-      "Position": "Midfielder",
-      "Effects": { "PlayerEffects": "Rock" },
-      "PlayerDataUrl": "http://www.futhead.com/14/players/152879/"
+  "WhosTurnIsIt" : "0",
+  "Id" : "152879",
+  "HomeTeam" : {
+    "Mana" : 1,
+    "TeamName" : "Palmer Hyde FC",
+    "Score" : "0",
+    "UserId" : "0",
+    "Hand" : [ {
+      "Nation" : "http://fh13.fhcdn.com/static/img/nations/14.png",
+      "Effects" : {
+        "PlayerEffects" : "Rock"
+      },
+      "PictureUrl" : "http://fh13.fhcdn.com/static/img/14/players/152879.png",
+      "PlayerDataUrl" : "http://www.futhead.com/14/players/152879/",
+      "Cost" : "1",
+      "Stamina" : "1",
+      "Description" : "Manager instructions: Give a player +2 attack this turn.",
+      "Attack" : "2",
+      "Id" : "152879",
+      "Name" : "Mark Noble",
+      "Position" : "Midfielder",
+      "ShortName" : "Noble",
+      "Club" : "http://fh13.fhcdn.com/static/img/14/clubs/19.png",
+      "CardType" : "Player"
+    }, {
+      "Nation" : "http://fh13.fhcdn.com/static/img/nations/14.png",
+      "PictureUrl" : "http://fh13.fhcdn.com/static/img/14/players/51394.png",
+      "PlayerDataUrl" : "http://www.futhead.com/14/players/51394/",
+      "Cost" : "1",
+      "Stamina" : "1",
+      "Description" : "Manager instructions: Deal 1 damage.",
+      "Attack" : "1",
+      "Id" : "51394",
+      "Name" : "Kevin Nolan",
+      "Position" : "Midfielder",
+      "ShortName" : "Nolan",
+      "Club" : "http://fh13.fhcdn.com/static/img/14/clubs/19.png",
+      "CardType" : "Player"
+    } ]
   },
-  {
-      "Id": "51394",
-      "Name": "Kevin Nolan",
-      "ShortName": "Nolan",
-      "CardType": "Player",
-      "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/51394.png",
-      "Cost": "1",
-      "Attack": "1",
-      "Stamina": "1",
-      "Description": "Manager instructions: Deal 1 damage.",
-      "Club": "http://fh13.fhcdn.com/static/img/14/clubs/19.png",
-      "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
-      "Position": "Midfielder",
-      "PlayerDataUrl": "http://www.futhead.com/14/players/51394/"
-  }],
-    "AwayTeamHandCount": "http://fh13.fhcdn.com/static/img/14/clubs/19.png",
-    "HomeTeamPitch": "http://fh13.fhcdn.com/static/img/nations/14.png",
-    "AwayTeamPitch": "Midfielder",
-    "HomeTeamManager": { "PlayerEffects": "Rock" },
-        "AwayTeamManager": "http://www.futhead.com/14/players/152879/"
+  "State" : "Playing",
+  "AwayTeam" : {
+    "Mana" : "1",
+    "TeamName" : "The Mighty Reds",
+    "Score" : "0",
+    "UserId" : "1"
+  }
 }
+
+// Home Team Game View
+{
+  "HomeTeamHand" : [ {
+    "Nation" : "http://fh13.fhcdn.com/static/img/nations/14.png",
+    "Effects" : {
+      "PlayerEffects" : "Rock"
+    },
+    "PictureUrl" : "http://fh13.fhcdn.com/static/img/14/players/152879.png",
+    "PlayerDataUrl" : "http://www.futhead.com/14/players/152879/",
+    "Cost" : "1",
+    "Stamina" : "1",
+    "Description" : "Manager instructions: Give a player +2 attack this turn.",
+    "Attack" : "2",
+    "Id" : "152879",
+    "Name" : "Mark Noble",
+    "Position" : "Midfielder",
+    "ShortName" : "Noble",
+    "Club" : "http://fh13.fhcdn.com/static/img/14/clubs/19.png",
+    "CardType" : "Player"
+  }, {
+    "Nation" : "http://fh13.fhcdn.com/static/img/nations/14.png",
+    "PictureUrl" : "http://fh13.fhcdn.com/static/img/14/players/51394.png",
+    "PlayerDataUrl" : "http://www.futhead.com/14/players/51394/",
+    "Cost" : "1",
+    "Stamina" : "1",
+    "Description" : "Manager instructions: Deal 1 damage.",
+    "Attack" : "1",
+    "Id" : "51394",
+    "Name" : "Kevin Nolan",
+    "Position" : "Midfielder",
+    "ShortName" : "Nolan",
+    "Club" : "http://fh13.fhcdn.com/static/img/14/clubs/19.png",
+    "CardType" : "Player"
+  } ],
+  "Mana" : 1,
+  "Id" : "152879"
+}
+
+// Away team game view
