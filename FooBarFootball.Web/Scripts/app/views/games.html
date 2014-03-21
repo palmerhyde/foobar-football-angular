@@ -2,92 +2,117 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <h1>{{game.HomeTeamName}}</h1>
+                <h1>{{game.YourTeamName}}</h1>
             </div>
             <div class="col-md-1">
-                <h1>{{game.HomeTeamScore}}</h1>
+                <h1>{{game.YourTeamScore}}</h1>
             </div>
             <div class="col-md-1">
-                <h1>{{game.AwayTeamScore}}</h1>
+                <h1>{{game.OpponentsTeamScore}}</h1>
             </div>
             <div class="col-md-5">
-                <h1>{{game.AwayTeamName}}</h1>
+                <h1>{{game.OppenentsTeamName}}</h1>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-2">
-            </div>
-            <div class="col-md-1">
-                Goalkeeper
-            </div>
-            <div class="col-md-1">
-                Defender 1
-                Defender 2
-                Defender 3
-                Defender 4
-            </div>
-            <div class="col-md-1">
-                Midfielder 1
-                Midfielder 2
-                Midfielder 3
-                Midfielder 4
-            </div>
-            <div class="col-md-1">
-                Attaker 1
-                Attacker 2
-            </div>
-            <div class="col-md-1">
-                Attaker 1</>
-                Attacker 2
-            </div>
-            <div class="col-md-1">
-                Midfielder 1
-                Midfielder 2
-                Midfielder 3
-                Midfielder 4
-            </div>
-            <div class="col-md-1">
-                Defender 1
-                Defender 2
-                Defender 3
-                Defender 4
-            </div>
-            <div class="col-md-1">
-                Goalkeeper
-            </div>
-            <div class="col-md-2">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-2">
-                <span class="badge">{{game.HomeTeamDeckCount}}</span>
-                <img src="/Content/Images/cardback.jpg" width="50%"/>
-                <a class="btn" data-ng-click="logout()">Deal 1 to hand</a>
-            </div>
-            <div class="col-md-8">
-                <div ng-repeat="player in game.HomeTeamHand">
-                    <span class="label label-default">{{player.Name}} </span>
-                    <span class="label label-primary">{{player.Cost}}</span>
-                    <span class="label label-success">{{player.Attack}}</span>
-                    <span class="label label-danger">{{player.Stamina}}</span>
-                    <a class="btn" data-ng-click="playPlayerCardFromHandToPitch(player)">Move to pitch</a>
+        <div id="game">
+            <div class="row pitch">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-1">
+                    Goalkeeper
+
+                    <div ng-repeat="player in game.YourTeamPitch">
+                        <div>
+                            <img ng-src="{{player.PictureUrl}}" />
+                        </div>
+                        <div>
+                            <span class="label label-default">{{player.Name}} </span>
+                            <span class="label label-primary right">{{player.Cost}}</span>
+                        </div>
+                        <div>
+                            <span class="label label-success">{{player.Attack}}</span>
+                            <span class="label label-danger right">{{player.Stamina}}</span>
+                        </div>
+                        <a class="btn" data-ng-click="playPlayerCardFromHandToPitch(player)">Attack</a>
+                    </div>
+
+                </div>
+                <div class="col-md-1">
+                    Defender 1
+                    Defender 2
+                    Defender 3
+                    Defender 4
+                </div>
+                <div class="col-md-1">
+                    Midfielder 1
+                    Midfielder 2
+                    Midfielder 3
+                    Midfielder 4
+                </div>
+                <div class="col-md-1">
+                    Attaker 1
+                    Attacker 2
+                </div>
+                <div class="col-md-1">
+                    Attaker 1
+                    Attacker 2
+                </div>
+                <div class="col-md-1">
+                    Midfielder 1
+                    Midfielder 2
+                    Midfielder 3
+                    Midfielder 4
+                </div>
+                <div class="col-md-1">
+                    Defender 1
+                    Defender 2
+                    Defender 3
+                    Defender 4
+                </div>
+                <div class="col-md-1">
+                    Goalkeeper
+                </div>
+                <div class="col-md-2">
                 </div>
             </div>
-            <div class="col-md-2">
-                <span class="badge">{{game.Mana}} Mana</span>
+            <div class="row">
+                <div class="col-md-2">
+                    <span class="badge">{{game.YourTeamDeckCount}}</span>
+                    <img src="/Content/Images/cardback.jpg" width="50%"/>
+                    <a class="btn" data-ng-click="logout()">Deal 1 to hand</a>
+                </div>
+                <div class="col-md-8">
+                    <div ng-repeat="player in game.YourTeamHand" class="card-compact draggable">
+                        <div>
+                            <img ng-src="{{player.PictureUrl}}" />
+                        </div>
+                        <div>
+                            <span class="label label-default">{{player.Name}} </span>
+                            <span class="label label-primary right">{{player.Cost}}</span>
+                        </div>
+                        <div>
+                            <span class="label label-success">{{player.Attack}}</span>
+                            <span class="label label-danger right">{{player.Stamina}}</span>
+                        </div>
+                        <a class="btn" data-ng-click="playPlayerCardFromHandToPitch(player)">Move to pitch</a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <span class="badge">{{game.Mana}} Mana</span>
+                </div>
             </div>
-        </div>
-        <div data-ng-show="isPlaying">
-            <section class="games">
-                <div class="clear"></div>
-                <ul ng-repeat="game in games">
-                    <li>{{game.Name}} <a class="btn" data-ng-click="joinGame(game)">Join</a></li>
-                </ul>
-            </section>
-            <p><a class="btn btn-primary btn-lg" data-ng-click="createGame()" data-ng-hide="isPlaying">Create game &raquo;</a></p>
-        </div>
-        <div data-ng-show="isPlaying">
-            <h4>Waitig for opponent to join your game.</h4>
+            <div data-ng-show="isPlaying">
+                <section class="games">
+                    <div class="clear"></div>
+                    <ul ng-repeat="game in games">
+                        <li>{{game.Name}} <a class="btn" data-ng-click="joinGame(game)">Join</a></li>
+                    </ul>
+                </section>
+                <p><a class="btn btn-primary btn-lg" data-ng-click="createGame()" data-ng-hide="isPlaying">Create game &raquo;</a></p>
+            </div>
+            <div data-ng-show="isPlaying">
+                <h4>Waitig for opponent to join your game.</h4>
+            </div>
         </div>
     </div>
 </div>
