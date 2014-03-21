@@ -1,52 +1,88 @@
 var listen = function () {
     console.log('Queue: PlayPlayerCardFromHandToPitch/');
+    
+    var ServiceFirebase = require('./service_firebase');
     var Firebase = require('firebase');
+    var Q = require('q');
+    var _ = require('underscore');
+    
     var queueRef = new Firebase('https://foobarfootball.firebaseio.com/Queues/PlayPlayerCardFromHandToPitch');
     queueRef.on('child_added', function (snapshot) {
-        console.log(snapshot.val());
         var cardId = snapshot.val().CardId;
         var userId = snapshot.val().UserId;
         var gameId = snapshot.val().GameId;
-        var user;
-        var game;
 
-        // Get the users gameview (this is async, how do we handle this?)
-        var userRef = new Firebase('https://foobarfootball.firebaseio.com/Users/' + userId);
-        userRef.on('value', function (snapshot) {
-            console.log(snapshot.val());
-            user = snapshot.val();
-        });
+        var userPromise = ServiceFirebase.Find("Users", userId);
+        var gamePromise = ServiceFirebase.Find("Games", "test");
 
-        // Get the game (this is async, how do we handle this?)
-        var gameRef = new Firebase('https://foobarfootball.firebaseio.com/Games/' + gameId);
-        gameRef.on('value', function (snapshot) {
-            console.log(snapshot.val());
-            game = snapshot.val();
+        var all = Q.all([userPromise, gamePromise]);
 
-            // Home or away team?
-            if (userId == snapshot.child('HomeTeamUserId').val()){
-                console.log('HOME TEAM!!!');
+        all.then(function() {
+            var user = userPromise.valueOf();
+            var game = gamePromise.valueOf();
+            var yourTeam;
+            var opponentsTeam;
+            var homeUser;
+            var awayUser;
+
+            if (game == null || user == null) {
+                console.log('game or user not found');
             }
 
-            if (userId == snapshot.child('AwayTeamUserId').val()){
-                console.log('AWAY TEAM!!!');
+
+            if (game.WhosTurnIsIt != userId) {
+                console.log('Its not your turn get out of here')
+            }
+
+            if (game.HomeTeam.UserId != userId && game.AwayTeam.UserId != userId) {
+                console.log('invalid userId');
+            }
+
+            if (game.HomeTeam.UserId  == userId) {
+                console.log('message from the home team');
+                yourTeam = game.HomeTeam;
+                opponentsTeam = game.AwayTeam;
+            }
+
+            if (game.AwayTeam.UserId  == userId) {
+                console.log('message from the away team');
+                yourTeam = game.AwayTeam;
+                opponentsTeam = game.TeamTeam;
+            }
+
+            // get the card from your hand
+            if (!yourTeam.Hand) {
+                yourTeam.Hand = [];
+            }
+            var card = yourTeam.Hand.filter(function( obj ) {
+                return obj.Id == cardId;
+            });
+
+            if (card == null || card[0] == null)
+            {
+                console.log('card not found');
+            }
+
+
+            // Is this move legal?
+            if (yourTeam.Mana >= card[0].Cost)
+            {
+                if (!yourTeam.Pitch)
+                {
+                    yourTeam.Pitch = [];
+                }
+
+                yourTeam.Pitch.push(card[0]);
+
+                yourTeam.Hand = _.without(yourTeam.Hand, card[0]);
+                yourTeam.Mana = yourTeam.Mana - card[0].Cost;
+
+                // save yourteam back up to the game
+                 ServiceFirebase.Set("Games", "test", game);
             }
         });
 
-        // Is this move legal?
-
-        // Get the opponents game view
-
-        // Update home team game view
-        // Update away team game view
-
-
-
-        // Now the message has been processed, remove it from the queue.
-        // This is async - it will most likely fire before most things in this module.
         snapshot.ref().remove();
     });
 };
 exports.listen = listen;
-
-
