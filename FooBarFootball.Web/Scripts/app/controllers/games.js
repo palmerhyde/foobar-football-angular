@@ -36,6 +36,7 @@ fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase',
         console.log(game)
     };
 
+    // TODO: move this into firebase with a lookup id of "demo".
     $scope.resetGame = function () {
         var game = {
     "Id": "152879",

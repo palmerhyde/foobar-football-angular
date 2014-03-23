@@ -1,57 +1,78 @@
 {
-    "Id": "152879",
-    "WhosTurnIsIt" : "0",
-    "State" : "Playing",
-    "HomeTeam": 
-  {
-      "UserId": "0",
-      "TeamName": "Palmer Hyde FC",
-      "Mana": "1",
-      "Score": "0",
-      "Deck": [],
-      "Hand": [
-      {
-        "Id": "152879",
-        "Name": "Mark Noble",
-        "ShortName": "Noble",
-        "CardType": "Player",
-        "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/152879.png",
-        "Cost": "1",
-        "Attack": "2",
-        "Stamina": "1",
-        "Description": "Manager instructions: Give a player +2 attack this turn.",
-        "Club": "http://fh13.fhcdn.com/static/img/14/clubs/19.png",
-        "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
-        "Position": "Midfielder",
-        "Effects": { "PlayerEffects": "Rock" },
-        "PlayerDataUrl": "http://www.futhead.com/14/players/152879/"
-    },
-    {
-        "Id": "51394",
-        "Name": "Kevin Nolan",
-        "ShortName": "Nolan",
-        "CardType": "Player",
-        "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/51394.png",
-        "Cost": "1",
-        "Attack": "1",
-        "Stamina": "1",
-        "Description": "Manager instructions: Deal 1 damage.",
-        "Club": "http://fh13.fhcdn.com/static/img/14/clubs/19.png",
-        "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
-        "Position": "Midfielder",
-        "PlayerDataUrl": "http://www.futhead.com/14/players/51394/"
-    }
-  ],
-      "Pitch": []
+  "WhosTurnIsIt" : "0",
+  "Id" : "152879",
+  "HomeTeam" : {
+    "Mana" : "2",
+    "TeamName" : "Palmer Hyde FC",
+    "Score" : "0",
+    "UserId" : "0",
+    "Hand" : [ {
+      "Nation" : "http://fh13.fhcdn.com/static/img/nations/14.png",
+      "Effects" : {
+        "PlayerEffects" : "Rock"
+      },
+      "PictureUrl" : "http://fh13.fhcdn.com/static/img/14/players/152879.png",
+      "PlayerDataUrl" : "http://www.futhead.com/14/players/152879/",
+      "Cost" : "1",
+      "Stamina" : "1",
+      "Description" : "Manager instructions: Give a player +2 attack this turn.",
+      "Attack" : "2",
+      "Id" : "152879",
+      "Name" : "Mark Noble",
+      "Position" : "Midfielder",
+      "ShortName" : "Noble",
+      "Club" : "http://fh13.fhcdn.com/static/img/14/clubs/19.png",
+      "CardType" : "Player"
+    }, {
+      "Nation" : "http://fh13.fhcdn.com/static/img/nations/14.png",
+      "PictureUrl" : "http://fh13.fhcdn.com/static/img/14/players/51394.png",
+      "PlayerDataUrl" : "http://www.futhead.com/14/players/51394/",
+      "Cost" : "1",
+      "Stamina" : "1",
+      "Description" : "Manager instructions: Deal 1 damage.",
+      "Attack" : "1",
+      "Id" : "51394",
+      "Name" : "Kevin Nolan",
+      "Position" : "Midfielder",
+      "ShortName" : "Nolan",
+      "Club" : "http://fh13.fhcdn.com/static/img/14/clubs/19.png",
+      "CardType" : "Player"
+    }, {
+      "Nation" : "http://fh13.fhcdn.com/static/img/nations/81.png",
+      "PictureUrl" : "http://fh13.fhcdn.com/static/img/14/players/175092.png",
+      "PlayerDataUrl" : "http://www.futhead.com/14/players/175092/",
+      "Cost" : "1",
+      "Stamina" : "2",
+      "Description" : "Rock",
+      "Attack" : "1",
+      "Id" : "175092",
+      "Name" : "Maynor Figueroa",
+      "Position" : "Defender",
+      "ShortName" : "Figueroa",
+      "Club" : "http://fh13.fhcdn.com/static/img/14/clubs/1952.png",
+      "CardType" : "Player"
+    } ]
   },
-    "AwayTeam": 
-  {
-      "UserId": "1",
-      "TeamName": "The Mighty Reds",
-      "Mana": "1",
-      "Score": "0",
-      "Deck": [],
-      "Hand": [],
-      "Pitch": []
+  "State" : "Playing",
+  "AwayTeam" : {
+    "Mana" : "1",
+    "TeamName" : "The Mighty Reds",
+    "Pitch" : [ {
+      "Nation" : "http://fh13.fhcdn.com/static/img/nations/34.png",
+      "PictureUrl" : "http://fh13.fhcdn.com/static/img/14/players/184457.png",
+      "PlayerDataUrl" : "http://www.futhead.com/14/players/184457/",
+      "Cost" : "1",
+      "Stamina" : "1",
+      "Description" : "Pressure",
+      "Attack" : "1",
+      "Id" : "184457",
+      "Name" : "Ricky van Wolfswinkel",
+      "Position" : "Attacker",
+      "ShortName" : "van Wolfswinkel",
+      "Club" : "http://fh13.fhcdn.com/static/img/14/clubs/1792.png",
+      "CardType" : "Player"
+    } ],
+    "Score" : "0",
+    "UserId" : "1"
   }
 }
