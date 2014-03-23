@@ -47,6 +47,7 @@ var listen = function () {
 function ConvertGameToGameViewHomeTeam(game) {
     var gameView = {
         Id: game.Id,
+        IsYourTurn: true,
         Mana: game.HomeTeam.Mana,
         YourTeamName: game.HomeTeam.TeamName,
         YourTeamScore: game.HomeTeam.Score,
@@ -66,6 +67,7 @@ function ConvertGameToGameViewHomeTeam(game) {
 function ConvertGameToGameViewAwayTeam(game) {
     var gameView = {
         Id: game.Id,
+        IsYourTurn: false,
         Mana: game.AwayTeam.Mana,
         YourTeamName: game.AwayTeam.TeamName,
         YourTeamScore: game.AwayTeam.Score,

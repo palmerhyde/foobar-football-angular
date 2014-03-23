@@ -8,7 +8,8 @@ fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase',
     // TODO: replace 0 with user.id
     var user = new Firebase("https://foobarfootball.firebaseio.com/Users/0");
     var queues = new Firebase("https://foobarfootball.firebaseio.com/Queues/PlayPlayerCardFromHandToPitch");
-    var queue_playerAttckPlayer = new Firebase("https://foobarfootball.firebaseio.com/Queues/PlayerAttackPlayer");
+    var queue_playerAttackPlayer = new Firebase("https://foobarfootball.firebaseio.com/Queues/PlayerAttackPlayer");
+    var queue_endTurn = new Firebase("https://foobarfootball.firebaseio.com/Queues/EndTurn");
     var userObject;
 
     // TODO: get the gameview from firebase.
@@ -19,22 +20,21 @@ fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase',
         $scope.$apply();
     });
 
-    $scope.games = $firebase(games);
-;
+    //$scope.games = $firebase(games);
 
-    $scope.createGame = function () {
-        // Push your manager / fb id if you are not already playing a game
-        var gameId = games.push({ Id: "0", Name: "Liam Molloy", State: "Waiting" });
+    // $scope.createGame = function () {
+    //     // Push your manager / fb id if you are not already playing a game
+    //     var gameId = games.push({ Id: "0", Name: "Liam Molloy", State: "Waiting" });
 
-        // push game id to the manager
-        user.child('Game').set(gameId.toString());
-        user.child('IsPlaying').set(true);
-        $scope.isPlaying = true;
-    };
+    //     // push game id to the manager
+    //     user.child('Game').set(gameId.toString());
+    //     user.child('IsPlaying').set(true);
+    //     $scope.isPlaying = true;
+    // };
 
-    $scope.joinGame = function (game) {
-        console.log(game)
-    };
+    // $scope.joinGame = function (game) {
+    //     console.log(game)
+    // };
 
     // TODO: move this into firebase with a lookup id of "demo".
     $scope.resetGame = function () {
@@ -135,7 +135,11 @@ fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase',
     };
 
     $scope.playerAttackPlayer = function (card) {
-        var cardPlayed = queue_playerAttckPlayer.push({ GameId: "test", CardId: card.Id, TargetCardId: 184457, UserId: userObject });
+        var cardPlayed = queue_playerAttackPlayer.push({ GameId: "test", CardId: card.Id, TargetCardId: 184457, UserId: userObject });
+    };
+
+    $scope.endTurn = function (card) {
+        var cardPlayed = queue_endTurn.push({ GameId: "test", UserId: userObject });
     };
     
     setTimeout(function() {

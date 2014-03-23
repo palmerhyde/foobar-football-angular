@@ -98,6 +98,9 @@
                 </div>
                 <div class="col-md-2">
                     <span class="badge">{{game.Mana}} Mana</span>
+                    <a class="btn" data-ng-click="endTurn()">End turn</a>
+                    <span class="label label-success" data-ng-show="game.IsYourTurn">Your Turn</span>
+                    <span class="label label-danger" data-ng-show="!game.IsYourTurn">Your Turn</span>
                 </div>
             </div>
             <div data-ng-show="isPlaying">

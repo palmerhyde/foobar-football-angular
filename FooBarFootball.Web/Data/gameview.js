@@ -94,7 +94,7 @@
 { GameId: "test", CardId: "1", UserId: "0" }
 
 // Player Attack Player
-{ GameId: "test", CardId: "1", UserId: "0" }
+{ GameId: "test", CardId: "1", TargetCardId: "2" UserId: "0" }
 
 // End turn
 { GameId: "test", UserId: "1" }
