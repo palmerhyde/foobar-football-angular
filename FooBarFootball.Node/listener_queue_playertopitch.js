@@ -12,42 +12,28 @@ var listen = function () {
         var userId = snapshot.val().UserId;
         var gameId = snapshot.val().GameId;
 
-        var userPromise = ServiceFirebase.Find("Users", userId);
         var gamePromise = ServiceFirebase.Find("Games", "test");
 
-        var all = Q.all([userPromise, gamePromise]);
+        var all = Q.all([gamePromise]);
 
         all.then(function() {
-            var user = userPromise.valueOf();
             var game = gamePromise.valueOf();
             var yourTeam;
-            var opponentsTeam;
-            var homeUser;
-            var awayUser;
-
-            if (game == null || user == null) {
-                console.log('game or user not found');
+            
+            if (game == null) {
+                console.log('game not found');
             }
-
 
             if (game.WhosTurnIsIt != userId) {
                 console.log('Its not your turn get out of here')
             }
 
-            if (game.HomeTeam.UserId != userId && game.AwayTeam.UserId != userId) {
-                console.log('invalid userId');
-            }
-
             if (game.HomeTeam.UserId  == userId) {
-                console.log('message from the home team');
                 yourTeam = game.HomeTeam;
-                opponentsTeam = game.AwayTeam;
             }
 
             if (game.AwayTeam.UserId  == userId) {
-                console.log('message from the away team');
                 yourTeam = game.AwayTeam;
-                opponentsTeam = game.TeamTeam;
             }
 
             // get the card from your hand
@@ -63,7 +49,6 @@ var listen = function () {
                 console.log('card not found');
             }
 
-
             // Is this move legal?
             if (yourTeam.Mana >= card[0].Cost)
             {
@@ -78,7 +63,8 @@ var listen = function () {
                 yourTeam.Mana = yourTeam.Mana - card[0].Cost;
 
                 // save yourteam back up to the game
-                 ServiceFirebase.Set("Games", "test", game);
+                // TODO: use actual game id instead of test.
+                ServiceFirebase.Set("Games", "test", game);
             }
         });
 

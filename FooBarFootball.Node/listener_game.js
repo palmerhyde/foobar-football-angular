@@ -48,8 +48,14 @@ function ConvertGameToGameViewHomeTeam(game) {
     var gameView = {
         Id: game.Id,
         Mana: game.HomeTeam.Mana,
+        YourTeamName: game.HomeTeam.TeamName,
+        YourTeamScore: game.HomeTeam.Score,
+        YourTeamDeckCount: game.HomeTeam.Deck.length,
         YourTeamHand: game.HomeTeam.Hand,
         YourTeamPitch: game.HomeTeam.Pitch,
+        OppenentsTeamName: game.AwayTeam.TeamName,
+        OppenentsTeamScore: game.AwayTeam.Score,
+        OpponentsTeamDeckCount: game.AwayTeam.Deck.length,
         OpponentsTeamHandCount: game.AwayTeam.Hand.length,
         OpponentsTeamPitch: game.AwayTeam.Pitch
     }
@@ -61,11 +67,16 @@ function ConvertGameToGameViewAwayTeam(game) {
     var gameView = {
         Id: game.Id,
         Mana: game.AwayTeam.Mana,
+        YourTeamName: game.AwayTeam.TeamName,
+        YourTeamScore: game.AwayTeam.Score,
+        YourTeamDeckCount: game.AwayTeam.Deck.length,
         YourTeamHand: game.AwayTeam.Hand,
         YourTeamPitch: game.AwayTeam.Pitch,
+        OppenentsTeamName: game.HomeTeam.TeamName,
+        OppenentsTeamScore: game.HomeTeam.Score,
+        OpponentsTeamDeckCount: game.HomeTeam.Deck.length,
         OpponentsTeamHandCount: game.HomeTeam.Hand.length,
         OpponentsTeamPitch: game.HomeTeam.Pitch
-        // TODO: update other properties
     }
 
     return gameView;
@@ -73,12 +84,20 @@ function ConvertGameToGameViewAwayTeam(game) {
 
 function SanitizeGame(game)
 {
+    if (!game.HomeTeam.Deck) {
+        game.HomeTeam.Deck = [];
+    }
+
     if (!game.HomeTeam.Hand) {
         game.HomeTeam.Hand = [];
     }
 
     if (!game.HomeTeam.Pitch) {
         game.HomeTeam.Pitch = [];
+    }
+
+    if (!game.AwayTeam.Deck) {
+        game.AwayTeam.Deck = [];
     }
 
     if (!game.AwayTeam.Hand) {
