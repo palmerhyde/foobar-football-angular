@@ -19,24 +19,14 @@ var listen = function () {
             var user1 = user1Promise.valueOf();
             var user2 = user2Promise.valueOf();
             
-            if (user1 == null || user2 == null) {
-                console.log('user 1 not found');
-            }
-
-            if (user2 == null) {
-                console.log('user 2 not found');
+            if (!user1 || !user2) {
+                console.log('user not found');
             }
 
             game = SanitizeGame(game);
 
-            if (game.WhosTurnIsIt == user1.Id) {
-                user1.GameView = ConvertGameToGameViewHomeTeam(game);
-                user2.GameView = ConvertGameToGameViewAwayTeam(game);
-            }
-            else {
-                user1.GameView = ConvertGameToGameViewAwayTeam(game);
-                user2.GameView = ConvertGameToGameViewHomeTeam(game);
-            }
+            user1.GameView = ConvertGameToGameViewHomeTeam(game, user1.Id);
+            user2.GameView = ConvertGameToGameViewAwayTeam(game, user2.Id);
 
             ServiceFirebase.Set("Users", game.HomeTeam.UserId, user1);
             ServiceFirebase.Set("Users", game.AwayTeam.UserId, user2);
@@ -44,10 +34,10 @@ var listen = function () {
     });
 };
 
-function ConvertGameToGameViewHomeTeam(game) {
+function ConvertGameToGameViewHomeTeam(game, userId) {
     var gameView = {
         Id: game.Id,
-        IsYourTurn: true,
+        IsYourTurn: game.WhosTurnIsIt == userId,
         Mana: game.HomeTeam.Mana,
         YourTeamName: game.HomeTeam.TeamName,
         YourTeamScore: game.HomeTeam.Score,
@@ -64,10 +54,10 @@ function ConvertGameToGameViewHomeTeam(game) {
     return gameView;
 }
 
-function ConvertGameToGameViewAwayTeam(game) {
+function ConvertGameToGameViewAwayTeam(game, userId) {
     var gameView = {
         Id: game.Id,
-        IsYourTurn: false,
+        IsYourTurn: game.WhosTurnIsIt == userId,
         Mana: game.AwayTeam.Mana,
         YourTeamName: game.AwayTeam.TeamName,
         YourTeamScore: game.AwayTeam.Score,
