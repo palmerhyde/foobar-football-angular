@@ -377,8 +377,14 @@ ul#menu {
     right: 0px;
 }
 
+.card-pitch .attack {
+	left: auto;
+    right: -5px;
+}
+
 .card-pitch .defence {
-    right: -2px;
+    right: -14px;
+    top: 22px;
 }
 
 
@@ -633,7 +639,7 @@ body.print .cards .card {
  **********************************/
 
 .card-pitch {
-	
+	position: relative;
 }
 
 .card-pitch img {
