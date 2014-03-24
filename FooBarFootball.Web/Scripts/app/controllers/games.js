@@ -298,8 +298,12 @@ fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase',
         var cardPlayed = queue_endTurn.push({ GameId: "test", UserId: userObject });
     };
     
-    setTimeout(function() {
-    	$( ".draggable" ).draggable({ containment: "#game", scroll: false });
+    /*
+	setTimeout(function() {
+    	$( ".draggable" ).draggable({ 
+    		containment: "#game", 
+    		scroll: false });
     }, 1000);
+    */
     
 }]);

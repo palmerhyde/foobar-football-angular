@@ -334,7 +334,11 @@ ul#menu {
 
 
 
-.card .attack, .card .defence, .card .title .score {
+.card .attack, 
+.card .defence, 
+.card .title .score,
+.card-pitch .attack,
+.card-pitch .defence {
     background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
     background-color: red;
     border: 2px solid white;
@@ -350,21 +354,33 @@ ul#menu {
     position: absolute;
 }
 
+.card-pitch .attack,
+.card-pitch .defence {
+	top: 0;
+}
+
 .card .title .score {
     background-color: blue;
     right: 7px;
     top: 7px;
 }
 
-.card .attack {
+.card .attack,
+.card-pitch .attack {
     background-color: green;
     left: 0px;
 }
 
-.card .defence {
+.card .defence,
+.card-pitch .defence {
     background-color: red;
     right: 0px;
 }
+
+.card-pitch .defence {
+    right: -2px;
+}
+
 
 .card .type {
     /*margin-top: -4px;*/
@@ -581,6 +597,10 @@ body.print .cards .card {
 	color: #fff;
 }
 
+.align-right {
+	text-align: right;
+}
+
 /**********************************
  * Comapct cards
  **********************************/
@@ -605,4 +625,68 @@ body.print .cards .card {
 .card-compact img {
 	width:100px;
 	text-align: center;
+}
+
+
+/**********************************
+ * Pitch cards 
+ **********************************/
+
+.card-pitch {
+	
+}
+
+.card-pitch img {
+	border-radius: 50%;
+	width: 50px;
+	border: 1px solid #FFFFFF;
+ 	margin: 10px;
+ 	box-shadow: 0px 0px 0px 7px rgba(0, 0, 0, 0.3), 
+             	0px 20px 15px 0px rgba(0, 0, 0, 0.6); 
+}
+
+.card-pitch label {
+	text-align: center;
+	margin-left: -13px;
+	width: 100px;
+	font-size: 13px;
+}
+.card-pitch a {
+	color: #fff;
+	border: 1px solid #fff;
+	padding: 5px;
+}
+
+/************************************
+ * Hand 
+ ************************************/
+
+.myhand .card, .card.scaledown {
+	display: inline-block;
+	margin-left: -60px;
+	/*General*/
+	transform: scale(0.7, 0.7);
+	/*Firefox*/
+	-moz-transform: scale(0.7, 0.7);
+	/*Microsoft Internet Explorer*/
+	-ms-transform: scale(0.7, 0.7);
+	/*Chrome, Safari*/
+	-webkit-transform: scale(0.7, 0.7);
+	/*Opera*/
+	-o-transform: scale(0.7, 0.7);
+}
+
+.myhand .card:hover {
+	margin-left: -30px;
+	margin-right: 30px;
+	/*General*/
+	transform: translate(0px, -100px) scale(1, 1);
+	/*Firefox*/
+	-moz-transform: translate(0px, -100px) scale(1, 1);
+	/*Microsoft Internet Explorer*/
+	-ms-transform: translate(0px, -100px) scale(1, 1);
+	/*Chrome, Safari*/
+	-webkit-transform: translate(0px, 0px) scale(1, 1);
+	/*Opera*/
+	-o-transform: translate(0px, -100px) scale(1, 1);
 }

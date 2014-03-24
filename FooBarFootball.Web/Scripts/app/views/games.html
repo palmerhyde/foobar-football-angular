@@ -1,94 +1,98 @@
 ﻿<div id="body">
     <div class="container">
-        <div class="row">
-            <div class="col-md-5">
-                <h1>{{game.YourTeamName}}</h1>
-            </div>
-            <div class="col-md-1">
-                <h1>{{game.YourTeamScore}}</h1>
-            </div>
-            <div class="col-md-1">
-                <h1>{{game.OppenentsTeamScore}}</h1>
-            </div>
-            <div class="col-md-5">
-                <h1>{{game.OppenentsTeamName}}</h1>
-            </div>
-        </div>
         <div id="game">
+        	<div class="row">
+	            <div class="col-md-5 align-right">
+	                <h1>{{game.YourTeamName}}</h1>
+	            </div>
+	            <div class="col-md-1 align-right">
+	                <h1>{{game.YourTeamScore}}</h1>
+	            </div>
+	            <div class="col-md-1">
+	                <h1>{{game.OppenentsTeamScore}}</h1>
+	            </div>
+	            <div class="col-md-5">
+	                <h1>{{game.OppenentsTeamName}}</h1>
+	            </div>
+	        </div>
+	        	
             <div class="row pitch">
                 <div class="col-md-2">
                 </div>
-                <div class="col-md-1">
-                    <div ng-repeat="player in game.YourTeamPitch" class="card-compact">
-                        <div>
-                            <img ng-src="{{player.PictureUrl}}" />
-                        </div>
-                        <div>
-                            <span class="label label-default">{{player.Name}} </span>
-                        </div>
-                        <div>
-                            <span class="label label-success">{{player.Attack}}</span>
-                            <span class="label label-danger right">{{player.Stamina}}</span>
-                        </div>
-                        <a class="btn" data-ng-click="playerAttackPlayer(player)">Attack</a>
+                <div class="col-md-1 drop">
+                    <!-- Your Goalkeepers -->
+                    <div ng-repeat="player in game.YourTeamPitch | filter: { Position: 'Goalkeeper' }" class="card-pitch">
+						<card-player-pitch data="player"></card-player-pitch>
                     </div>
-
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-1 drop">
+                    <!-- Your Defenders -->
+                    <div ng-repeat="player in game.YourTeamPitch | filter: { Position: 'Defender' }" class="card-pitch">
+						<card-player-pitch data="player"></card-player-pitch>
+                    </div>
                 </div>
-                <div class="col-md-1">
+                <div class="col-md-1 drop">
+                    <!-- Your Midfielders -->
+                    <div ng-repeat="player in game.YourTeamPitch | filter: { Position: 'Midfielder' }" class="card-pitch">
+						<card-player-pitch data="player"></card-player-pitch>
+                    </div>
                 </div>
-                <div class="col-md-1">
-                </div>
-                <div class="col-md-1">
-                     <div ng-repeat="player in game.OpponentsTeamPitch" class="card-compact">
-                        <div>
-                            <img ng-src="{{player.PictureUrl}}" />
-                        </div>
-                        <div>
-                            <span class="label label-default">{{player.Name}} </span>
-                        </div>
-                        <div>
-                            <span class="label label-success">{{player.Attack}}</span>
-                            <span class="label label-danger right">{{player.Stamina}}</span>
-                        </div>
-                        <a class="btn" data-ng-click="playPlayerCardFromHandToPitch(player)">Attack</a>
+                <div class="col-md-1 drop">
+                    <!-- Your Attackers -->
+                    <div ng-repeat="player in game.YourTeamPitch | filter: { Position: 'Attacker' }" class="card-pitch">
+						<card-player-pitch data="player"></card-player-pitch>
                     </div>
                 </div>
                 <div class="col-md-1">
+                	<!-- Opponents Attackers -->
+                     <div ng-repeat="player in game.OpponentsTeamPitch | filter: { Position: 'Attacker' }" class="card-pitch">
+                        <card-player-pitch data="player"></card-player-pitch>
+                        <!--a class="btn" data-ng-click="playPlayerCardFromHandToPitch(player)">Attack</a-->
+                    </div>
                 </div>
                 <div class="col-md-1">
+                    <!-- Opponents Midfielders -->
+                    <div ng-repeat="player in game.OpponentsTeamPitch | filter: { Position: 'Midfielder' }" class="card-pitch">
+                        <card-player-pitch data="player"></card-player-pitch>
+                        <!--a class="btn" data-ng-click="playPlayerCardFromHandToPitch(player)">Attack</a-->
+                    </div>
                 </div>
                 <div class="col-md-1">
+                    <!-- Opponents Defenders -->
+                    <div ng-repeat="player in game.OpponentsTeamPitch | filter: { Position: 'Defender' }" class="card-pitch">
+                        <card-player-pitch data="player"></card-player-pitch>
+                        <!--a class="btn" data-ng-click="playPlayerCardFromHandToPitch(player)">Attack</a-->
+                    </div>
+                </div>
+                <div class="col-md-1">
+					<!-- Opponents Goalkeepers -->
+					<div ng-repeat="player in game.OpponentsTeamPitch | filter: { Position: 'Goalkeeper'}" class="card-pitch">
+                        <card-player-pitch data="player"></card-player-pitch>
+                        <!--a class="btn" data-ng-click="playPlayerCardFromHandToPitch(player)">Attack</a-->
+                    </div>
                 </div>
                 <div class="col-md-2">
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-2">
-                    <span class="badge">{{game.YourTeamDeckCount}}</span>
-                    <img src="/Content/Images/cardback.jpg" width="50%"/>
+                    <div class="card facedown scaledown">
+				        <div class="num">{{game.YourTeamDeckCount}}</div>
+				    </div>
                     <a class="btn" data-ng-click="logout()">Deal 1 to hand</a>
                     <a class="btn" data-ng-click="resetGame()">Reset game</a>
                 </div>
                 <div class="col-md-8">
-                    <div ng-repeat="player in game.YourTeamHand" class="card-compact draggable">
-                        <div>
-                            <img ng-src="{{player.PictureUrl}}" />
-                        </div>
-                        <div>
-                            <span class="label label-default">{{player.Name}} </span>
-                            <span class="label label-primary right">{{player.Cost}}</span>
-                        </div>
-                        <div>
-                            <span class="label label-success">{{player.Attack}}</span>
-                            <span class="label label-danger right">{{player.Stamina}}</span>
-                        </div>
-                        <a class="btn" data-ng-click="playPlayerCardFromHandToPitch(player)">Move to pitch</a>
+                	<div class="myhand">
+	                    <div ng-repeat="player in game.YourTeamHand" class="draggable card {{player.Style}}">
+	            			<card-player data="player"></card-player>
+	            			<br />
+	                        <a class="btn" data-ng-click="playPlayerCardFromHandToPitch(player)">Move to pitch</a>
+	                    </div>
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <span class="badge">{{game.Mana}} Tactic points</span>
+                    <span class="badge">{{game.Mana}} Mana</span>
                     <a class="btn" data-ng-click="endTurn()">End turn</a>
                     <span class="label label-success" data-ng-show="game.IsYourTurn">Your Turn</span>
                     <span class="label label-danger" data-ng-show="!game.IsYourTurn">Your Turn</span>
