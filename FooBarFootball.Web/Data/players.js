@@ -8,12 +8,12 @@
           "Cost": "1",
           "Attack": "2",
           "Stamina": "1",
-          "Description": "Manager instructions: Give a player +2 attack this turn.",
+          "Description": "Manager instructions: Restore 2 defence",
           "Club": "http://fh13.fhcdn.com/static/img/14/clubs/19.png",
           "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
           "Position": "Midfielder",
-          "Effects": { "PlayerEffects": "Rock" },
-          "PlayerDataUrl": "http://www.futhead.com/14/players/152879/"
+          "PlayerDataUrl": "http://www.futhead.com/14/players/152879/",
+          "Hearthstone" : "Voodoo Doctor"
       },
       {
           "Id": "51394",
@@ -28,24 +28,9 @@
           "Club": "http://fh13.fhcdn.com/static/img/14/clubs/19.png",
           "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
           "Position": "Midfielder",
-          "PlayerDataUrl": "http://www.futhead.com/14/players/51394/"
+          "PlayerDataUrl": "http://www.futhead.com/14/players/51394/",
+          "Hearthstone" : "Elven Archer"
       },
-    {
-        "Id": "666",
-        "Name": "TBD counter player",
-        "ShortName": "Counter player",
-        "CardType": "Player",
-        "CardStyle": "Counter",
-        "PictureUrl": "http://fh13.fhcdn.com/static/img/blank.png",
-        "Cost": "1",
-        "Attack": "1",
-        "Stamina": "3",
-        "Description": "Whenever one of your players on the pitch increases their stamina draw a card.",
-        "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1.png",
-        "Nation": "http://fh13.fhcdn.com/static/img/nations/45.png",
-        "Position": "Defender",
-        "PlayerDataUrl": "http://www.futhead.com/14/players/146562/"
-    },
     {
         "Id": "175092",
         "Name": "Maynor Figueroa",
@@ -59,7 +44,8 @@
         "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1952.png",
         "Nation": "http://fh13.fhcdn.com/static/img/nations/81.png",
         "Position": "Defender",
-        "PlayerDataUrl": "http://www.futhead.com/14/players/175092/"
+        "PlayerDataUrl": "http://www.futhead.com/14/players/175092/",
+        "Hearthstone" : "Goldshire Footman"
     },
     {
         "Id": "188253",
@@ -74,7 +60,8 @@
         "Club": "http://fh13.fhcdn.com/static/img/14/clubs/7.png",
         "Nation": "http://fh13.fhcdn.com/static/img/nations/25.png",
         "Position": "Midfielder",
-        "PlayerDataUrl": "http://www.futhead.com/14/players/188253/"
+        "PlayerDataUrl": "http://www.futhead.com/14/players/188253/",
+        "Hearthstone" : "Grimscale Oracle"
     },
     {
         "Id": "186200",
@@ -104,7 +91,8 @@
         "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1792.png",
         "Nation": "http://fh13.fhcdn.com/static/img/nations/34.png",
         "Position": "Attacker",
-        "PlayerDataUrl": "http://www.futhead.com/14/players/184457/"
+        "PlayerDataUrl": "http://www.futhead.com/14/players/184457/",
+        "Hearthstone" : "Stonetusk Boar"
     },
     {
     "Id": "170570",
@@ -119,7 +107,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1806.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/25.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/170570/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/170570/",
+    "Hearthstone" : "Acidic Swamp Ooze"
   },
   {
     "Id": "192505",
@@ -149,7 +138,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/2.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/18.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/164978/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/164978/",
+    "Hearthstone" : "Bluegill Warrior"
   },
    {
     "Id": "137785",
@@ -164,7 +154,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1806.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/21.png",
     "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/137785/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/137785/",
+    "Hearthstone" : "Frostwolf Grunt"
   },
    {
     "Id": "8517",
@@ -179,7 +170,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/144.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/8517/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/8517/",
+    "Hearthstone" : "Kobold Geomancer"
   },
    {
     "Id": "6826",
@@ -194,7 +186,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/7.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/6826/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/6826/",
+    "Hearthstone" : "Mana Wraith"
   },
 {
     "Id": "179591",
@@ -209,7 +202,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1960.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/45.png",
     "Position": "Attacker",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/179591/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/179591/",
+    "Hearthstone": "Murloc Tidehunter"
   },
   {
     "Id": "180819",
@@ -255,7 +249,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/106.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/13130/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/13130/",
+    "Hearthstone" : "Dalaran Mage"
   },
   {
     "Id": "152747",
@@ -266,11 +261,12 @@
     "Cost": "3",
     "Attack": "2",
     "Stamina": "2",
-    "Description": "Manager instructions: Deal 1 attack impact",
+    "Description": "Manager instructions: Deal 1 attack",
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/18.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/152747/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/152747/",
+    "Hearthstone" : "Ironforge Rifleman"
   },
   {
     "Id": "120312",
@@ -285,7 +281,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/18.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/120312/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/120312/",
+    "Hearthstone" : "Ironfur Grizzly"
   },
   {
     "Id": "5809",
@@ -299,12 +296,12 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/109.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/18.png",
     "Position": "Attacker",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/5809/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/5809/",
+    "Hearthstone" : "Magma Rager"
   },
   {
     "Id": "164477",
-    "Name": "John Obi Mikel
-    ",
+    "Name": "John Obi Mikel",
     "ShortName": "Mikel",
     "CardType": "Player",
     "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/164477.png",
@@ -320,8 +317,7 @@
   },
   {
     "Id": "184432",
-    "Name": "Azpilicueta
-    ",
+    "Name": "Azpilicueta",
     "ShortName": "Azpilicueta",
     "CardType": "Player",
     "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/184432.png",
@@ -332,12 +328,12 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/5.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/45.png",
     "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/184432/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/184432/",
+    "Hearthstone" : "Shattered Sun Cleric"
   },
   {
     "Id": "164876",
-    "Name": "Michu
-    ",
+    "Name": "Michu",
     "ShortName": "Michu",
     "CardType": "Player",
     "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/164876.png",
@@ -348,7 +344,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1960.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/45.png",
     "Position": "Attacker",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/164876/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/164876/",
+    "Hearthstone" : "Shattered Sun Cleric"
   },
   {
     "Id": "53612",
@@ -363,7 +360,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/21.png",
     "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/53612/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/53612/",
+    "Hearthstone" : "Silverback Patriarch"
   },
    {
     "Id": "137782",
@@ -374,13 +372,12 @@
     "Cost": "3",
     "Attack": "2",
     "Stamina": "3",
-    "Description": "Rock
-    Wind up: +3 Attack
-    ",
+    "Description": "Rock. Wind up: +3 Attack",
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/9.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/137782/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/137782/",
+    "Hearthstone" : "Tauren Warrior"
   },
   {
     "Id": "8473",
@@ -410,7 +407,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/18.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/24.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/184484/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/184484/",
+    "Hearthstone" : "Chillwind Yeti"
   },
    {
     "Id": "53050",
@@ -425,7 +423,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/18.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/144.png",
     "Position": "Attacker",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/53050/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/53050/",
+    "Hearthstone" : "Cult Master"
   },
   {
     "Id": "178372",
@@ -440,7 +439,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/5.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/51.png",
     "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/178372/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/178372/",
+    "Hearthstone", "Dragonling Mechanic"
   },
    {
     "Id": "169721",
@@ -455,7 +455,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/10.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/169721/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/169721/",
+    "Hearthstone": "Gnomish Inventor"
   },
    {
     "Id": "53914",
@@ -485,7 +486,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/11.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/7.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/176944/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/176944/",
+    "Hearthstone" : "Ogre Magi"
   },
   {
     "Id": "46815",
@@ -516,13 +518,12 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/7.png",
     "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/157304/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/157304/",
+    "Hearthstone" : "Stormwind knight"
   },
    {
     "Id": "176266",
-    "Name": "
-      Lucas Leiva
-    ",
+    "Name": "Lucas Leiva",
     "ShortName": "Leiva",
     "CardType": "Player",
     "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/176266.png",
@@ -533,7 +534,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/9.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/54.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/176266/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/176266/",
+    "Hearthstone" : "Booty Bay Bodyguard"
   },
   {
     "Id": "138412",
@@ -548,7 +550,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/10.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/138412/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/138412/",
+    "Hearthstone" : "Darkscale Healer"
   },
   {
     "Id": "187961",
@@ -559,27 +562,12 @@
     "Cost": "5",
     "Attack": "4",
     "Stamina": "4",
-    "Description": "Manager instructions: Gain +1 / +1 all players on the pitch.",
+    "Description": "Manager instructions: Gain +1 / +1 all your players on the pitch.",
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/18.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/54.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/187961/"
-  },
-  {
-    "Id": "166706",
-    "Name": "Martin Škrtel
-    ",
-    "ShortName": "Škrtel",
-    "CardType": "Player",
-    "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/166706.png",
-    "Cost": "5",
-    "Attack": "2",
-    "Stamina": "7",
-    "Description": "Wind up: When attacked, this player gains +3 attack.",
-    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/9.png",
-    "Nation": "http://fh13.fhcdn.com/static/img/nations/43.png",
-    "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/166706/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/187961/",
+    "Hearthstone" : "Frostwolf Warlord"
   },
   {
     "Id": "152908",
@@ -612,7 +600,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/18.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Attacker",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/50542/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/50542/",
+    "Hearthstone" : "Stormpike Commando"
   },
   {
     "Id": "138726",
@@ -627,7 +616,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/10.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/138726/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/138726/",
+    "Hearthstone" : "Archmage"
   },
   {
     "Id": "189461",
@@ -641,7 +631,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/189461/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/189461/",
+    "Hearthstone" : "Boulderfist Ogre"
   },
   {
     "Id": "183285",
@@ -656,7 +647,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/9.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/18.png",
     "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/183285/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/183285/",
+    "Hearthstone" : "Lord of the Arena"
   },
   {
     "Id": "178224",
@@ -671,7 +663,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/11.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/83.png",
     "Position": "Attacker",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/178224/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/178224/",
+    "Hearthstone" : "Reckless Rocketeer"
   },
   {
     "Id": "139068",
@@ -682,16 +675,16 @@
     "Cost": "6",
     "Attack": "4",
     "Stamina": "5",
-    "Description": "Push forward",
+    "Description": "Push forward (2 attacks per turn)",
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/11.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/38.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/139068/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/139068/",
+    "Hearthstone" : "Windfury Harpy"
   },
   {
     "Id": "49369",
-    "Name": "Fernando Torres
-    ",
+    "Name": "Fernando Torres",
     "ShortName": "Torres",
     "CardType": "Player",
     "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/49369.png",
@@ -701,12 +694,12 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/5.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/45.png",
     "Position": "Attacker",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/49369/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/49369/",
+    "Hearthstone" : "Core Hound"
   },
    {
     "Id": "13743",
-    "Name": "Steven Gerrard
-    ",
+    "Name": "Steven Gerrard",
     "ShortName": "Gerrard",
     "CardType": "Player",
     "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/13743.png",
@@ -718,11 +711,11 @@
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Midfielder",
     "PlayerDataUrl": "http://www.futhead.com/14/players/13743/"
+    "Hearthstone" : "Stormwind Champion"
   },
    {
     "Id": "146562",
-    "Name": "Santi Cazorla
-    ",
+    "Name": "Santi Cazorla",
     "ShortName": "Cazorla",
     "CardType": "Player",
     "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/146562.png",
@@ -733,7 +726,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/45.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/146562/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/146562/",
+    "Hearthstone" , "War golem"
   },
   {
     "Id": "666",
@@ -748,7 +742,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/45.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/146562/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/146562/",
+    "Hearthstone" : "Mama Wyrm"
   },
   {
     "Id": "666",
@@ -763,7 +758,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/45.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/146562/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/146562/",
+    "Hearthstone" : "Water Elemental"
   },
   {
     "Id": "666",
@@ -779,6 +775,7 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/45.png",
     "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/146562/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/146562/",
+    "Hearthstone" : "Northshire Cleric"
   }
 ]

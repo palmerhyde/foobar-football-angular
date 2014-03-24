@@ -6,6 +6,54 @@
     "TeamName" : "Palmer Hyde FC",
     "Score" : "0",
     "UserId" : "0",
+    "Deck" : [
+      {
+        "Id": "186200",
+        "Name": "Fabio Borini",
+        "ShortName": "Borini",
+        "CardType": "Player",
+        "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/186200.png",
+        "Cost": "1",
+        "Attack": "2",
+        "Stamina": "1",
+        "Club": "http://fh13.fhcdn.com/static/img/14/clubs/106.png",
+        "Nation": "http://fh13.fhcdn.com/static/img/nations/27.png",
+        "Position": "Attacker",
+        "PlayerDataUrl": "http://www.futhead.com/14/players/186200/",
+        "Hearthstone" : "Murloc Raider"
+      },
+      {
+        "Id": "192505",
+        "Name": "Romelu Lukaku",
+        "ShortName": "Lukaku",
+        "CardType": "Player",
+        "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/192505.png",
+        "Cost": "2",
+        "Attack": "3",
+        "Stamina": "2",
+        "Club": "http://fh13.fhcdn.com/static/img/14/clubs/7.png",
+        "Nation": "http://fh13.fhcdn.com/static/img/nations/7.png",
+        "Position": "Attacker",
+        "PlayerDataUrl": "http://www.futhead.com/14/players/192505/",
+        "Hearthstone" : "Bloodfen Raptor"
+      },
+      {
+        "Id": "180819",
+        "Name": "Adam Lallana",
+        "ShortName": "Hernández",
+        "CardType": "Player",
+        "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/180819.png",
+        "Cost": "2",
+        "Attack": "1",
+        "Stamina": "1",
+        "Description": "Manager instructions: Draw a card",
+        "Club": "http://fh13.fhcdn.com/static/img/14/clubs/17.png",
+        "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
+        "Position": "Midfielder",
+        "PlayerDataUrl": "http://www.futhead.com/14/players/180819/",
+        "Hearthstone" : "Novice Engineer"
+      }
+    ],
     "Hand" : [ {
       "Nation" : "http://fh13.fhcdn.com/static/img/nations/14.png",
       "Effects" : {
@@ -76,3 +124,5 @@
     "UserId" : "1"
   }
 }
+
+
