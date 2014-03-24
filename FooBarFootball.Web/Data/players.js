@@ -88,7 +88,8 @@
         "Club": "http://fh13.fhcdn.com/static/img/14/clubs/106.png",
         "Nation": "http://fh13.fhcdn.com/static/img/nations/27.png",
         "Position": "Attacker",
-        "PlayerDataUrl": "http://www.futhead.com/14/players/186200/"
+        "PlayerDataUrl": "http://www.futhead.com/14/players/186200/",
+        "Hearthstone" : "Murloc Raider"
     },
     {
         "Id": "184457",
@@ -132,7 +133,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/7.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/7.png",
     "Position": "Attacker",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/192505/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/192505/",
+    "Hearthstone" : "Bloodfen Raptor"
   },
   {
     "Id": "164978",
@@ -216,13 +218,14 @@
     "CardType": "Player",
     "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/180819.png",
     "Cost": "2",
-    "Attack": "2",
+    "Attack": "1",
     "Stamina": "1",
     "Description": "Manager instructions: Draw a card",
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/17.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/180819/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/180819/",
+    "Hearthstone" : "Novice Engineer"
   },
   {
     "Id": "169596",
@@ -236,7 +239,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1806.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/169596/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/169596/",
+    "Hearthstone", "River Crocolisk"
   },
   {
     "Id": "13130",
@@ -311,7 +315,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/5.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/133.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/164477/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/164477/",
+    "Hearthstone", "Raid leader"
   },
   {
     "Id": "184432",
@@ -390,7 +395,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/12.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/8473/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/8473/",
+    "Hearthstone", "Wolfrider"
   },
    {
     "Id": "184484",
@@ -463,7 +469,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/7.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/53914/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/53914/",
+    "Hearthstone", "Oasis Snapjaw"
   },
   {
     "Id": "176944",
@@ -488,12 +495,13 @@
     "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/46815.png",
     "Cost": "4",
     "Attack": "3",
-    "Stamina": "4",
+    "Stamina": "5",
     "Description": "Rock",
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/144.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/36.png",
     "Position": "Defender",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/46815/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/46815/",
+    "Hearthstone" : "Senjin Shieldmasta"
   },
    {
     "Id": "157304",
@@ -588,7 +596,8 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/11.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/152908/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/152908/",
+    "Hearthstone" : "Nightblade"
   },
   {
     "Id": "50542",

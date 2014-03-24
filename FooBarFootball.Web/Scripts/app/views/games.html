@@ -19,8 +19,6 @@
                 <div class="col-md-2">
                 </div>
                 <div class="col-md-1">
-                    Goalkeeper
-
                     <div ng-repeat="player in game.YourTeamPitch" class="card-compact">
                         <div>
                             <img ng-src="{{player.PictureUrl}}" />
@@ -37,14 +35,10 @@
 
                 </div>
                 <div class="col-md-1">
-                    Defender 1
                 </div>
                 <div class="col-md-1">
-                    Midfielder 1
                 </div>
                 <div class="col-md-1">
-                    Attaker 1
-                    Attacker 2
                 </div>
                 <div class="col-md-1">
                      <div ng-repeat="player in game.OpponentsTeamPitch" class="card-compact">
@@ -62,13 +56,10 @@
                     </div>
                 </div>
                 <div class="col-md-1">
-                    Midfielder 1
                 </div>
                 <div class="col-md-1">
-                    Defender 1
                 </div>
                 <div class="col-md-1">
-                    Goalkeeper
                 </div>
                 <div class="col-md-2">
                 </div>
@@ -97,7 +88,7 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <span class="badge">{{game.Mana}} Mana</span>
+                    <span class="badge">{{game.Mana}} Tactic points</span>
                     <a class="btn" data-ng-click="endTurn()">End turn</a>
                     <span class="label label-success" data-ng-show="game.IsYourTurn">Your Turn</span>
                     <span class="label label-danger" data-ng-show="!game.IsYourTurn">Your Turn</span>
