@@ -183,54 +183,6 @@ var listen = function () {
                 "Hearthstone" : "Boulderfist Ogre"
               }
             ],
-              "Hand": [
-              {
-                "Id": "152879",
-                "Name": "Mark Noble",
-                "ShortName": "Noble",
-                "CardType": "Player",
-                "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/152879.png",
-                "Cost": "1",
-                "Attack": "2",
-                "Stamina": "1",
-                "Description": "Manager instructions: Give a player +2 attack this turn.",
-                "Club": "http://fh13.fhcdn.com/static/img/14/clubs/19.png",
-                "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
-                "Position": "Midfielder",
-                "Effects": { "PlayerEffects": "Rock" },
-                "PlayerDataUrl": "http://www.futhead.com/14/players/152879/"
-            },
-            {
-                "Id": "51394",
-                "Name": "Kevin Nolan",
-                "ShortName": "Nolan",
-                "CardType": "Player",
-                "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/51394.png",
-                "Cost": "1",
-                "Attack": "1",
-                "Stamina": "1",
-                "Description": "Manager instructions: Deal 1 damage.",
-                "Club": "http://fh13.fhcdn.com/static/img/14/clubs/19.png",
-                "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
-                "Position": "Midfielder",
-                "PlayerDataUrl": "http://www.futhead.com/14/players/51394/"
-            },
-            {
-                "Id": "175092",
-                "Name": "Maynor Figueroa",
-                "ShortName": "Figueroa",
-                "CardType": "Player",
-                "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/175092.png",
-                "Cost": "1",
-                "Attack": "1",
-                "Stamina": "2",
-                "Description": "Rock",
-                "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1952.png",
-                "Nation": "http://fh13.fhcdn.com/static/img/nations/81.png",
-                "Position": "Defender",
-                "PlayerDataUrl": "http://www.futhead.com/14/players/175092/"
-            }
-          ],
               "Pitch": []
           },
             "AwayTeam": 
@@ -435,6 +387,18 @@ var listen = function () {
               ]
             }
           }
+
+          // Shuffle the deck(s)
+          resetGame.HomeTeam.Deck = _.shuffle(resetGame.HomeTeam.Deck);
+          resetGame.AwayTeam.Deck = _.shuffle(resetGame.AwayTeam.Deck);
+
+          // Deal top 3 for home team
+          resetGame.HomeTeam.Hand = _.first(resetGame.HomeTeam.Deck, 3);
+          resetGame.HomeTeam.Deck.splice(0, 3);
+
+          // Deal top 4 for away team
+          resetGame.AwayTeam.Hand = _.first(resetGame.AwayTeam.Deck, 4);
+          resetGame.AwayTeam.Deck.splice(0, 4);
 
             // Save the actual game
             ServiceFirebase.Set("Games", "test", resetGame);
