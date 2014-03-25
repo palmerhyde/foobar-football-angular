@@ -46,7 +46,7 @@ fooBarApp.config(['$routeProvider',
             templateUrl: 'Scripts/app/views/signalr.html',
             controller: 'SignalrController'
         }).
-        when('/simulator/firebase', {
+        when('/simulator/firebase/:id', {
             templateUrl: 'Scripts/app/views/games.html',
             controller: 'GamesController'
         }).
