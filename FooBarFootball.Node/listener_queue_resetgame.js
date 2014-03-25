@@ -26,6 +26,19 @@ var listen = function () {
               "TeamName": "Palmer Hyde FC",
               "Mana": "2",
               "Score": "0",
+              "Manager" : {
+                  "Id": "1",
+                  "Name": "Jose Mourinho",
+                  "ShortName": "Mourinho",
+                  "CardType": "Manager",
+                  "PictureUrl": "http://fh13.fhcdn.com/static/img/14/staff/1000593.png",
+                  "Cost": "2",
+                  "Stamina": "30",
+                  "Description": "Restore 2 imapact points or Restore 2 stamina.",
+                  "Style" : "counter",
+                  "Hearthstone" : "Priest"
+              },
+
                   "Deck" : [
               {
                 "Id": "186200",
@@ -191,6 +204,18 @@ var listen = function () {
               "TeamName": "The Mighty Reds",
               "Mana": "1",
               "Score": "0",
+              "Manager" : {
+                  "Id": "2",
+                  "Name": "Manuel Pellegrini",
+                  "ShortName": "Pellegrini",
+                  "CardType": "Manager",
+                  "PictureUrl": "http://fh13.fhcdn.com/static/img/14/staff/1000596.png",
+                  "Cost": "2",
+                  "Stamina": "30",
+                  "Description": "Deal 1 direct impact or deal 1 stamina damage to an opposition player on the pitch.",
+                  "Style" : "total",
+                  "Hearthstone" : "Mage"
+              },
               "Deck": [
                 {
                   "Id": "51394",
