@@ -1,0 +1,3 @@
+fooBarControllers.controller('LoginController', [ function () {
+    
+}]);

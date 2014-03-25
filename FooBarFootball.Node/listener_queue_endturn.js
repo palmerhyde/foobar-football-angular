@@ -25,7 +25,7 @@ var listen = function () {
             }
 
             if (game.WhosTurnIsIt != userId) {
-                console.log('Its not your turn get out of here')
+                console.log('Its not your turn get out of here');
             }
 
             if (game.HomeTeam.UserId  == userId) {

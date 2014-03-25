@@ -8,16 +8,16 @@ var find = function (asset, id) {
   var defer = q.defer();
 
   query.on('value', function (snapshot) {
-  	defer.resolve(snapshot.val())
+  	defer.resolve(snapshot.val());
   });
 
   return defer.promise;
-} 
+};
 
 var set = function (asset, id, data) {
 	var reference = new Firebase(fireBaseUrl + '/' + asset + '/' + id);
 	reference.set(data);
-}
+};
 
 exports.Find = find;
 exports.Set = set;
