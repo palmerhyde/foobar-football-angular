@@ -79,7 +79,6 @@
                     <div class="card facedown scaledown">
 				        <div class="num">{{game.YourTeamDeckCount}}</div>
 				    </div>
-                    <a class="btn" data-ng-click="logout()">Deal 1 to hand</a>
                     <a class="btn" data-ng-click="resetGame()">Reset game</a>
                 </div>
                 <div class="col-md-8">
@@ -92,10 +91,17 @@
                     </div>
                 </div>
                 <div class="col-md-2">
-                    <span class="badge">{{game.Mana}} Mana</span>
+                    <span class="badge">
+                    <ng-pluralize count="game.Mana"
+                        when="{'0': '{} Tactics',
+                     'one': '{} Tactic',
+                     'other': '{} Tactics'}">
+                    </ng-pluralize>
+                    </span>
                     <a class="btn" data-ng-click="endTurn()">End turn</a>
                     <span class="label label-success" data-ng-show="game.IsYourTurn">Your Turn</span>
                     <span class="label label-danger" data-ng-show="!game.IsYourTurn">Your Turn</span>
+                    <span class="label label-primary">Turn {{game.Turn}}</span>
                 </div>
             </div>
             <div data-ng-show="isPlaying">

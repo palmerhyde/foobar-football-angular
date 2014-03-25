@@ -30,12 +30,19 @@ var listen = function () {
 
             if (game.HomeTeam.UserId  == userId) {
                 yourTeam = game.HomeTeam;
+                yourTeam.Mana = 0;
                 opponentsTeam = game.AwayTeam;
+                opponentsTeam.Mana = game.Turn;
+                DealCard(opponentsTeam.Deck, opponentsTeam.Hand);
             }
 
             if (game.AwayTeam.UserId  == userId) {
+                game.Turn = game.Turn + 1;
                 yourTeam = game.AwayTeam;
+                yourTeam.Mana = 0;
                 opponentsTeam = game.HomeTeam;
+                opponentsTeam.Mana = game.Turn;
+                DealCard(opponentsTeam.Deck, opponentsTeam.Hand);
             }
 
             game.WhosTurnIsIt = opponentsTeam.UserId;
@@ -47,4 +54,12 @@ var listen = function () {
         snapshot.ref().remove();
     });
 };
+
+function DealCard(deck, hand) {
+    if (deck.length > 0 ) {
+        hand.push(deck[0]);
+        deck.splice(0, 1);
+    } 
+}
+
 exports.listen = listen;

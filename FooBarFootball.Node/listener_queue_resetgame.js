@@ -20,11 +20,12 @@ var listen = function () {
             "Id": "152879",
             "WhosTurnIsIt" : "0",
             "State" : "Playing",
+            "Turn" : 1,
             "HomeTeam": 
           {
               "UserId": "0",
               "TeamName": "Palmer Hyde FC",
-              "Mana": "2",
+              "Mana": 1,
               "Score": "0",
               "Manager" : {
                   "Id": "1",
@@ -202,7 +203,7 @@ var listen = function () {
           {
               "UserId": "1",
               "TeamName": "The Mighty Reds",
-              "Mana": "1",
+              "Mana": 0,
               "Score": "0",
               "Manager" : {
                   "Id": "2",
@@ -393,23 +394,7 @@ var listen = function () {
                 }
               ],
               "Hand": [],
-              "Pitch": [
-                {
-                    "Id": "184457",
-                    "Name": "Ricky van Wolfswinkel",
-                    "ShortName": "van Wolfswinkel",
-                    "CardType": "Player",
-                    "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/184457.png",
-                    "Cost": "1",
-                    "Attack": "1",
-                    "Stamina": "1",
-                    "Description": "Pressure",
-                    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1792.png",
-                    "Nation": "http://fh13.fhcdn.com/static/img/nations/34.png",
-                    "Position": "Attacker",
-                    "PlayerDataUrl": "http://www.futhead.com/14/players/184457/"
-                }
-              ]
+              "Pitch": []
             }
           };
 
@@ -421,9 +406,9 @@ var listen = function () {
           resetGame.HomeTeam.Hand = _.first(resetGame.HomeTeam.Deck, 3);
           resetGame.HomeTeam.Deck.splice(0, 3);
 
-          // Deal top 4 for away team
-          resetGame.AwayTeam.Hand = _.first(resetGame.AwayTeam.Deck, 4);
-          resetGame.AwayTeam.Deck.splice(0, 4);
+          // Deal top 3 for away team
+          resetGame.AwayTeam.Hand = _.first(resetGame.AwayTeam.Deck, 3);
+          resetGame.AwayTeam.Deck.splice(0, 3);
 
             // Save the actual game
             ServiceFirebase.Set("Games", "test", resetGame);
