@@ -1,9 +1,9 @@
-fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase', function ($scope, $http, $firebase) {
+fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase', '$routeParams', function ($scope, $http, $firebase, $routeParams) {
     $scope.title = "FooBar Football - Games";
 
         // TODO: replace 0 with user.id
     // TODO: Replace multi queues with big queue
-    var user = new Firebase("https://foobarfootball.firebaseio.com/Users/0");
+    var user = new Firebase("https://foobarfootball.firebaseio.com/Users/" + $routeParams.id);
     var queues = new Firebase("https://foobarfootball.firebaseio.com/Queues/PlayPlayerCardFromHandToPitch");
     var queue_playerAttackPlayer = new Firebase("https://foobarfootball.firebaseio.com/Queues/PlayerAttackPlayer");
     var queue_endTurn = new Firebase("https://foobarfootball.firebaseio.com/Queues/EndTurn");
