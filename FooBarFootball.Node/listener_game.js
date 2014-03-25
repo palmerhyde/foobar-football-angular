@@ -44,11 +44,13 @@ function ConvertGameToGameViewHomeTeam(game, userId) {
         YourTeamDeckCount: game.HomeTeam.Deck.length,
         YourTeamHand: game.HomeTeam.Hand,
         YourTeamPitch: game.HomeTeam.Pitch,
+        YourTeamManager: game.HomeTeam.Manager,
         OppenentsTeamName: game.AwayTeam.TeamName,
         OppenentsTeamScore: game.AwayTeam.Score,
         OpponentsTeamDeckCount: game.AwayTeam.Deck.length,
         OpponentsTeamHandCount: game.AwayTeam.Hand.length,
-        OpponentsTeamPitch: game.AwayTeam.Pitch
+        OpponentsTeamPitch: game.AwayTeam.Pitch,
+        OpponentsTeamManager: game.AwayTeam.Manager
     };
 
     return gameView;
@@ -64,11 +66,13 @@ function ConvertGameToGameViewAwayTeam(game, userId) {
         YourTeamDeckCount: game.AwayTeam.Deck.length,
         YourTeamHand: game.AwayTeam.Hand,
         YourTeamPitch: game.AwayTeam.Pitch,
+        YourTeamManager: game.AwayTeam.Manager,
         OppenentsTeamName: game.HomeTeam.TeamName,
         OppenentsTeamScore: game.HomeTeam.Score,
         OpponentsTeamDeckCount: game.HomeTeam.Deck.length,
         OpponentsTeamHandCount: game.HomeTeam.Hand.length,
-        OpponentsTeamPitch: game.HomeTeam.Pitch
+        OpponentsTeamPitch: game.HomeTeam.Pitch,
+        OpponentsTeamManager: game.HomeTeam.Manager
     };
 
     return gameView;
