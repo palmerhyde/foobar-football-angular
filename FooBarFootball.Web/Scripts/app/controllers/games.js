@@ -21,8 +21,8 @@ fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase',
         var cardPlayed = queues.push({ GameId: 1, CardId: card.Id, UserId: userObject });
     };
 
-    $scope.playerAttackPlayer = function (card) {
-        var cardPlayed = queue_playerAttackPlayer.push({ GameId: "test", CardId: card.Id, TargetCardId: 184457, UserId: userObject });
+    $scope.playerAttackPlayer = function (card, targetCard) {
+        var cardPlayed = queue_playerAttackPlayer.push({ GameId: "test", CardId: card.Id, TargetCardId: targetCard.Id, UserId: userObject });
     };
 
     $scope.endTurn = function (card) {
