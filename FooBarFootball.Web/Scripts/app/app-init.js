@@ -1,7 +1,29 @@
 ﻿
 var fooBarControllers = angular.module('fooBarControllers', []);
 
-var fooBarApp = angular.module('fooBarApp', ['ngRoute', 'firebase', 'fooBarControllers']);
+var fooBarApp = angular.module('fooBarApp', ['ngRoute', 'firebase', 'fooBarControllers', 'ngCookies']);
+
+fooBarApp.run(['$rootScope', '$location', 'AuthenticationService', function ($rootScope, $location, AuthenticationService) {
+
+  // enumerate routes that don't need authentication
+  var routesThatRequireAuth = ['/simulator/firebase'];
+
+  // check if current location matches route  
+  var routeAuth = function (route) {
+    return _.find(routesThatRequireAuth,
+      function (AuthRoute) {
+        return route.indexOf(AuthRoute) > -1;
+      });
+  };
+
+  $rootScope.$on('$routeChangeStart', function (event, next, current) {
+    // if route requires auth and user is not logged in
+    if (routeAuth($location.url()) && !AuthenticationService.isLoggedIn()) {
+      // redirect back to login
+      $location.path('/login');
+    }
+  });
+}]);
 
 fooBarApp.config(['$routeProvider',
   function ($routeProvider) {
@@ -58,8 +80,14 @@ fooBarApp.config(['$routeProvider',
               templateUrl: 'Scripts/app/views/demo.html',
               controller: 'DemoController'
           }).
+          when('/login', {
+              templateUrl: 'Scripts/app/views/login.html',
+              controller: 'LoginController'
+          }).
         otherwise({
             redirectTo: '/'
         });
   }]);
+
+
 

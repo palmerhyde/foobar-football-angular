@@ -484,7 +484,7 @@ ul#menu {
 }
 
 .card.facedown {
-    background-color: #000;
+    background: #fff url("images/cardback.png") no-repeat center center;
 }
 
 .card.facedown .num {

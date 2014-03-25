@@ -49,7 +49,7 @@ function ConvertGameToGameViewHomeTeam(game, userId) {
         OpponentsTeamDeckCount: game.AwayTeam.Deck.length,
         OpponentsTeamHandCount: game.AwayTeam.Hand.length,
         OpponentsTeamPitch: game.AwayTeam.Pitch
-    }
+    };
 
     return gameView;
 }
@@ -69,7 +69,7 @@ function ConvertGameToGameViewAwayTeam(game, userId) {
         OpponentsTeamDeckCount: game.HomeTeam.Deck.length,
         OpponentsTeamHandCount: game.HomeTeam.Hand.length,
         OpponentsTeamPitch: game.HomeTeam.Pitch
-    }
+    };
 
     return gameView;
 }

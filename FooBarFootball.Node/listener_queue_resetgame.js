@@ -386,7 +386,7 @@ var listen = function () {
                 }
               ]
             }
-          }
+          };
 
           // Shuffle the deck(s)
           resetGame.HomeTeam.Deck = _.shuffle(resetGame.HomeTeam.Deck);
