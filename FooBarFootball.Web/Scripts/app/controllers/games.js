@@ -32,4 +32,6 @@ fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase',
     $scope.resetGame = function () {
         var cardPlayed = queue_resetGame.push({ GameId: "test", UserId: userObject });
     };
+    
+    $( ".game-controls" ).draggable({ containment: "body" });
 }]);
