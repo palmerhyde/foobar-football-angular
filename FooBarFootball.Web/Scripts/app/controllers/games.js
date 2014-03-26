@@ -6,6 +6,7 @@ fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase',
     var user = new Firebase("https://foobarfootball.firebaseio.com/Users/" + $routeParams.id);
     var queues = new Firebase("https://foobarfootball.firebaseio.com/Queues/PlayPlayerCardFromHandToPitch");
     var queue_playerAttackPlayer = new Firebase("https://foobarfootball.firebaseio.com/Queues/PlayerAttackPlayer");
+    var queue_playerAttackManager = new Firebase("https://foobarfootball.firebaseio.com/Queues/PlayerAttackManager");
     var queue_endTurn = new Firebase("https://foobarfootball.firebaseio.com/Queues/EndTurn");
     var queue_resetGame = new Firebase("https://foobarfootball.firebaseio.com/Queues/ResetGame");
     var userObject;
@@ -23,6 +24,10 @@ fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase',
 
     $scope.playerAttackPlayer = function (card, targetCard) {
         var cardPlayed = queue_playerAttackPlayer.push({ GameId: "test", CardId: card.Id, TargetCardId: targetCard.Id, UserId: userObject });
+    };
+
+    $scope.playerAttackManager = function (card, targetCard) {
+        var cardPlayed = queue_playerAttackManager.push({ GameId: "test", CardId: card.Id, UserId: userObject });
     };
 
     $scope.endTurn = function (card) {
