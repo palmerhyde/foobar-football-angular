@@ -195,6 +195,22 @@ var listen = function () {
                 "Position": "Midfielder",
                 "PlayerDataUrl": "http://www.futhead.com/14/players/189461/",
                 "Hearthstone" : "Boulderfist Ogre"
+              },
+              {
+                "Id": "16254",
+                "Name": "Tim Howard",
+                "ShortName": "Howard",
+                "CardType": "Player",
+                "CardStyle": "",
+                "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/16254.png",
+                "Cost": "3",
+                "Attack": "1",
+                "Stamina": "4",
+                "Description": "",
+                "Club": "http://fh13.fhcdn.com/static/img/14/clubs/7.png",
+                "Nation": "http://fh13.fhcdn.com/static/img/nations/95.png",
+                "Position": "Goalkeeper",
+                "Hearthstone" : ""
               }
             ],
               "Pitch": []
@@ -391,7 +407,23 @@ var listen = function () {
                     "Position": "Attacker",
                     "PlayerDataUrl": "http://www.futhead.com/14/players/49369/",
                     "Hearthstone" : "Core Hound"
-                }
+                },
+                {
+                    "Id": "173426",
+                    "Name": "Simon Mignolet",
+                    "ShortName": "Mignolet",
+                    "CardType": "Player",
+                    "CardStyle": "",
+                    "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/173426.png",
+                    "Cost": "4",
+                    "Attack": "3",
+                    "Stamina": "4",
+                    "Description": "",
+                    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/9.png",
+                    "Nation": "http://fh13.fhcdn.com/static/img/nations/7.png",
+                    "Position": "Goalkeeper",
+                    "Hearthstone" : ""
+                  }
               ],
               "Hand": [],
               "Pitch": []

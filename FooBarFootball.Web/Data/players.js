@@ -234,7 +234,7 @@
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Defender",
     "PlayerDataUrl": "http://www.futhead.com/14/players/169596/",
-    "Hearthstone", "River Crocolisk"
+    "Hearthstone": "River Crocolisk"
   },
   {
     "Id": "13130",
@@ -313,7 +313,7 @@
     "Nation": "http://fh13.fhcdn.com/static/img/nations/133.png",
     "Position": "Midfielder",
     "PlayerDataUrl": "http://www.futhead.com/14/players/164477/",
-    "Hearthstone", "Raid leader"
+    "Hearthstone": "Raid leader"
   },
   {
     "Id": "184432",
@@ -393,7 +393,7 @@
     "Nation": "http://fh13.fhcdn.com/static/img/nations/12.png",
     "Position": "Midfielder",
     "PlayerDataUrl": "http://www.futhead.com/14/players/8473/",
-    "Hearthstone", "Wolfrider"
+    "Hearthstone": "Wolfrider"
   },
    {
     "Id": "184484",
@@ -440,7 +440,7 @@
     "Nation": "http://fh13.fhcdn.com/static/img/nations/51.png",
     "Position": "Defender",
     "PlayerDataUrl": "http://www.futhead.com/14/players/178372/",
-    "Hearthstone", "Dragonling Mechanic"
+    "Hearthstone": "Dragonling Mechanic"
   },
    {
     "Id": "169721",
@@ -471,7 +471,7 @@
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Defender",
     "PlayerDataUrl": "http://www.futhead.com/14/players/53914/",
-    "Hearthstone", "Oasis Snapjaw"
+    "Hearthstone": "Oasis Snapjaw"
   },
   {
     "Id": "176944",
@@ -710,7 +710,7 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/9.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
     "Position": "Midfielder",
-    "PlayerDataUrl": "http://www.futhead.com/14/players/13743/"
+    "PlayerDataUrl": "http://www.futhead.com/14/players/13743/",
     "Hearthstone" : "Stormwind Champion"
   },
    {
@@ -727,7 +727,7 @@
     "Nation": "http://fh13.fhcdn.com/static/img/nations/45.png",
     "Position": "Midfielder",
     "PlayerDataUrl": "http://www.futhead.com/14/players/146562/",
-    "Hearthstone" , "War golem"
+    "Hearthstone" : "War golem"
   },
   {
     "Id": "666",
@@ -824,6 +824,102 @@
     "Club": "http://fh13.fhcdn.com/static/img/14/clubs/999.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/27.png",
     "Position": "Attacker",
+    "Hearthstone" : ""
+  },
+  {
+    "Id": "12804",
+    "Name": "Shay Given",
+    "ShortName": "Given",
+    "CardType": "Player",
+    "CardStyle": "",
+    "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/2651.png",
+    "Cost": "1",
+    "Attack": "1",
+    "Stamina": "2",
+    "Description": "",
+    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/12.png",
+    "Nation": "http://fh13.fhcdn.com/static/img/nations/25.png",
+    "Position": "Goalkeeper",
+    "Hearthstone" : ""
+  },
+  {
+    "Id": "193080",
+    "Name": "De Gea",
+    "ShortName": "De Gea",
+    "CardType": "Player",
+    "CardStyle": "",
+    "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/193080.png",
+    "Cost": "3",
+    "Attack": "2",
+    "Stamina": "3",
+    "Description": "",
+    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/11.png",
+    "Nation": "http://fh13.fhcdn.com/static/img/nations/45.png",
+    "Position": "Goalkeeper",
+    "Hearthstone" : ""
+  },
+  {
+    "Id": "3400",
+    "Name": "Hugo Lloris",
+    "ShortName": "Lloris",
+    "CardType": "Player",
+    "CardStyle": "",
+    "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/167948.png",
+    "Cost": "2",
+    "Attack": "2",
+    "Stamina": "2",
+    "Description": "",
+    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/18.png",
+    "Nation": "http://fh13.fhcdn.com/static/img/nations/18.png",
+    "Position": "Goalkeeper",
+    "Hearthstone" : ""
+  },
+  {
+    "Id": "16254",
+    "Name": "Tim Howard",
+    "ShortName": "Howard",
+    "CardType": "Player",
+    "CardStyle": "",
+    "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/16254.png",
+    "Cost": "3",
+    "Attack": "1",
+    "Stamina": "4",
+    "Description": "",
+    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/7.png",
+    "Nation": "http://fh13.fhcdn.com/static/img/nations/95.png",
+    "Position": "Goalkeeper",
+    "Hearthstone" : ""
+  },
+  {
+    "Id": "150724",
+    "Name": "Joe Hart",
+    "ShortName": "Joe Hart",
+    "CardType": "Player",
+    "CardStyle": "",
+    "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/150724.png",
+    "Cost": "3",
+    "Attack": "3",
+    "Stamina": "3",
+    "Description": "",
+    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/10.png",
+    "Nation": "http://fh13.fhcdn.com/static/img/nations/4.png",
+    "Position": "Goalkeeper",
+    "Hearthstone" : ""
+  },
+  {
+    "Id": "173426",
+    "Name": "Simon Mignolet",
+    "ShortName": "Mignolet",
+    "CardType": "Player",
+    "CardStyle": "",
+    "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/173426.png",
+    "Cost": "4",
+    "Attack": "3",
+    "Stamina": "4",
+    "Description": "",
+    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/9.png",
+    "Nation": "http://fh13.fhcdn.com/static/img/nations/7.png",
+    "Position": "Goalkeeper",
     "Hearthstone" : ""
   }
 ]
