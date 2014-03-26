@@ -777,5 +777,53 @@
     "Position": "Defender",
     "PlayerDataUrl": "http://www.futhead.com/14/players/146562/",
     "Hearthstone" : "Northshire Cleric"
+  },
+  {
+    "Id": "12740",
+    "Name": "Lionel Messi",
+    "ShortName": "Messi",
+    "CardType": "Player",
+    "CardStyle": "Total",
+    "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/158023.png",
+    "Cost": "10",
+    "Attack": "10",
+    "Stamina": "8",
+    "Description": "",
+    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/241.png",
+    "Nation": "http://fh13.fhcdn.com/static/img/nations/52.png",
+    "Position": "Attacker",
+    "Hearthstone" : ""
+  },
+  {
+    "Id": "12742",
+    "Name": "Cristiano Ronaldo",
+    "ShortName": "Ronaldo",
+    "CardType": "Player",
+    "CardStyle": "Total",
+    "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/20801.png",
+    "Cost": "10",
+    "Attack": "10",
+    "Stamina": "8",
+    "Description": "",
+    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/241.png",
+    "Nation": "http://fh13.fhcdn.com/static/img/nations/38.png",
+    "Position": "Attacker",
+    "Hearthstone" : ""
+  },
+  {
+    "Id": "12472",
+    "Name": "Gianfranco Zola",
+    "ShortName": "Zola",
+    "CardType": "Player",
+    "CardStyle": "Total",
+    "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/1201.png",
+    "Cost": "10",
+    "Attack": "10",
+    "Stamina": "8",
+    "Description": "",
+    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/999.png",
+    "Nation": "http://fh13.fhcdn.com/static/img/nations/27.png",
+    "Position": "Attacker",
+    "Hearthstone" : ""
   }
 ]
