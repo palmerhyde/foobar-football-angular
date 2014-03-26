@@ -80,6 +80,7 @@ function ConvertGameToGameViewAwayTeam(game, userId) {
     return gameView;
 }
 
+// TODO: Reuse this logic
 function SanitizeGame(game)
 {
     if (!game.HomeTeam.Deck) {
