@@ -34,6 +34,7 @@ var listen = function () {
                 opponentsTeam = game.AwayTeam;
                 opponentsTeam.Mana = game.Turn;
                 DealCard(opponentsTeam.Deck, opponentsTeam.Hand);
+                WarmUpPlayers(opponentsTeam.Pitch);
             }
 
             if (game.AwayTeam.UserId  == userId) {
@@ -43,6 +44,7 @@ var listen = function () {
                 opponentsTeam = game.HomeTeam;
                 opponentsTeam.Mana = game.Turn;
                 DealCard(opponentsTeam.Deck, opponentsTeam.Hand);
+                WarmUpPlayers(opponentsTeam.Pitch);
             }
 
             game.WhosTurnIsIt = opponentsTeam.UserId;
@@ -55,8 +57,22 @@ var listen = function () {
     });
 };
 
+function WarmUpPlayers(players) {
+    if (players) {
+        for (var i=0; i < players.length; i++) {
+            players[i].IsWarmingUp = false;
+        }
+    }
+}
+
+// TODO: unit test this logic.
 function DealCard(deck, hand) {
-    if (deck.length > 0 ) {
+    if (deck && deck.length > 0) {
+
+        if (!hand) {
+            hand = [];
+        }
+
         hand.push(deck[0]);
         deck.splice(0, 1);
     } 

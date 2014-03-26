@@ -61,6 +61,7 @@ var listen = function () {
 
                 yourTeam.Hand = _.without(yourTeam.Hand, card[0]);
                 yourTeam.Mana = yourTeam.Mana - card[0].Cost;
+                warmUpPlayer(card[0]);
 
                 // save yourteam back up to the game
                 // TODO: use actual game id instead of test.
@@ -71,4 +72,11 @@ var listen = function () {
         snapshot.ref().remove();
     });
 };
+
+function warmUpPlayer(card) {
+    if(card) {
+        card.IsWarmingUp = true;
+    }
+}
+
 exports.listen = listen;
