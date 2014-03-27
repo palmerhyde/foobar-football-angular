@@ -25,20 +25,20 @@
                     <!-- Your Goalkeepers -->
                     <div ng-repeat="player in game.YourTeamPitch | filter: { Position: 'Goalkeeper' }" class="card-pitch">
 						<card-player-pitch data="player"></card-player-pitch>
-						<div class="btn-group">
+						<div class="btn-group" data-ng-show="!player.IsWarmingUp">
 						  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
 						    <span class="caret"></span>
 						    <span class="sr-only">Toggle Dropdown</span>
 						  </button>
 						  <ul class="dropdown-menu" role="menu">
 						    <li ng-repeat="targetPlayer in game.OpponentsTeamPitch" >
-								<a class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)" data-ng-show="!player.IsWarmingUp">
+								<a class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)" >
 		                        	Attack {{targetPlayer.ShortName}}
 		                        </a>
 							</li>
 						    <li class="divider"></li>
 						    <li>
-						    	<a class="btn" data-ng-click="playerAttackManager(player)" data-ng-show="!player.IsWarmingUp">Attack Manager</a>
+						    	<a class="btn" data-ng-click="playerAttackManager(player)">Attack Manager</a>
 						    </li>
 						  </ul>
 						</div> 
@@ -48,20 +48,20 @@
                     <!-- Your Defenders -->
                     <div ng-repeat="player in game.YourTeamPitch | filter: { Position: 'Defender' }" class="card-pitch">
 						<card-player-pitch data="player"></card-player-pitch>
-                        <div class="btn-group">
+                        <div class="btn-group" data-ng-show="!player.IsWarmingUp">
 						  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
 						    <span class="caret"></span>
 						    <span class="sr-only">Toggle Dropdown</span>
 						  </button>
 						  <ul class="dropdown-menu" role="menu">
 						    <li ng-repeat="targetPlayer in game.OpponentsTeamPitch" >
-								<a class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)" data-ng-show="!player.IsWarmingUp">
+								<a class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)">
 		                        	Attack {{targetPlayer.ShortName}}
 		                        </a>
 							</li>
 						    <li class="divider"></li>
 						    <li>
-						    	<a class="btn" data-ng-click="playerAttackManager(player)" data-ng-show="!player.IsWarmingUp">Attack Manager</a>
+						    	<a class="btn" data-ng-click="playerAttackManager(player)">Attack Manager</a>
 						    </li>
 						  </ul>
 						</div> 
@@ -71,20 +71,20 @@
                     <!-- Your Midfielders -->
                     <div ng-repeat="player in game.YourTeamPitch | filter: { Position: 'Midfielder' }" class="card-pitch">
 						<card-player-pitch data="player"></card-player-pitch>
-                        <div class="btn-group">
+                        <div class="btn-group" data-ng-show="!player.IsWarmingUp">
 						  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
 						    <span class="caret"></span>
 						    <span class="sr-only">Toggle Dropdown</span>
 						  </button>
 						  <ul class="dropdown-menu" role="menu">
 						    <li ng-repeat="targetPlayer in game.OpponentsTeamPitch" >
-								<a class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)" data-ng-show="!player.IsWarmingUp">
+								<a class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)">
 		                        	Attack {{targetPlayer.ShortName}}
 		                        </a>
 							</li>
 						    <li class="divider"></li>
 						    <li>
-						    	<a class="btn" data-ng-click="playerAttackManager(player)" data-ng-show="!player.IsWarmingUp">Attack Manager</a>
+						    	<a class="btn" data-ng-click="playerAttackManager(player)">Attack Manager</a>
 						    </li>
 						  </ul>
 						</div> 
@@ -94,20 +94,20 @@
                     <!-- Your Attackers -->
                     <div ng-repeat="player in game.YourTeamPitch | filter: { Position: 'Attacker' }" class="card-pitch">
 						<card-player-pitch data="player"></card-player-pitch>
-                        <div class="btn-group">
+                        <div class="btn-group" data-ng-show="!player.IsWarmingUp">
 						  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
 						    <span class="caret"></span>
 						    <span class="sr-only">Toggle Dropdown</span>
 						  </button>
 						  <ul class="dropdown-menu" role="menu">
 						    <li ng-repeat="targetPlayer in game.OpponentsTeamPitch" >
-								<a class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)" data-ng-show="!player.IsWarmingUp">
+								<a class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)">
 		                        	Attack {{targetPlayer.ShortName}}
 		                        </a>
 							</li>
 						    <li class="divider"></li>
 						    <li>
-						    	<a class="btn" data-ng-click="playerAttackManager(player)" data-ng-show="!player.IsWarmingUp">Attack Manager</a>
+						    	<a class="btn" data-ng-click="playerAttackManager(player)">Attack Manager</a>
 						    </li>
 						  </ul>
 						</div> 
