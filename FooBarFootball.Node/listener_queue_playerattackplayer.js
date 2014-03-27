@@ -80,6 +80,8 @@ var listen = function () {
                 // TODO: move to discard pile.
             }
 
+            WarmUpPlayer(card[0]);
+
             // Save the actual game
             ServiceFirebase.Set("Games", "test", game);
         });
@@ -87,4 +89,11 @@ var listen = function () {
         snapshot.ref().remove();
     });
 };
+
+function WarmUpPlayer(card) {
+    if(card) {
+        card.IsWarmingUp = true;
+    }
+}
+
 exports.listen = listen;
