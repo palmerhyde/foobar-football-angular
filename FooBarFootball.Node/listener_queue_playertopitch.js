@@ -58,7 +58,6 @@ var listen = function () {
                 }
 
                 yourTeam.Pitch.push(card[0]);
-
                 yourTeam.Hand = _.without(yourTeam.Hand, card[0]);
                 yourTeam.Mana = yourTeam.Mana - card[0].Cost;
                 warmUpPlayer(card[0]);

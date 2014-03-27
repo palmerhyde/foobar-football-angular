@@ -805,7 +805,7 @@
     "Attack": "10",
     "Stamina": "8",
     "Description": "",
-    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/241.png",
+    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/243.png",
     "Nation": "http://fh13.fhcdn.com/static/img/nations/38.png",
     "Position": "Attacker",
     "Hearthstone" : ""
@@ -907,18 +907,18 @@
     "Hearthstone" : ""
   },
   {
-    "Id": "173426",
-    "Name": "Simon Mignolet",
-    "ShortName": "Mignolet",
+    "Id": "666",
+    "Name": "Ed Pearson",
+    "ShortName": "Pearson",
     "CardType": "Player",
     "CardStyle": "",
-    "PictureUrl": "http://fh13.fhcdn.com/static/img/14/players/173426.png",
-    "Cost": "4",
-    "Attack": "3",
-    "Stamina": "4",
+    "PictureUrl": "https://scontent-a-ams.xx.fbcdn.net/hphotos-ash2/t1.0-9/183694_10150158102624276_2294312_n.jpg",
+    "Cost": "6",
+    "Attack": "6",
+    "Stamina": "6",
     "Description": "",
-    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/9.png",
-    "Nation": "http://fh13.fhcdn.com/static/img/nations/7.png",
+    "Club": "http://fh13.fhcdn.com/static/img/14/clubs/243.png",
+    "Nation": "http://fh13.fhcdn.com/static/img/nations/95.png",
     "Position": "Goalkeeper",
     "Hearthstone" : ""
   }
