@@ -25,40 +25,92 @@
                     <!-- Your Goalkeepers -->
                     <div ng-repeat="player in game.YourTeamPitch | filter: { Position: 'Goalkeeper' }" class="card-pitch">
 						<card-player-pitch data="player"></card-player-pitch>
-                        <a ng-repeat="targetPlayer in game.OpponentsTeamPitch" class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)" data-ng-show="!player.IsWarmingUp">
-                        	Attack {{targetPlayer.ShortName}}
-                        </a>
-                        <a class="btn" data-ng-click="playerAttackManager(player)" data-ng-show="!player.IsWarmingUp">Attack manager</a>
+						<div class="btn-group">
+						  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+						    <span class="caret"></span>
+						    <span class="sr-only">Toggle Dropdown</span>
+						  </button>
+						  <ul class="dropdown-menu" role="menu">
+						    <li ng-repeat="targetPlayer in game.OpponentsTeamPitch" >
+								<a class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)" data-ng-show="!player.IsWarmingUp">
+		                        	Attack {{targetPlayer.ShortName}}
+		                        </a>
+							</li>
+						    <li class="divider"></li>
+						    <li>
+						    	<a class="btn" data-ng-click="playerAttackManager(player)" data-ng-show="!player.IsWarmingUp">Attack Manager</a>
+						    </li>
+						  </ul>
+						</div> 
                     </div>
                 </div>
                 <div class="col-md-1 drop">
                     <!-- Your Defenders -->
                     <div ng-repeat="player in game.YourTeamPitch | filter: { Position: 'Defender' }" class="card-pitch">
 						<card-player-pitch data="player"></card-player-pitch>
-                        <a ng-repeat="targetPlayer in game.OpponentsTeamPitch" class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)" data-ng-show="!player.IsWarmingUp">
-                        	Attack {{targetPlayer.ShortName}}
-                        </a>
-                        <a class="btn" data-ng-click="playerAttackManager(player)" data-ng-show="!player.IsWarmingUp">Attack manager</a>
+                        <div class="btn-group">
+						  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+						    <span class="caret"></span>
+						    <span class="sr-only">Toggle Dropdown</span>
+						  </button>
+						  <ul class="dropdown-menu" role="menu">
+						    <li ng-repeat="targetPlayer in game.OpponentsTeamPitch" >
+								<a class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)" data-ng-show="!player.IsWarmingUp">
+		                        	Attack {{targetPlayer.ShortName}}
+		                        </a>
+							</li>
+						    <li class="divider"></li>
+						    <li>
+						    	<a class="btn" data-ng-click="playerAttackManager(player)" data-ng-show="!player.IsWarmingUp">Attack Manager</a>
+						    </li>
+						  </ul>
+						</div> 
                     </div>
                 </div>
                 <div class="col-md-1 drop">
                     <!-- Your Midfielders -->
                     <div ng-repeat="player in game.YourTeamPitch | filter: { Position: 'Midfielder' }" class="card-pitch">
 						<card-player-pitch data="player"></card-player-pitch>
-                        <a ng-repeat="targetPlayer in game.OpponentsTeamPitch" class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)" data-ng-show="!player.IsWarmingUp">
-                        	Attack {{targetPlayer.ShortName}}
-                        </a>
-                        <a class="btn" data-ng-click="playerAttackManager(player)" data-ng-show="!player.IsWarmingUp">Attack manager</a>
+                        <div class="btn-group">
+						  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+						    <span class="caret"></span>
+						    <span class="sr-only">Toggle Dropdown</span>
+						  </button>
+						  <ul class="dropdown-menu" role="menu">
+						    <li ng-repeat="targetPlayer in game.OpponentsTeamPitch" >
+								<a class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)" data-ng-show="!player.IsWarmingUp">
+		                        	Attack {{targetPlayer.ShortName}}
+		                        </a>
+							</li>
+						    <li class="divider"></li>
+						    <li>
+						    	<a class="btn" data-ng-click="playerAttackManager(player)" data-ng-show="!player.IsWarmingUp">Attack Manager</a>
+						    </li>
+						  </ul>
+						</div> 
                     </div>
                 </div>
                 <div class="col-md-1 drop">
                     <!-- Your Attackers -->
                     <div ng-repeat="player in game.YourTeamPitch | filter: { Position: 'Attacker' }" class="card-pitch">
 						<card-player-pitch data="player"></card-player-pitch>
-                        <a ng-repeat="targetPlayer in game.OpponentsTeamPitch" class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)" data-ng-show="!player.IsWarmingUp">
-                        	Attack {{targetPlayer.ShortName}}
-                        </a>
-                        <a class="btn" data-ng-click="playerAttackManager(player)" data-ng-show="!player.IsWarmingUp">Attack manager</a>
+                        <div class="btn-group">
+						  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+						    <span class="caret"></span>
+						    <span class="sr-only">Toggle Dropdown</span>
+						  </button>
+						  <ul class="dropdown-menu" role="menu">
+						    <li ng-repeat="targetPlayer in game.OpponentsTeamPitch" >
+								<a class="btn" data-ng-click="playerAttackPlayer(player, targetPlayer)" data-ng-show="!player.IsWarmingUp">
+		                        	Attack {{targetPlayer.ShortName}}
+		                        </a>
+							</li>
+						    <li class="divider"></li>
+						    <li>
+						    	<a class="btn" data-ng-click="playerAttackManager(player)" data-ng-show="!player.IsWarmingUp">Attack Manager</a>
+						    </li>
+						  </ul>
+						</div> 
                     </div>
                 </div>
                 <div class="col-md-1">
@@ -102,7 +154,6 @@
                     <div class="card facedown scaledown">
 				        <div class="num">{{game.YourTeamDeckCount}}</div>
 				    </div>
-                    <a class="btn" data-ng-click="resetGame()">Reset game</a>
                 </div>
                 <div class="col-md-10">
                 	<div class="myhand">
@@ -143,6 +194,7 @@
 			            <div data-ng-show="isPlaying">
 			                <h4>Waitig for opponent to join your game.</h4>
 			            </div>
+			            <a class="btn" data-ng-click="resetGame()">Reset game</a>
 		            </div>
 		        </div>
             </div>
