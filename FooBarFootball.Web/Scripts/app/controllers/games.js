@@ -1,16 +1,12 @@
-fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase', function ($scope, $http, $firebase) {
+fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase', '$routeParams', function ($scope, $http, $firebase, $routeParams) {
     $scope.title = "FooBar Football - Games";
 
-    // TODO: why is there a strongly coupled call to new Firebase when we have a $firebase instance passed by DI?
-    // TODO: make a game service with 3 way binding
-    var games = new Firebase("https://foobarfootball.firebaseio.com/Games");
-
-    // TODO: replace 0 with user.id
-    var user = new Firebase("https://foobarfootball.firebaseio.com/Users/0");
-    var queues = new Firebase("https://foobarfootball.firebaseio.com/Queues/PlayPlayerCardFromHandToPitch");
+        // TODO: replace 0 with user.id
+    // TODO: Replace multi queues with big queue
+    var user = new Firebase("https://foobarfootball.firebaseio.com/Users/" + $routeParams.id);
+    var queues = new Firebase("https://foobarfootball.firebaseio.com/Queues/");
     var userObject;
 
-    // TODO: get the gameview from firebase.
     user.on('value', function (snapshot) {
         // TODO: replace snapshot.name() with user.id
         userObject = snapshot.name();
@@ -18,24 +14,26 @@ fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase',
         $scope.$apply();
     });
 
-    $scope.games = $firebase(games);
-;
-
-    $scope.createGame = function () {
-        // Push your manager / fb id if you are not already playing a game
-        var gameId = games.push({ Id: "0", Name: "Liam Molloy", State: "Waiting" });
-
-        // push game id to the manager
-        user.child('Game').set(gameId.toString());
-        user.child('IsPlaying').set(true);
-        $scope.isPlaying = true;
-    };
-
-    $scope.joinGame = function (game) {
-        console.log(game)
-    };
-
+    
     $scope.playPlayerCardFromHandToPitch = function (card) {
-        var cardPlayed = queues.push({ GameId: 1, CardId: card.Id, UserId: userObject });
+        var cardPlayed = queues.child('PlayPlayerCardFromHandToPitch').push({ GameId: 1, CardId: card.Id, UserId: userObject });
     };
+
+    $scope.playerAttackPlayer = function (card, targetCard) {
+        var cardPlayed = queues.child('PlayerAttackPlayer').push({ GameId: "test", CardId: card.Id, TargetCardId: targetCard.Id, UserId: userObject });
+    };
+
+    $scope.playerAttackManager = function (card, targetCard) {
+        var cardPlayed = queues.child('PlayerAttackManager').push({GameId: "test", CardId: card.Id, UserId: userObject });
+    };
+
+    $scope.endTurn = function (card) {
+        var cardPlayed = queues.child('EndTurn').push({ GameId: "test", UserId: userObject });
+    };
+
+    $scope.resetGame = function () {
+        var cardPlayed = queues.child('ResetGame').push({GameId: "test", UserId: userObject });
+    };
+    
+    $( ".game-controls" ).draggable({ containment: "body" });
 }]);

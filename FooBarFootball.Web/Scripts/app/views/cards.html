@@ -1,17 +1,16 @@
 ﻿<div id="body">
     <br />
     <section class="cards" ng-controller="CardsController">
-        <div class="search">
-            <label>Search by name: </label>
-            <input type="text" ng-model="searchTerm"/>
-        </div>
         <div class="clear"></div>
-        <div ng-repeat="player in players | filter: {prototype.name: searchTerm}" class="card" >
-            <card-player data="player"></card-player>
-        </div>
-        <!-- Moves -->
-        <div ng-repeat="move in moves | filter: {name: searchTerm}" class="card" >
-            <card-move data="move"></card-move>
-        </div>
+
+        <div ng-repeat="card in cards track by $index" ng-switch on="card.cardType" class="card {{card.style}}">
+        	<div>{{card.cardType}}</div>
+	        <card-player data="card" ng-switch-when="Player"></card-player>
+	        <card-manager data="card" ng-switch-when="Manager"></card-manager>
+	        <card-move data="card" ng-switch-when="Move"></card-move>
+	        <card-tactic data="card" ng-switch-when="Tactic"></card-tactic>
+	    </div>
+        
+        
     </section>
 </div>

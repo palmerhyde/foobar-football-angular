@@ -1,8 +1,8 @@
 ﻿<div id="body">
     <br />
-    <section class="cards" ng-controller="ManagerCardsController">
+    <section class="cards">
         <!-- Manager -->
-        <div ng-repeat="manager in managers | filter: {name: searchTerm}" class="card {{manager.prototype.style}}" >
+        <div ng-repeat="manager in managers" class="card {{manager.Style}}" >
             <card-manager data="manager"></card-manager>
         </div>
     </section>

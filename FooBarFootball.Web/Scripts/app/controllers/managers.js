@@ -1,13 +1,7 @@
-fooBarControllers.controller('ManagerCardsController', ['$scope', '$http', function ($scope, $http) {
-    $scope.title = "FooBar Football - Manager Cards";
+fooBarControllers.controller('ManagerCardsController', ['$scope', '$http', '$firebase', function ($scope, $http, $firebase) {
+    $scope.title = "FooBar Football - Managers";
     $scope.managers = [];
-    
-    $http.get('/api/managers').then(function(data) {
-        var managersArr = [];
-        for (var i = 0; i < data.data.length; i++) {
-            var manager = new ModelManager(data.data[i]);
-            managersArr.push(manager);
-        }
-        $scope.managers = managersArr;
-    });
+
+    var managersRef = new Firebase("https://foobarfootball.firebaseio.com/Managers");
+    $scope.managers = $firebase(managersRef);
 }]);
