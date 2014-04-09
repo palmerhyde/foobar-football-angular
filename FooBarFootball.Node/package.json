@@ -1,0 +1,12 @@
+{
+  "name": "FooBarFootballGameRulesEngine",
+  "description": "FooBar Football game rules engine",
+  "version": "0.0.1",
+  "private": true,
+  "main": "server.js",
+  "dependencies": {
+    "firebase": "*",
+    "underscore": "*",
+    "q" : "*"
+  }
+}
