@@ -1,13 +1,5 @@
 console.log('FooBar Football server starting...');
-var queue_playertopitch = require('./listener_queue_playertopitch');
-var queue_playerattackplayer = require('./listener_queue_playerattackplayer');
-var queue_playerattackmanager = require('./listener_queue_playerattackmanager');
-var queue_endturn = require('./listener_queue_endturn');
-var queue_resetgame = require('./listener_queue_resetgame');
 var game_listener = require('./listener_game');
-queue_playertopitch.listen();
-queue_playerattackplayer.listen();
-queue_playerattackmanager.listen();
-queue_endturn.listen();
-queue_resetgame.listen();
+var queues = require('./listener_queue');
+queues.listen();
 game_listener.listen();

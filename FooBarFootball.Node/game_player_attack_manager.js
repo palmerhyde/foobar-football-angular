@@ -1,24 +1,7 @@
-var listen = function () {
-    console.log('Queue: PlayerAttackManager/');
-    
+var playTurn = function playTurn(game, userId, cardId) {
     var ServiceFirebase = require('./service_firebase');
-    var Firebase = require('firebase');
-    var Q = require('q');
     var _ = require('underscore');
-    
-    var queueRef = new Firebase('https://foobarfootball.firebaseio.com/Queues/PlayerAttackManager');
-    queueRef.on('child_added', function (snapshot) {
-        var cardId = snapshot.val().CardId;
-        var userId = snapshot.val().UserId;
-        var gameId = snapshot.val().GameId;
-
-        // TODO: get the real game
-        var gamePromise = ServiceFirebase.Find("Games", "test");
-        var all = Q.all([gamePromise]);
-
-        all.then(function() {
-            var game = gamePromise.valueOf();
-            var yourTeam;
+    var yourTeam;
             var opponentsTeam;
             
             if (game == null) {
@@ -62,17 +45,14 @@ var listen = function () {
             WarmUpPlayer(card[0]);
 
             // Save the actual game
-            ServiceFirebase.Set("Games", "test", game);
-        });
+            ServiceFirebase.Set("Games", game.Id, game);
+}
 
-        snapshot.ref().remove();
-    });
-};
-
+// TODO: move to shared logic
 function WarmUpPlayer(card) {
     if(card) {
         card.IsWarmingUp = true;
     }
 }
 
-exports.listen = listen;
+exports.playTurn = playTurn;

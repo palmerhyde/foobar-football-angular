@@ -1,23 +1,10 @@
-var listen = function () {
-    console.log('Queue: Reset Game');
-    
+var playTurn = function playTurn(game) {
     var ServiceFirebase = require('./service_firebase');
-    var Firebase = require('firebase');
-    var Q = require('q');
     var _ = require('underscore');
     
-    var queueRef = new Firebase('https://foobarfootball.firebaseio.com/Queues/ResetGame');
-    queueRef.on('child_added', function (snapshot) {
-        var gameId = snapshot.val().GameId;
-
-        // TODO: get the real game
-        var gamePromise = ServiceFirebase.Find("Games", "test");
-        var all = Q.all([gamePromise]);
-
-        all.then(function() {
-            var game = gamePromise.valueOf();
-            var resetGame = {
-            "Id": "152879",
+    // TODO: move to data file or into firebase.
+    var resetGame = {
+            "Id": game.Id,
             "WhosTurnIsIt" : "0",
             "State" : "Playing",
             "Turn" : 1,
@@ -442,11 +429,8 @@ var listen = function () {
           resetGame.AwayTeam.Hand = _.first(resetGame.AwayTeam.Deck, 3);
           resetGame.AwayTeam.Deck.splice(0, 3);
 
-            // Save the actual game
-            ServiceFirebase.Set("Games", "test", resetGame);
-        });
+          // Save the actual game
+          ServiceFirebase.Set("Games", game.Id, resetGame);
+}
 
-        snapshot.ref().remove();
-    });
-};
-exports.listen = listen;
+exports.playTurn = playTurn;
