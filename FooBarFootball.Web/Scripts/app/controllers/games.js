@@ -16,23 +16,23 @@ fooBarControllers.controller('GamesController', ['$scope', '$http', '$firebase',
 
     
     $scope.playPlayerCardFromHandToPitch = function (card) {
-        var cardPlayed = queues.child('PlayPlayerCardFromHandToPitch').push({ GameId: 1, CardId: card.Id, UserId: userObject });
+        var cardPlayed = queues.child('PlayPlayerCardFromHandToPitch').push({ GameId: $scope.game.Id, CardId: card.Id, UserId: userObject });
     };
 
     $scope.playerAttackPlayer = function (card, targetCard) {
-        var cardPlayed = queues.child('PlayerAttackPlayer').push({ GameId: "test", CardId: card.Id, TargetCardId: targetCard.Id, UserId: userObject });
+        var cardPlayed = queues.child('PlayerAttackPlayer').push({ GameId: $scope.game.Id, CardId: card.Id, TargetCardId: targetCard.Id, UserId: userObject });
     };
 
     $scope.playerAttackManager = function (card, targetCard) {
-        var cardPlayed = queues.child('PlayerAttackManager').push({GameId: "test", CardId: card.Id, UserId: userObject });
+        var cardPlayed = queues.child('PlayerAttackManager').push({GameId: $scope.game.Id, CardId: card.Id, UserId: userObject });
     };
 
     $scope.endTurn = function (card) {
-        var cardPlayed = queues.child('EndTurn').push({ GameId: "test", UserId: userObject });
+        var cardPlayed = queues.child('EndTurn').push({ GameId: $scope.game.Id, UserId: userObject });
     };
 
     $scope.resetGame = function () {
-        var cardPlayed = queues.child('ResetGame').push({GameId: "test", UserId: userObject });
+        var cardPlayed = queues.child('ResetGame').push({GameId: $scope.game.Id, UserId: userObject });
     };
     
     $( ".game-controls" ).draggable({ containment: "body" });

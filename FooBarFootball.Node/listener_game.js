@@ -1,5 +1,5 @@
 var listen = function () {
-    console.log('Listener: Game');
+    console.log('Listener: Games');
     
     var ServiceFirebase = require('./service_firebase');
     var Firebase = require('firebase');
