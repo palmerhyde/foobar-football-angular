@@ -1,0 +1,196 @@
+/* Cards
+----------------------------------------------------------*/
+.cards .card {
+    float: left;
+    margin: 20px; 
+    position: relative;
+}
+
+.card {
+    height: 320px;
+    width: 223px;
+    border: 10px solid black;
+    border-radius: 10px;
+    background-color: #777;
+    padding: 5px;
+    position: relative;
+}
+
+.card.generic {
+    background-image:url('../images/cards/genericbg.jpg');
+}
+
+.card.total {
+    background-color: #f68b32;
+    background-image:url('../images/cards/totalbg.jpg');
+}
+
+.card.organised {
+    background-color: green;
+    background-image:url('../images/cards/organisedbg.jpg');
+}
+
+.card.latin {
+    background-color: red;
+    background-image:url('../images/cards/latinbg.jpg');
+}
+
+.card.physical {
+    background-color: purple;
+    background-image:url('../images/cards/physicalbg.jpg');
+}
+
+.card.counter {
+    background-color: black;
+    background-image:url('../images/cards/counterbg.jpg');
+}
+
+.card .club {
+    width: 22px;
+    left: 17px;
+}
+
+.card .nation {
+    width: 30px;
+    right: 17px;
+}
+
+.card .club, .card .nation {
+    position: absolute;
+    z-index: 1000;
+    top: 40px;
+}
+
+.card .title, .card .type,
+.card .photo, .card .attrs {
+    background-color: #999;
+}
+
+.card .title, .card .type {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 3px 10px;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+
+
+.card .photo, .card .attrs {
+    margin: 0px 10px;
+}
+
+.card .photo img {
+    width: 115px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+.card .attack, 
+.card .defence, 
+.card .title .score,
+.card-pitch .attack,
+.card-pitch .defence {
+    background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
+    background-color: red;
+    border: 2px solid white;
+    border-radius: 12px; /* one half of ( (border * 2) + height + padding ) */
+    box-shadow: 1px 1px 1px black;
+    color: white;
+    font: bold 15px/13px Helvetica, Verdana, Tahoma;
+    height: 23px; 
+    min-width: 14px;
+    padding: 4px 5px 0 5px;
+    text-align: center;
+    bottom: 0px;
+    position: absolute;
+}
+
+.card-pitch .attack,
+.card-pitch .defence {
+	top: 0;
+}
+
+.card .title .score {
+    background-color: blue;
+    right: 7px;
+    top: 7px;
+}
+
+.card .attack,
+.card-pitch .attack {
+    background-color: green;
+    left: 0px;
+}
+
+.card .defence,
+.card-pitch .defence {
+    background-color: red;
+    right: 0px;
+}
+
+.card-pitch .attack {
+	left: auto;
+    right: -5px;
+}
+
+.card-pitch .defence {
+    right: -14px;
+    top: 22px;
+}
+
+
+.card .type {
+    /*margin-top: -4px;*/
+}
+
+.card .attrs {
+    border: 2px solid black;
+    padding: 2px 10px;
+    margin-top: -2px;
+    font-size: 11px;
+    height: 120px;
+    overflow: auto;
+}
+
+.card .attrs.moves {
+    height: 150px;
+}
+
+.card .attrs .header {
+    background-color: #777777;
+    margin-left: -10px;
+    padding: 0 5px;
+    width: 113%;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    margin-top: -2px;
+}
+
+.card .attrs .header.last {
+    margin-top: 10px;
+}
+
+.card .attrs .key {
+    font-weight: 700;
+    /*min-width: 136px;*/
+    display: inline-block;
+}
+
+.card .attrs .value {
+    float: right;
+}
+
+.card.facedown {
+    background: #fff url("../images/cardback.png") no-repeat center center;
+}
+
+.card.facedown .num {
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+}

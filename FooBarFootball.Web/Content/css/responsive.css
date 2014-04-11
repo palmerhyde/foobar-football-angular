@@ -1,0 +1,126 @@
+/*********************************
+ * Screen sizes 
+ *********************************/
+
+@media all and (max-height: 800px) {
+    .pitch {
+		background: transparent url("../images/pitch-802x272.jpg") no-repeat center center;
+		height: 273px;
+	}
+	
+	.myhand .card, .card.scaledown {
+		/*General*/
+		transform: scale(0.5, 0.5);
+		/*Firefox*/
+		-moz-transform: scale(0.5, 0.5);
+		/*Microsoft Internet Explorer*/
+		-ms-transform: scale(0.5, 0.5);
+		/*Chrome, Safari*/
+		-webkit-transform: scale(0.5, 0.5);
+		/*Opera*/
+		-o-transform: scale(0.5, 0.5);
+	}
+	
+	.game-info .club {
+		padding: 0;
+	}
+	
+	.opp-manager {
+		right: 25px;
+		top: -79px;
+	}
+	
+	.your-manager {
+		left: 29px;
+		bottom: -80px;
+	}
+	
+	.game-controls {
+		width: 150px;
+	}
+	
+	.game-controls h4, .game-controls .body {
+		padding: 5px;
+	}
+	
+	.card-pitch .btn-group {
+		margin-top: -10px;
+	}
+	
+	.card-pitch {
+		margin-bottom: 0px;
+	}
+
+	
+	.card-pitch img {
+		border-radius: 50%;
+		width: 35px;
+		border: 1px solid #FFFFFF;
+	 	margin: 5px;
+	 	box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.3), 
+	             	0px 3px 5px 0px rgba(0, 0, 0, 0.6); 
+	}
+	
+	.card-pitch label {
+		text-align: center;
+		margin-left: -13px;
+		width: 61px;
+		font-size: 11px;
+	}
+	.card-pitch a {
+		padding: 2px;
+	}
+
+	.card-pitch .attack, .card-pitch .defence {
+		border: 2px solid white;
+		border-radius: 12px;
+		font: bold 11px/11px Helvetica, Verdana, Tahoma;
+		height: 17px;
+		min-width: 10px;
+		padding: 1px 3px 0 3px;
+		bottom: 0px;
+	}
+	
+	.card-pitch .attack {
+		left: auto;
+		right: 14px;
+	}
+
+	.card-pitch .defence {
+		right: 11px;
+		top: 17px;
+	}	
+	
+	.your-manager:hover {
+		margin-left: -30px;
+		margin-right: 30px;
+		/*General*/
+		transform: translate(0px, -48px) scale(1, 1);
+		/*Firefox*/
+		-moz-transform: translate(0px, -48px) scale(1, 1);
+		/*Microsoft Internet Explorer*/
+		-ms-transform: translate(0px, -48px) scale(1, 1);
+		/*Chrome, Safari*/
+		-webkit-transform: translate(0px, -48px) scale(1, 1);
+		/*Opera*/
+		-o-transform: translate(0px, -48px) scale(1, 1);
+		z-index: 10000;
+	}
+	
+	.opp-manager:hover {
+		margin-left: -30px;
+		margin-right: 30px;
+		/*General*/
+		transform: translate(0px, 48px) scale(1, 1);
+		/*Firefox*/
+		-moz-transform: translate(0px, 48px) scale(1, 1);
+		/*Microsoft Internet Explorer*/
+		-ms-transform: translate(0px, 48px) scale(1, 1);
+		/*Chrome, Safari*/
+		-webkit-transform: translate(0px, 48px) scale(1, 1);
+		/*Opera*/
+		-o-transform: translate(0px, 48px) scale(1, 1);
+		z-index: 10000;
+	}	
+}
+
