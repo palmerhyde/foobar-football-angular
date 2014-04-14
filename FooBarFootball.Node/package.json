@@ -7,6 +7,13 @@
   "dependencies": {
     "firebase": "*",
     "underscore": "*",
-    "q" : "*"
+    "q" : "*",
+    "should": "*",
+    "istanbul" : "*",
+    "mocha-istanbul": "*"
+  },
+  "scripts" : { 
+    "test" : "mocha",
+    "test" : "istanbul cover node_modules/mocha/bin/_mocha"
   }
 }
