@@ -1,15 +1,34 @@
 var playTurn = function playTurn(game, userId, cardId, targetCardId) {
-    var ServiceFirebase = require('./service_firebase');
     var _ = require('underscore');
+    var WarmUp = require('./effect_warmup');
+    var Validate = require('./helper_validation.js');
+    var DeckHelper = require('./helper_deck.js');
     var yourTeam;
     var opponentsTeam;
     
-    if (game == null) {
-        console.log('game not found');
+    if (typeof game == 'undefined') {
+        throw new Error('missing game parameter');
+    }
+
+    if (typeof userId == 'undefined') {
+        throw new Error('missing userId parameter');
+    }
+
+    if (typeof cardId == 'undefined') {
+        throw new Error('missing cardId parameter');
+    }
+
+    if (typeof targetCardId == 'undefined') {
+        throw new Error('missing targetCardId parameter');
+    }
+
+
+    if (!Validate.validateGame(game)) {
+        throw new Error('not a valid game');
     }
 
     if (game.WhosTurnIsIt != userId) {
-        console.log('Its not your turn get out of here')
+        throw new Error('its not your turn');
     }
 
     if (game.HomeTeam.UserId  == userId) {
@@ -22,30 +41,17 @@ var playTurn = function playTurn(game, userId, cardId, targetCardId) {
         opponentsTeam = game.HomeTeam;
     }
 
-    // get the cards from the pitch
-    if (!yourTeam.Pitch) {
-        yourTeam.Pitch = [];
-    }
-    var card = yourTeam.Pitch.filter(function( obj ) {
-        return obj.Id == cardId;
-    });
-
-    if (!opponentsTeam.Pitch) {
-        opponentsTeam.Pitch = [];
-    }
-
-     var targetCard = opponentsTeam.Pitch.filter(function( obj ) {
-        return obj.Id == targetCardId;
-    });
+    var card = DeckHelper.findCardInDeck(cardId, yourTeam.Pitch);
+    var targetCard = DeckHelper.findCardInDeck(targetCardId, opponentsTeam.Pitch);
 
     if (card == null || card[0] == null)
     {
-        console.log('card not found');
+        throw new Error('card not on pitch');
     }
 
     if (targetCard == null || targetCard[0] == null)
     {
-        console.log('target card not found');
+        throw new Error('target card not on pitch');
     }
 
     // play the move;
@@ -62,17 +68,10 @@ var playTurn = function playTurn(game, userId, cardId, targetCardId) {
         // TODO: move to discard pile.
     }
 
-    WarmUpPlayer(card[0]);
+    WarmUp.warmUpPlayer(card[0]);
 
-    // Save the actual game
-    ServiceFirebase.Set("Games", game.Id, game);
+    return game;
 }
 
-// TODO: move to shared logic
-function WarmUpPlayer(card) {
-    if(card) {
-        card.IsWarmingUp = true;
-    }
-}
 
 exports.playTurn = playTurn;

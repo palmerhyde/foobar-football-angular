@@ -1,6 +1,7 @@
 var playTurn = function playTurn(game, userId, cardId) {
     var WarmUp = require('./effect_warmup');
     var Validate = require('./helper_validation.js');
+    var DeckHelper = require('./helper_deck.js');
 
     var yourTeam;
     var opponentsTeam;
@@ -39,9 +40,7 @@ var playTurn = function playTurn(game, userId, cardId) {
         throw new Error('not a valid manager');
     }
 
-    var card = yourTeam.Pitch.filter(function( obj ) {
-        return obj.Id == cardId;
-    });
+    var card = DeckHelper.findCardInDeck(cardId, yourTeam.Pitch);
 
     if (card == null || card[0] == null)
     {
