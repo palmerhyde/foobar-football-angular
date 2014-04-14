@@ -26,7 +26,8 @@ var listen = function () {
 
         all.then(function() {
             var game = gamePromise.valueOf();
-            gameEndTurn.playTurn(game, userId);
+            var modifiedGame = gameEndTurn.playTurn(game, userId);
+            ServiceFirebase.Set("Games", modifiedGame.Id, modifiedGame);
         });
 
         snapshot.ref().remove();

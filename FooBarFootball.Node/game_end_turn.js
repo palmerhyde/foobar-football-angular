@@ -1,16 +1,21 @@
 var playTurn = function playTurn(game, userId) {
-    var ServiceFirebase = require('./service_firebase');
-    var _ = require('underscore');
+    if (typeof game == 'undefined') {
+        throw new Error('missing game parameter');
+    }
+
+    if (typeof userId == 'undefined') {
+        throw new Error('missing userId parameter');
+    }
+
+    if (!ValidateGame(game)) {
+        throw new Error('not a valid game');
+    }
 
     var yourTeam;
     var opponentsTeam;
     
-    if (game == null) {
-        console.log('game not found');
-    }
-
     if (game.WhosTurnIsIt != userId) {
-        console.log('Its not your turn get out of here');
+        throw new Error('its not your turn');
     }
 
     if (game.HomeTeam.UserId  == userId) {
@@ -34,10 +39,35 @@ var playTurn = function playTurn(game, userId) {
 
     game.WhosTurnIsIt = opponentsTeam.UserId;
 
-    // Save the actual game
-    ServiceFirebase.Set("Games", game.Id, game);
+    return game;
 }
 
+//TODO: move into a game helper class
+function ValidateGame(game) {
+    if (
+            typeof game == 'undefined' ||
+            typeof game.WhosTurnIsIt == 'undefined' ||
+            typeof game.HomeTeam == 'undefined' ||
+            typeof game.HomeTeam.UserId == 'undefined' ||
+            typeof game.HomeTeam.Mana == 'undefined' ||
+            typeof game.HomeTeam.Deck == 'undefined' ||
+            typeof game.HomeTeam.Hand == 'undefined' ||
+            typeof game.HomeTeam.Pitch == 'undefined' ||
+            typeof game.AwayTeam == 'undefined' ||
+            typeof game.AwayTeam.UserId == 'undefined' ||
+            typeof game.AwayTeam.Mana == 'undefined' ||
+            typeof game.AwayTeam.Deck == 'undefined' ||
+            typeof game.AwayTeam.Hand == 'undefined' ||
+            typeof game.AwayTeam.Pitch == 'undefined'
+        )
+    {
+        return false;
+    }
+
+    return true
+}
+
+// TODO: Move to shared module
 function WarmUpPlayers(players) {
     if (players) {
         for (var i=0; i < players.length; i++) {
@@ -46,14 +76,8 @@ function WarmUpPlayers(players) {
     }
 }
 
-// TODO: unit test this logic.
 function DealCard(deck, hand) {
     if (deck && deck.length > 0) {
-
-        if (!hand) {
-            hand = [];
-        }
-
         hand.push(deck[0]);
         deck.splice(0, 1);
     } 
