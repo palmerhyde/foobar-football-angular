@@ -1,4 +1,3 @@
-var assert = require("assert")
 var should = require('should');
 var game = require("../game_end_turn")
 var validGame;
@@ -13,14 +12,16 @@ beforeEach(function(){
       Mana : 5,
       Deck: [{Id: 1}],
       Pitch: [{id: 1, IsWarmingUp: true}, {id: 2, IsWarmingUp: true}],
-      Hand: []
+      Hand: [],
+      Manager : {Id: 1, Cost:2, Stamina: 30, CardType: 'Manager'}
     },
     AwayTeam : {
       UserId : 1,
       Mana : 0,
       Deck: [{Id: 1}],
       Pitch: [{id: 1, IsWarmingUp: true}, {id: 2, IsWarmingUp: true}],
-      Hand: []
+      Hand: [],
+      Manager : {Id: 1, Cost:2, Stamina: 30, CardType: 'Manager'}
     }
   };
 });
@@ -43,7 +44,7 @@ describe("End Turn Logic", function() {
    });
 
    describe(".PlayTurn when not players turn", function() {
-       it("should throw an exception for missing userId parameter", function(){
+       it("should throw an exception for not being the users turn", function(){
            (function(){
               game.playTurn(validGame, 0);
             }).should.throw('its not your turn');
@@ -147,12 +148,3 @@ describe("End Turn Logic", function() {
        });
    });
 });
-
-
-function WarmUpPlayers(players) {
-    if (players) {
-        for (var i=0; i < players.length; i++) {
-            players[i].IsWarmingUp = false;
-        }
-    }
-}

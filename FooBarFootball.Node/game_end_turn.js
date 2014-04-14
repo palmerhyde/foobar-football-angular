@@ -1,4 +1,7 @@
 var playTurn = function playTurn(game, userId) {
+    var WarmUp = require('./effect_warmup');
+    var Validate = require('./helper_validation.js');
+
     if (typeof game == 'undefined') {
         throw new Error('missing game parameter');
     }
@@ -7,7 +10,7 @@ var playTurn = function playTurn(game, userId) {
         throw new Error('missing userId parameter');
     }
 
-    if (!ValidateGame(game)) {
+    if (!Validate.validateGame(game)) {
         throw new Error('not a valid game');
     }
 
@@ -24,7 +27,7 @@ var playTurn = function playTurn(game, userId) {
         opponentsTeam = game.AwayTeam;
         opponentsTeam.Mana = game.Turn;
         DealCard(opponentsTeam.Deck, opponentsTeam.Hand);
-        WarmUpPlayers(opponentsTeam.Pitch);
+        WarmUp.warmUpPlayers(opponentsTeam.Pitch);
     }
 
     if (game.AwayTeam.UserId  == userId) {
@@ -34,66 +37,12 @@ var playTurn = function playTurn(game, userId) {
         opponentsTeam = game.HomeTeam;
         opponentsTeam.Mana = game.Turn;
         DealCard(opponentsTeam.Deck, opponentsTeam.Hand);
-        WarmUpPlayers(opponentsTeam.Pitch);
+        WarmUp.warmUpPlayers(opponentsTeam.Pitch);
     }
 
     game.WhosTurnIsIt = opponentsTeam.UserId;
 
     return game;
-}
-
-//TODO: move into a game helper class
-//TODO: we need to think about undefined arrays and making them empty.
-function ValidateGame(game) {
-    if (
-            typeof game == 'undefined' ||
-            typeof game.WhosTurnIsIt == 'undefined' ||
-            typeof game.HomeTeam == 'undefined' ||
-            typeof game.HomeTeam.UserId == 'undefined' ||
-            typeof game.HomeTeam.Mana == 'undefined' ||
-            typeof game.AwayTeam == 'undefined' ||
-            typeof game.AwayTeam.UserId == 'undefined' ||
-            typeof game.AwayTeam.Mana == 'undefined'
-        )
-    {
-        return false;
-    }
-
-    // Firebase does not store empty arrays so they will come back as undefined. We need to recreate them
-    if (typeof game.HomeTeam.Deck == 'undefined') {
-        game.HomeTeam.Deck = [];
-    }
-
-    if (typeof game.HomeTeam.Hand == 'undefined') {
-        game.HomeTeam.Hand = [];
-    }
-
-    if (typeof game.HomeTeam.Pitch == 'undefined') {
-        game.HomeTeam.Pitch = [];
-    }
-
-        if (typeof game.AwayTeam.Deck == 'undefined') {
-        game.AwayTeam.Deck = [];
-    }
-
-    if (typeof game.AwayTeam.Hand == 'undefined') {
-        game.AwayTeam.Hand = [];
-    }
-
-    if (typeof game.AwayTeam.Pitch == 'undefined') {
-        game.AwayTeam.Pitch = [];
-    }
-
-    return true
-}
-
-// TODO: Move to shared module
-function WarmUpPlayers(players) {
-    if (players) {
-        for (var i=0; i < players.length; i++) {
-            players[i].IsWarmingUp = false;
-        }
-    }
 }
 
 function DealCard(deck, hand) {
