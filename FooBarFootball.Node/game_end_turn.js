@@ -43,6 +43,7 @@ var playTurn = function playTurn(game, userId) {
 }
 
 //TODO: move into a game helper class
+//TODO: we need to think about undefined arrays and making them empty.
 function ValidateGame(game) {
     if (
             typeof game == 'undefined' ||
@@ -50,18 +51,37 @@ function ValidateGame(game) {
             typeof game.HomeTeam == 'undefined' ||
             typeof game.HomeTeam.UserId == 'undefined' ||
             typeof game.HomeTeam.Mana == 'undefined' ||
-            typeof game.HomeTeam.Deck == 'undefined' ||
-            typeof game.HomeTeam.Hand == 'undefined' ||
-            typeof game.HomeTeam.Pitch == 'undefined' ||
             typeof game.AwayTeam == 'undefined' ||
             typeof game.AwayTeam.UserId == 'undefined' ||
-            typeof game.AwayTeam.Mana == 'undefined' ||
-            typeof game.AwayTeam.Deck == 'undefined' ||
-            typeof game.AwayTeam.Hand == 'undefined' ||
-            typeof game.AwayTeam.Pitch == 'undefined'
+            typeof game.AwayTeam.Mana == 'undefined'
         )
     {
         return false;
+    }
+
+    // Firebase does not store empty arrays so they will come back as undefined. We need to recreate them
+    if (typeof game.HomeTeam.Deck == 'undefined') {
+        game.HomeTeam.Deck = [];
+    }
+
+    if (typeof game.HomeTeam.Hand == 'undefined') {
+        game.HomeTeam.Hand = [];
+    }
+
+    if (typeof game.HomeTeam.Pitch == 'undefined') {
+        game.HomeTeam.Pitch = [];
+    }
+
+        if (typeof game.AwayTeam.Deck == 'undefined') {
+        game.AwayTeam.Deck = [];
+    }
+
+    if (typeof game.AwayTeam.Hand == 'undefined') {
+        game.AwayTeam.Hand = [];
+    }
+
+    if (typeof game.AwayTeam.Pitch == 'undefined') {
+        game.AwayTeam.Pitch = [];
     }
 
     return true

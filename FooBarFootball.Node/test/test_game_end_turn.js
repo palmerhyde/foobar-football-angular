@@ -58,6 +58,25 @@ describe("End Turn Logic", function() {
        });
    });
 
+   describe(".PlayTurn with undefined hand, pitch and deck", function() {
+       it("should result in defined hand, pitch and deck being arrays", function(){
+           validGame.HomeTeam.Hand = undefined;
+           validGame.AwayTeam.Hand = undefined;
+           validGame.HomeTeam.Pitch = undefined;
+           validGame.AwayTeam.Pitch = undefined;
+           validGame.HomeTeam.Deck = undefined;
+           validGame.AwayTeam.Deck = undefined;
+           validGame.WhosTurnIsIt = 0;
+           var modifiedGame =  game.playTurn(validGame, 0);
+           modifiedGame.HomeTeam.Hand.should.be.an.Array;
+           modifiedGame.AwayTeam.Hand.should.be.an.Array;
+           modifiedGame.HomeTeam.Deck.should.be.an.Array;
+           modifiedGame.AwayTeam.Deck.should.be.an.Array;
+           modifiedGame.HomeTeam.Pitch.should.be.an.Array;
+           modifiedGame.AwayTeam.Pitch.should.be.an.Array;
+       });
+   });
+
    describe(".PlayTurn with current user being the home team", function() {
        it("should result in WhosTurnIsIt being the away team", function(){
            validGame.WhosTurnIsIt = 0;
