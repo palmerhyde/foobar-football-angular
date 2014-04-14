@@ -1,14 +1,29 @@
 var playTurn = function playTurn(game, userId, cardId) {
     var ServiceFirebase = require('./service_firebase');
     var _ = require('underscore');
+    var WarmUp = require('./effect_warmup');
+    var Validate = require('./helper_validation.js');
+    var DeckHelper = require('./helper_deck.js');
     var yourTeam;
             
-    if (game == null) {
-        console.log('game not found');
+    if (typeof game == 'undefined') {
+        throw new Error('missing game parameter');
+    }
+
+    if (typeof userId == 'undefined') {
+        throw new Error('missing userId parameter');
+    }
+
+    if (typeof cardId == 'undefined') {
+        throw new Error('missing cardId parameter');
+    }
+
+    if (!Validate.validateGame(game)) {
+        throw new Error('not a valid game');
     }
 
     if (game.WhosTurnIsIt != userId) {
-        console.log('Its not your turn get out of here');
+        throw new Error('its not your turn');
     }
 
     if (game.HomeTeam.UserId  == userId) {
@@ -19,40 +34,24 @@ var playTurn = function playTurn(game, userId, cardId) {
         yourTeam = game.AwayTeam;
     }
 
-    // get the card from your hand
-    if (!yourTeam.Hand) {
-        yourTeam.Hand = [];
-    }
-    var card = yourTeam.Hand.filter(function( obj ) {
-        return obj.Id == cardId;
-    });
+    var card = DeckHelper.findCardInDeck(cardId, yourTeam.Hand)
 
     if (card == null || card[0] == null)
     {
-        console.log('card not found');
+        throw new Error('card not in hand');
     }
 
-    // Is this move legal?
-    if (yourTeam.Mana >= card[0].Cost)
+    if (yourTeam.Mana < card[0].Cost)
     {
-        if (!yourTeam.Pitch)
-        {
-            yourTeam.Pitch = [];
-        }
-
-        yourTeam.Pitch.push(card[0]);
-        yourTeam.Hand = _.without(yourTeam.Hand, card[0]);
-        yourTeam.Mana = yourTeam.Mana - card[0].Cost;
-        warmUpPlayer(card[0]);
-        ServiceFirebase.Set("Games", game.Id, game);
+        throw new Error('not enough currency');
     }
-}
 
-// TODO: move to shared logic
-function warmUpPlayer(card) {
-    if(card) {
-        card.IsWarmingUp = true;
-    }
+    yourTeam.Pitch.push(card[0]);
+    yourTeam.Hand = _.without(yourTeam.Hand, card[0]);
+    yourTeam.Mana = yourTeam.Mana - card[0].Cost;
+    WarmUp.warmUpPlayer(card[0]);
+    return game;
+    
 }
 
 exports.playTurn = playTurn;
