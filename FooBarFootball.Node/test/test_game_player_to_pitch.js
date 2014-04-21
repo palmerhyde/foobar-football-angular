@@ -87,6 +87,57 @@ describe("Player To Pitch Logic", function() {
        });
    });
 
+   describe(".PlayTurn with un-warmed up player", function() {
+       it("should result in the player being in a warming up state", function(){
+          validGame.WhosTurnIsIt = 0;
+          validGame.HomeTeam.Mana = 3
+          validGame.HomeTeam.Hand[0].Id = 1;
+          validGame.HomeTeam.Hand[0].Cost = 2;
+          validGame.HomeTeam.Hand[0].IsWarmingUp = false;
+          modifiedGame = game.playTurn(validGame, 0, 1);
+          DeckHelper.findCardInDeck(1, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsWarmingUp', true);
+       });
+   });
+
+    describe(".PlayTurn with un-warmed up player with the ~pressure~ effect", function() {
+       it("should result in the player not being in warming up state", function(){
+          validGame.WhosTurnIsIt = 0;
+          validGame.HomeTeam.Mana = 3
+          validGame.HomeTeam.Hand[0].Id = 1;
+          validGame.HomeTeam.Hand[0].Cost = 2;
+          validGame.HomeTeam.Hand[0].IsWarmingUp = false;
+          validGame.HomeTeam.Hand[0].Effects = [{ type: 'pressure'}];
+          modifiedGame = game.playTurn(validGame, 0, 1);
+          DeckHelper.findCardInDeck(1, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsWarmingUp', false);
+       });
+   });
+
+    describe(".PlayTurn with un-warmed up player with the ~pressure~ effect with is warming up set to true", function() {
+       it("should result in the player not being in warming up state", function(){
+          validGame.WhosTurnIsIt = 0;
+          validGame.HomeTeam.Mana = 3
+          validGame.HomeTeam.Hand[0].Id = 1;
+          validGame.HomeTeam.Hand[0].Cost = 2;
+          validGame.HomeTeam.Hand[0].IsWarmingUp = true;
+          validGame.HomeTeam.Hand[0].Effects = [{ type: 'pressure'}];
+          modifiedGame = game.playTurn(validGame, 0, 1);
+          DeckHelper.findCardInDeck(1, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsWarmingUp', false);
+       });
+   });
+
+   describe(".PlayTurn with un-warmed up player without the ~pressure~ effect with is warming up set to false", function() {
+       it("should result in the player being in warming up state", function(){
+          validGame.WhosTurnIsIt = 0;
+          validGame.HomeTeam.Mana = 3
+          validGame.HomeTeam.Hand[0].Id = 1;
+          validGame.HomeTeam.Hand[0].Cost = 2;
+          validGame.HomeTeam.Hand[0].IsWarmingUp = false;
+          validGame.HomeTeam.Hand[0].Effects = [{ type: 'unknown'}];
+          modifiedGame = game.playTurn(validGame, 0, 1);
+          DeckHelper.findCardInDeck(1, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsWarmingUp', true);
+       });
+   });
+
    describe(".PlayTurn with 1 currency for a card costing 2", function() {
        it("should throw an exception for costing too much", function(){
            (function(){

@@ -1,9 +1,9 @@
 var playTurn = function playTurn(game, userId, cardId) {
     var ServiceFirebase = require('./service_firebase');
     var _ = require('underscore');
-    var WarmUp = require('./effect_warmup');
     var Validate = require('./helper_validation.js');
     var DeckHelper = require('./helper_deck.js');
+    var EffectsHelper = require('./helper_effects.js');
     var yourTeam;
             
     if (typeof game == 'undefined') {
@@ -46,12 +46,12 @@ var playTurn = function playTurn(game, userId, cardId) {
         throw new Error('not enough currency');
     }
 
+    EffectsHelper.initalEffects(card[0], game);
+    var gameAfterEffects = EffectsHelper.playEffects(card[0], game);
     yourTeam.Pitch.push(card[0]);
     yourTeam.Hand = _.without(yourTeam.Hand, card[0]);
     yourTeam.Mana = yourTeam.Mana - card[0].Cost;
-    WarmUp.warmUpPlayer(card[0]);
-    return game;
-    
+    return gameAfterEffects;
 }
 
 exports.playTurn = playTurn;
