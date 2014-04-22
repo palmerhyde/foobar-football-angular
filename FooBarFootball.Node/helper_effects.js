@@ -1,5 +1,12 @@
+var DeckHelper = require('./helper_deck.js');
+
+/*
+ * This is documentation, we need to experiment on how to 
+ * generate documentation
+ */
 function PlayEffects(card, game) {
     var Pressure = require('./effect_pressure');
+    var Rock = require('./effect_rock');
 
     if (typeof card == 'undefined') {
     	throw new Error('card argument missing');
@@ -11,10 +18,13 @@ function PlayEffects(card, game) {
 
     if (card.Effects) {
         for (var i=0; i < card.Effects.length; i++) {
-            var effect = card.Effects[i].type;
+            var effect = card.Effects[i].Type;
             switch (effect) {
                 case 'pressure':
                   Pressure.applyEffect(card);
+                  break;
+                case 'rock':
+                  Rock.applyEffect(card, game);
                   break;
             }
         }
@@ -23,6 +33,9 @@ function PlayEffects(card, game) {
     return game;
 }
 
+/*
+ * Place a card into an inital state before effects are applied
+ */
 function InitialEffects(card, game) {
     var WarmUp = require('./effect_warmup');
     
@@ -35,8 +48,48 @@ function InitialEffects(card, game) {
     }
 
     WarmUp.warmUpPlayer(card);
+    card.IsTargetable = true;
+    card.CanAttack = true;
     return game;
+}
+
+function UpdateEffects(yourTeam) {
+    UpdateTargetablePlayers(yourTeam);
+    UpdatePlayersWhoCanAttack(yourTeam);
+    return yourTeam
+}
+
+function UpdateEffects(yourTeam) {
+    UpdateTargetablePlayers(yourTeam);
+    UpdatePlayersWhoCanAttack(yourTeam);
+    return yourTeam
+}
+
+function UpdateTargetablePlayers(yourTeam) {
+    if (DeckHelper.deckContainsEffect("rock", yourTeam.Pitch)) {
+        for (var i = 0; i < yourTeam.Pitch.length; i++) {
+            if (yourTeam.Pitch[i].IsRock) {
+                yourTeam.Pitch[i].IsTargetable = true;
+            }
+            else {
+                yourTeam.Pitch[i].IsTargetable = false;
+            }
+        }
+    }
+
+    return yourTeam
+}
+
+function UpdatePlayersWhoCanAttack(yourTeam) {
+    // foreach (var player in game.Pitch)
+    //  if (player is not warming up || player is not marked)
+    //    player.CanAttack = true
+    //  else
+    //    player.CanAttack = false
+
+    return yourTeam;
 }
 
 exports.playEffects = PlayEffects;
 exports.initalEffects = InitialEffects;
+exports.updateEffects = UpdateEffects;

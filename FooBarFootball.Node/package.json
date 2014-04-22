@@ -10,7 +10,8 @@
     "q" : "*",
     "should": "*",
     "istanbul" : "*",
-    "mocha-istanbul": "*"
+    "mocha-istanbul": "*",
+    "mocha": "*"
   },
   "scripts" : { 
     "test" : "mocha",

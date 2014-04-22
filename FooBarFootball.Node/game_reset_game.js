@@ -115,6 +115,7 @@ var playTurn = function playTurn(game) {
                 "Attack": "3",
                 "Stamina": "1",
                 "Description": "Pressure",
+                "Effects" : [{"type" : "pressure"}],
                 "Club": "http://fh13.fhcdn.com/static/img/14/clubs/1.png",
                 "Nation": "http://fh13.fhcdn.com/static/img/nations/12.png",
                 "Position": "Midfielder",

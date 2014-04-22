@@ -3,6 +3,7 @@ var playTurn = function playTurn(game, userId, cardId, targetCardId) {
     var WarmUp = require('./effect_warmup');
     var Validate = require('./helper_validation.js');
     var DeckHelper = require('./helper_deck.js');
+    var EffectsHelper = require('./helper_effects.js');
     var yourTeam;
     var opponentsTeam;
     
@@ -54,6 +55,16 @@ var playTurn = function playTurn(game, userId, cardId, targetCardId) {
         throw new Error('target card not on pitch');
     }
 
+        if (!targetCard[0].IsTargetable)
+    {
+        throw new Error('target card is not targetable');
+    }
+
+    if (!card[0].CanAttack)
+    {
+        throw new Error('card cannot attack');
+    }
+
     // play the move;
     card[0].Stamina = card[0].Stamina - targetCard[0].Attack;
     targetCard[0].Stamina = targetCard[0].Stamina - card[0].Attack;
@@ -68,7 +79,9 @@ var playTurn = function playTurn(game, userId, cardId, targetCardId) {
         // TODO: move to discard pile.
     }
 
+    // Move warmup to Effects Helper
     WarmUp.warmUpPlayer(card[0]);
+    EffectsHelper.updateEffects(yourTeam);
 
     return game;
 }
