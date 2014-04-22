@@ -51,6 +51,7 @@ var playTurn = function playTurn(game, userId, cardId) {
     yourTeam.Pitch.push(card[0]);
     yourTeam.Hand = _.without(yourTeam.Hand, card[0]);
     yourTeam.Mana = yourTeam.Mana - card[0].Cost;
+    EffectsHelper.updateEffects(yourTeam);
     return gameAfterEffects;
 }
 

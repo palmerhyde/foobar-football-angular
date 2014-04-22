@@ -106,7 +106,7 @@ describe("Player To Pitch Logic", function() {
           validGame.HomeTeam.Hand[0].Id = 1;
           validGame.HomeTeam.Hand[0].Cost = 2;
           validGame.HomeTeam.Hand[0].IsWarmingUp = false;
-          validGame.HomeTeam.Hand[0].Effects = [{ type: 'pressure'}];
+          validGame.HomeTeam.Hand[0].Effects = [{ Type: 'pressure'}];
           modifiedGame = game.playTurn(validGame, 0, 1);
           DeckHelper.findCardInDeck(1, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsWarmingUp', false);
        });
@@ -119,7 +119,7 @@ describe("Player To Pitch Logic", function() {
           validGame.HomeTeam.Hand[0].Id = 1;
           validGame.HomeTeam.Hand[0].Cost = 2;
           validGame.HomeTeam.Hand[0].IsWarmingUp = true;
-          validGame.HomeTeam.Hand[0].Effects = [{ type: 'pressure'}];
+          validGame.HomeTeam.Hand[0].Effects = [{ Type: 'pressure'}];
           modifiedGame = game.playTurn(validGame, 0, 1);
           DeckHelper.findCardInDeck(1, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsWarmingUp', false);
        });
@@ -132,9 +132,26 @@ describe("Player To Pitch Logic", function() {
           validGame.HomeTeam.Hand[0].Id = 1;
           validGame.HomeTeam.Hand[0].Cost = 2;
           validGame.HomeTeam.Hand[0].IsWarmingUp = false;
-          validGame.HomeTeam.Hand[0].Effects = [{ type: 'unknown'}];
+          validGame.HomeTeam.Hand[0].Effects = [{ Type: 'unknown'}];
           modifiedGame = game.playTurn(validGame, 0, 1);
           DeckHelper.findCardInDeck(1, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsWarmingUp', true);
+       });
+   });
+
+   describe(".PlayTurn with player with ~rock~ effect with targetable players on the pitch", function() {
+       it("should result in players without the ~rock~ not being targetable ", function(){
+          validGame.WhosTurnIsIt = 0;
+          validGame.HomeTeam.Mana = 3
+          validGame.HomeTeam.Hand[0].Id = 1;
+          validGame.HomeTeam.Hand[0].Cost = 2;
+          validGame.HomeTeam.Hand[0].IsWarmingUp = true;
+          validGame.HomeTeam.Hand[0].Effects = [{ Type: 'rock'}];
+          validGame.HomeTeam.Pitch.push({Id : 2, IsTargetable: true});
+          validGame.HomeTeam.Pitch.push({Id : 3, IsTargetable: true});
+          modifiedGame = game.playTurn(validGame, 0, 1);
+          DeckHelper.findCardInDeck(1, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsTargetable', true);
+          DeckHelper.findCardInDeck(2, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsTargetable', false);
+          DeckHelper.findCardInDeck(3, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsTargetable', false);
        });
    });
 

@@ -114,13 +114,55 @@ describe("Player Attack Player Logic", function() {
        });
    });
 
+   describe(".PlayTurn with target card not being targetable", function() {
+       it("should throw an exception for not being targetable", function(){
+           (function(){
+              validGame.WhosTurnIsIt = 0;
+              validGame.HomeTeam.Pitch[0].Id = 1;
+              validGame.HomeTeam.Pitch[0].IsTargetable = true;
+              validGame.HomeTeam.Pitch[0].CanAttack = true;
+              validGame.HomeTeam.Pitch[0].Attack = 1;
+              validGame.HomeTeam.Pitch[0].Stamina = 2;
+              validGame.AwayTeam.Pitch[0].Id = 2;
+              validGame.AwayTeam.Pitch[0].IsTargetable = false;
+              validGame.AwayTeam.Pitch[0].CanAttack = true;
+              validGame.AwayTeam.Pitch[0].Attack = 1;
+              validGame.AwayTeam.Pitch[0].Stamina = 2;
+              modifiedGame = game.playTurn(validGame, 0, 1, 2);
+            }).should.throw('target card is not targetable');
+       });
+   });
+
+   describe(".PlayTurn with card not being able to attack", function() {
+       it("should throw an exception for not being attackabe", function(){
+           (function(){
+              validGame.WhosTurnIsIt = 0;
+              validGame.HomeTeam.Pitch[0].Id = 1;
+              validGame.HomeTeam.Pitch[0].IsTargetable = true;
+              validGame.HomeTeam.Pitch[0].CanAttack = false;
+              validGame.HomeTeam.Pitch[0].Attack = 1;
+              validGame.HomeTeam.Pitch[0].Stamina = 2;
+              validGame.AwayTeam.Pitch[0].Id = 2;
+              validGame.AwayTeam.Pitch[0].IsTargetable = true;
+              validGame.AwayTeam.Pitch[0].CanAttack = false;
+              validGame.AwayTeam.Pitch[0].Attack = 1;
+              validGame.AwayTeam.Pitch[0].Stamina = 2;
+              modifiedGame = game.playTurn(validGame, 0, 1, 2);
+            }).should.throw('card cannot attack');
+       });
+   });
+
    describe(".PlayTurn with vanilla 1/2 attacking a vanilla 1/2", function() {
        it("should result in a vanilla 1/1 and a vanilla 1/1", function(){
           validGame.WhosTurnIsIt = 0;
           validGame.HomeTeam.Pitch[0].Id = 1;
+          validGame.HomeTeam.Pitch[0].IsTargetable = true;
+          validGame.HomeTeam.Pitch[0].CanAttack = true;
           validGame.HomeTeam.Pitch[0].Attack = 1;
           validGame.HomeTeam.Pitch[0].Stamina = 2;
           validGame.AwayTeam.Pitch[0].Id = 2;
+          validGame.AwayTeam.Pitch[0].IsTargetable = true;
+          validGame.AwayTeam.Pitch[0].CanAttack = true;
           validGame.AwayTeam.Pitch[0].Attack = 1;
           validGame.AwayTeam.Pitch[0].Stamina = 2;
           modifiedGame = game.playTurn(validGame, 0, 1, 2);
@@ -133,9 +175,13 @@ describe("Player Attack Player Logic", function() {
        it("should result in a vanilla 4/3 and a discarded card", function(){
           validGame.WhosTurnIsIt = 0;
           validGame.HomeTeam.Pitch[0].Id = 1;
+          validGame.HomeTeam.Pitch[0].IsTargetable = true;
+          validGame.HomeTeam.Pitch[0].CanAttack = true;
           validGame.HomeTeam.Pitch[0].Attack = 4;
           validGame.HomeTeam.Pitch[0].Stamina = 4;
           validGame.AwayTeam.Pitch[0].Id = 2;
+          validGame.AwayTeam.Pitch[0].IsTargetable = true;
+          validGame.AwayTeam.Pitch[0].CanAttack = true;
           validGame.AwayTeam.Pitch[0].Attack = 1;
           validGame.AwayTeam.Pitch[0].Stamina = 2;
           modifiedGame = game.playTurn(validGame, 0, 1, 2);
@@ -148,9 +194,13 @@ describe("Player Attack Player Logic", function() {
        it("should result in a discarded card and a 4/2 vanilla", function(){
           validGame.WhosTurnIsIt = 1;
           validGame.HomeTeam.Pitch[0].Id = 1;
+          validGame.HomeTeam.Pitch[0].IsTargetable = true;
+          validGame.HomeTeam.Pitch[0].CanAttack = true;
           validGame.HomeTeam.Pitch[0].Attack = 2;
           validGame.HomeTeam.Pitch[0].Stamina = 3;
           validGame.AwayTeam.Pitch[0].Id = 2;
+          validGame.AwayTeam.Pitch[0].IsTargetable = true;
+          validGame.AwayTeam.Pitch[0].CanAttack = true;
           validGame.AwayTeam.Pitch[0].Attack = 4;
           validGame.AwayTeam.Pitch[0].Stamina = 4;
           modifiedGame = game.playTurn(validGame, 1, 2, 1);
@@ -163,9 +213,13 @@ describe("Player Attack Player Logic", function() {
        it("should result in both cards being discarded", function(){
           validGame.WhosTurnIsIt = 0;
           validGame.HomeTeam.Pitch[0].Id = 1;
+          validGame.HomeTeam.Pitch[0].IsTargetable = true;
+          validGame.HomeTeam.Pitch[0].CanAttack = true;
           validGame.HomeTeam.Pitch[0].Attack = 3;
           validGame.HomeTeam.Pitch[0].Stamina = 3;
           validGame.AwayTeam.Pitch[0].Id = 2;
+          validGame.AwayTeam.Pitch[0].IsTargetable = true;
+          validGame.AwayTeam.Pitch[0].CanAttack = true;
           validGame.AwayTeam.Pitch[0].Attack = 3;
           validGame.AwayTeam.Pitch[0].Stamina = 3;
           modifiedGame = game.playTurn(validGame, 0, 1, 2);
@@ -173,5 +227,4 @@ describe("Player Attack Player Logic", function() {
           DeckHelper.findCardInDeck(2, modifiedGame.AwayTeam.Pitch).should.be.undefined;
        });
    });
-
 });
