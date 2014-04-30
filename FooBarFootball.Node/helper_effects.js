@@ -47,6 +47,8 @@ function InitialEffects(card, game) {
         throw new Error('game argument missing');
     }
 
+    card.OriginalAttack = card.Attack;
+    card.OriginalStamina = card.Stamina;
     WarmUp.warmUpPlayer(card);
     card.IsTargetable = true;
     card.CanAttack = true;

@@ -90,7 +90,7 @@ describe("Player To Pitch Logic", function() {
    describe(".PlayTurn with un-warmed up player", function() {
        it("should result in the player being in a warming up state", function(){
           validGame.WhosTurnIsIt = 0;
-          validGame.HomeTeam.Mana = 3
+          validGame.HomeTeam.Mana = 3;
           validGame.HomeTeam.Hand[0].Id = 1;
           validGame.HomeTeam.Hand[0].Cost = 2;
           validGame.HomeTeam.Hand[0].IsWarmingUp = false;

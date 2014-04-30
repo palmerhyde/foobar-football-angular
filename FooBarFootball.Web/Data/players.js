@@ -13,7 +13,16 @@
           "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
           "Position": "Midfielder",
           "PlayerDataUrl": "http://www.futhead.com/14/players/152879/",
-          "Hearthstone" : "Voodoo Doctor"
+          "Hearthstone" : "Voodoo Doctor",
+          "Effects" : [{
+                "Type" : "Manager Instructions"
+            },
+            {
+                "Type" : "Restore Stamina",
+                "Value" : 2,
+                "Situation" : "On Pitch"
+            }
+          ]
       },
       {
           "Id": "51394",
@@ -29,7 +38,16 @@
           "Nation": "http://fh13.fhcdn.com/static/img/nations/14.png",
           "Position": "Midfielder",
           "PlayerDataUrl": "http://www.futhead.com/14/players/51394/",
-          "Hearthstone" : "Elven Archer"
+          "Hearthstone" : "Elven Archer",
+          "Effects" : [{
+                "Type" : "Manager Instructions"
+            },
+            {
+                "Type" : "Attack",
+                "Value" : 1,
+                "Situation" : "On Pitch"
+            }
+          ]
       },
     {
         "Id": "175092",
@@ -45,7 +63,11 @@
         "Nation": "http://fh13.fhcdn.com/static/img/nations/81.png",
         "Position": "Defender",
         "PlayerDataUrl": "http://www.futhead.com/14/players/175092/",
-        "Hearthstone" : "Goldshire Footman"
+        "Hearthstone" : "Goldshire Footman",
+        "Effects" : [{
+                "Type" : "Rock"
+            }
+          ]
     },
     {
         "Id": "188253",
