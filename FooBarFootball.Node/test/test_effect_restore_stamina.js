@@ -37,7 +37,7 @@ describe("Effect Restore Stamina Logic", function() {
 
     describe(".ApplyEffect with target player with 3 original stamina, 2 stamina data and a +2 buff", function() {
         it("should result in the target player having 3 stamina", function(){
-            var targetCard = effect.applyEffect({Type: "Restore Stamina", Value: 2 }, {Id: 1, Stamina : 2, OriginalStamina:3 });
+            var targetCard = effect.applyEffect({ Type: "Restore Stamina", Value: 2 }, {Id: 1, Stamina : 2, OriginalStamina:3 });
             targetCard.should.have.property('Stamina', 3);
         });
     });

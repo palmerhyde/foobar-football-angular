@@ -139,21 +139,35 @@ describe("Player To Pitch Logic", function() {
    });
 
    describe(".PlayTurn with player with ~rock~ effect with targetable players on the pitch", function() {
-       it("should result in players without the ~rock~ not being targetable ", function(){
-          validGame.WhosTurnIsIt = 0;
-          validGame.HomeTeam.Mana = 3
-          validGame.HomeTeam.Hand[0].Id = 1;
-          validGame.HomeTeam.Hand[0].Cost = 2;
-          validGame.HomeTeam.Hand[0].IsWarmingUp = true;
-          validGame.HomeTeam.Hand[0].Effects = [{ Type: 'rock'}];
-          validGame.HomeTeam.Pitch.push({Id : 2, IsTargetable: true});
-          validGame.HomeTeam.Pitch.push({Id : 3, IsTargetable: true});
-          modifiedGame = game.playTurn(validGame, 0, 1);
-          DeckHelper.findCardInDeck(1, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsTargetable', true);
-          DeckHelper.findCardInDeck(2, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsTargetable', false);
-          DeckHelper.findCardInDeck(3, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsTargetable', false);
-       });
-   });
+        it("should result in players without the ~rock~ not being targetable ", function(){
+            validGame.WhosTurnIsIt = 0;
+            validGame.HomeTeam.Mana = 3
+            validGame.HomeTeam.Hand[0].Id = 1;
+            validGame.HomeTeam.Hand[0].Cost = 2;
+            validGame.HomeTeam.Hand[0].IsWarmingUp = true;
+            validGame.HomeTeam.Hand[0].Effects = [{ Type: 'rock'}];
+            validGame.HomeTeam.Pitch.push({Id : 2, IsTargetable: true});
+            validGame.HomeTeam.Pitch.push({Id : 3, IsTargetable: true});
+            modifiedGame = game.playTurn(validGame, 0, 1);
+            DeckHelper.findCardInDeck(1, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsTargetable', true);
+            DeckHelper.findCardInDeck(2, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsTargetable', false);
+            DeckHelper.findCardInDeck(3, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsTargetable', false);
+        });
+    });
+
+    describe(".PlayTurn with player with ~restore stamina~ effect targeting a valid player the pitch", function() {
+        it("should result in the targeted players stamina being restored ", function(){
+            validGame.WhosTurnIsIt = 0;
+            validGame.HomeTeam.Mana = 3
+            validGame.HomeTeam.Hand[0].Id = 1;
+            validGame.HomeTeam.Hand[0].Cost = 2;
+            validGame.HomeTeam.Hand[0].IsWarmingUp = true;
+            validGame.HomeTeam.Hand[0].Effects = [{ Type: "Restore Stamina", Value: 2 }];
+            validGame.HomeTeam.Pitch.push({Id : 2, IsTargetable: true, Stamina: 1, OriginalStamina: 3 });
+            modifiedGame = game.playTurn(validGame, 0, 1, 2);
+            DeckHelper.findCardInDeck(2, modifiedGame.HomeTeam.Pitch)[0].should.have.property('Stamina', 3);
+        });
+    });
 
    describe(".PlayTurn with 1 currency for a card costing 2", function() {
        it("should throw an exception for costing too much", function(){

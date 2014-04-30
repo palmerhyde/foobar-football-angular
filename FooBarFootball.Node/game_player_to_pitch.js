@@ -1,11 +1,13 @@
-var playTurn = function playTurn(game, userId, cardId) {
+var playTurn = function playTurn(game, userId, cardId, targetCardId) {
     var ServiceFirebase = require('./service_firebase');
     var _ = require('underscore');
     var Validate = require('./helper_validation.js');
     var DeckHelper = require('./helper_deck.js');
     var EffectsHelper = require('./helper_effects.js');
     var yourTeam;
-            
+
+    // TODO: we need to accept a target card or a list of target cards
+
     if (typeof game == 'undefined') {
         throw new Error('missing game parameter');
     }
@@ -41,13 +43,19 @@ var playTurn = function playTurn(game, userId, cardId) {
         throw new Error('card not in hand');
     }
 
+    var targetCard = [];
+
+    if (targetCardId != 'undefined' && targetCardId >0) {
+        targetCard = DeckHelper.findCardInDeck(targetCardId, yourTeam.Pitch)
+    }
+
     if (yourTeam.Mana < card[0].Cost)
     {
         throw new Error('not enough currency');
     }
 
     EffectsHelper.initalEffects(card[0], game);
-    var gameAfterEffects = EffectsHelper.playEffects(card[0], game);
+    var gameAfterEffects = EffectsHelper.playEffects(card[0], game, targetCard[0]);
     yourTeam.Pitch.push(card[0]);
     yourTeam.Hand = _.without(yourTeam.Hand, card[0]);
     yourTeam.Mana = yourTeam.Mana - card[0].Cost;

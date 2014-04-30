@@ -4,9 +4,10 @@ var DeckHelper = require('./helper_deck.js');
  * This is documentation, we need to experiment on how to 
  * generate documentation
  */
-function PlayEffects(card, game) {
+function PlayEffects(card, game, targetCard) {
     var Pressure = require('./effect_pressure');
     var Rock = require('./effect_rock');
+    var RestoreStamina = require('./effect_restore_stamina');
 
     if (typeof card == 'undefined') {
     	throw new Error('card argument missing');
@@ -26,6 +27,9 @@ function PlayEffects(card, game) {
                 case 'rock':
                   Rock.applyEffect(card, game);
                   break;
+                case 'Restore Stamina':
+                    RestoreStamina.applyEffect(card.Effects[i], targetCard);
+                    break;
             }
         }
     }

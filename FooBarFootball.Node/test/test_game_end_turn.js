@@ -113,7 +113,6 @@ describe("End Turn Logic", function() {
        });
    });
 
-
    describe(".PlayTurn with current user being the away team", function() {
        it("should result in WhosTurnIsIt being the home team", function(){
            var modifiedGame =  game.playTurn(validGame, 1);
