@@ -17,6 +17,7 @@ function PlayEffects(card, game, targetCard) {
     	throw new Error('game argument missing');
     }
 
+    // Put the effect on the games stack of effects.
     if (card.Effects) {
         for (var i=0; i < card.Effects.length; i++) {
             var effect = card.Effects[i].Type;

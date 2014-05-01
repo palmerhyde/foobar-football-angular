@@ -54,8 +54,14 @@ var playTurn = function playTurn(game, userId, cardId, targetCardId) {
         throw new Error('not enough currency');
     }
 
+    // Place a player in an inital on pitch state.
+    // TODO: move into a playerHelper module, this is not related to effects
     EffectsHelper.initalEffects(card[0], game);
+
+    // Put any effects the player has on the games effects stack.
     var gameAfterEffects = EffectsHelper.playEffects(card[0], game, targetCard[0]);
+
+    // TODO: Move this into a deckHelper / gameHelper module
     yourTeam.Pitch.push(card[0]);
     yourTeam.Hand = _.without(yourTeam.Hand, card[0]);
     yourTeam.Mana = yourTeam.Mana - card[0].Cost;
