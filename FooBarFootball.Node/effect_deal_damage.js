@@ -9,8 +9,12 @@ function ApplyEffect(game, effect) {
         throw new Error('missing effect parameter');
     }
 
-    if (effect.Type != 'Pressure') {
-        throw new Error('Effect of type pressure expected');
+    if (effect.Type != 'Deal Damage') {
+        throw new Error('invalid effect type');
+    }
+
+    if (typeof effect.Value == 'undefined') {
+        throw new Error('effect must have a value');
     }
 
     if (effect.TeamId == game.HomeTeam.Id)  {
@@ -20,7 +24,7 @@ function ApplyEffect(game, effect) {
             throw new Error('card not on pitch');
         }
 
-        card[0].IsWarmingUp = false;
+        DealDamage(card[0], effect.Value);
     }
 
     if (effect.TeamId == game.AwayTeam.Id)  {
@@ -30,10 +34,15 @@ function ApplyEffect(game, effect) {
             throw new Error('card not on pitch');
         }
 
-        card[0].IsWarmingUp = false;
+        DealDamage(card[0], effect.Value);
     }
 
-    return game
-} 
+    return game;
+}
+
+function DealDamage(card, value) {
+    // TODO: Check - is target player eligible for the buff?
+    card.Stamina -= value;
+}
 
 exports.applyEffect = ApplyEffect;

@@ -16,6 +16,10 @@ function ValidateGame(game) {
     }
 
     // Firebase does not store empty arrays so they will come back as undefined. We need to recreate them
+    if (typeof game.Effects == 'undefined') {
+        game.Effects = [];
+    }
+
     if (typeof game.HomeTeam.Deck == 'undefined') {
         game.HomeTeam.Deck = [];
     }
@@ -28,7 +32,7 @@ function ValidateGame(game) {
         game.HomeTeam.Pitch = [];
     }
 
-        if (typeof game.AwayTeam.Deck == 'undefined') {
+    if (typeof game.AwayTeam.Deck == 'undefined') {
         game.AwayTeam.Deck = [];
     }
 
@@ -60,7 +64,21 @@ function ValidateManager(manager) {
     }
 
     return true
-} 
+}
+
+function ValidateEffect(effect) {
+    if (
+        typeof effect == 'undefined' ||
+        typeof effect.Type == 'undefined'
+        )
+    {
+        return false;
+    }
+
+    return true
+}
+
 
 exports.validateGame = ValidateGame;
 exports.validateManager = ValidateManager;
+exports.validateEffect = ValidateEffect;

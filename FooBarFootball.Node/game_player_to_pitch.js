@@ -58,15 +58,21 @@ var playTurn = function playTurn(game, userId, cardId, targetCardId) {
     // TODO: move into a playerHelper module, this is not related to effects
     EffectsHelper.initalEffects(card[0], game);
 
-    // Put any effects the player has on the games effects stack.
-    var gameAfterEffects = EffectsHelper.playEffects(card[0], game, targetCard[0]);
+    // TODO: Move into EffectsHelper
+    if (typeof card[0].Effects != 'undefined') {
+        for (var i = 0; i < card[0].Effects.length; i++) {
+            var obj = _[i];
+            EffectsHelper.addEffectToGameEffectStack(game, card[0].Effects[i], yourTeam, card[0], targetCard[0]);
+        }
+    }
 
     // TODO: Move this into a deckHelper / gameHelper module
     yourTeam.Pitch.push(card[0]);
     yourTeam.Hand = _.without(yourTeam.Hand, card[0]);
     yourTeam.Mana = yourTeam.Mana - card[0].Cost;
-    EffectsHelper.updateEffects(yourTeam);
-    return gameAfterEffects;
+    EffectsHelper.playEffects(game);
+    EffectsHelper.updateEffects(game);
+    return game;
 }
 
 exports.playTurn = playTurn;

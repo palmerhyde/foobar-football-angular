@@ -15,6 +15,15 @@ function FindCardInDeck(cardId, deck) {
 } 
 
 function DeckContainsEffect(effect, deck) {
+
+    if (typeof effect == 'undefined') {
+        throw new Error('effect argument missing');
+    }
+
+    if (typeof deck == 'undefined') {
+        throw new Error('deck argument missing');
+    }
+
     var containsEffect = false;
 
     for (var i = 0; i < deck.length; i++) {
