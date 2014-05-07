@@ -81,7 +81,7 @@ var playTurn = function playTurn(game, userId, cardId, targetCardId) {
 
     // Move warmup to Effects Helper
     WarmUp.warmUpPlayer(card[0]);
-    EffectsHelper.updateEffects(yourTeam);
+    EffectsHelper.updateEffects(game);
 
     return game;
 }

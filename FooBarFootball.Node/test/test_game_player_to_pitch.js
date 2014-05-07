@@ -90,6 +90,7 @@ describe("Player To Pitch Logic", function() {
    describe(".PlayTurn with un-warmed up player", function() {
        it("should result in the player being in a warming up state", function(){
           validGame.WhosTurnIsIt = 0;
+          validGame.HomeTeam.Id = 1;
           validGame.HomeTeam.Mana = 3;
           validGame.HomeTeam.Hand[0].Id = 1;
           validGame.HomeTeam.Hand[0].Cost = 2;
@@ -102,11 +103,12 @@ describe("Player To Pitch Logic", function() {
     describe(".PlayTurn with un-warmed up player with the ~pressure~ effect", function() {
        it("should result in the player not being in warming up state", function(){
           validGame.WhosTurnIsIt = 0;
+          validGame.HomeTeam.Id = 1;
           validGame.HomeTeam.Mana = 3
           validGame.HomeTeam.Hand[0].Id = 1;
           validGame.HomeTeam.Hand[0].Cost = 2;
           validGame.HomeTeam.Hand[0].IsWarmingUp = false;
-          validGame.HomeTeam.Hand[0].Effects = [{ Type: 'pressure'}];
+          validGame.HomeTeam.Hand[0].Effects = [{ Type: 'Pressure', "Trigger": 'OnPitch', Target: "Self", "TeamId" : 1}];
           modifiedGame = game.playTurn(validGame, 0, 1);
           DeckHelper.findCardInDeck(1, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsWarmingUp', false);
        });
@@ -115,11 +117,12 @@ describe("Player To Pitch Logic", function() {
     describe(".PlayTurn with un-warmed up player with the ~pressure~ effect with is warming up set to true", function() {
        it("should result in the player not being in warming up state", function(){
           validGame.WhosTurnIsIt = 0;
+          validGame.HomeTeam.Id = 1;
           validGame.HomeTeam.Mana = 3
           validGame.HomeTeam.Hand[0].Id = 1;
           validGame.HomeTeam.Hand[0].Cost = 2;
           validGame.HomeTeam.Hand[0].IsWarmingUp = true;
-          validGame.HomeTeam.Hand[0].Effects = [{ Type: 'pressure'}];
+          validGame.HomeTeam.Hand[0].Effects = [{ Type: 'Pressure', "Trigger": 'OnPitch', Target: "Self", "TeamId" : 1}];
           modifiedGame = game.playTurn(validGame, 0, 1);
           DeckHelper.findCardInDeck(1, modifiedGame.HomeTeam.Pitch)[0].should.have.property('IsWarmingUp', false);
        });
@@ -128,6 +131,7 @@ describe("Player To Pitch Logic", function() {
    describe(".PlayTurn with un-warmed up player without the ~pressure~ effect with is warming up set to false", function() {
        it("should result in the player being in warming up state", function(){
           validGame.WhosTurnIsIt = 0;
+          validGame.HomeTeam.Id = 1;
           validGame.HomeTeam.Mana = 3
           validGame.HomeTeam.Hand[0].Id = 1;
           validGame.HomeTeam.Hand[0].Cost = 2;
@@ -141,11 +145,12 @@ describe("Player To Pitch Logic", function() {
    describe(".PlayTurn with player with ~rock~ effect with targetable players on the pitch", function() {
         it("should result in players without the ~rock~ not being targetable ", function(){
             validGame.WhosTurnIsIt = 0;
+            validGame.HomeTeam.Id = 1;
             validGame.HomeTeam.Mana = 3
             validGame.HomeTeam.Hand[0].Id = 1;
             validGame.HomeTeam.Hand[0].Cost = 2;
             validGame.HomeTeam.Hand[0].IsWarmingUp = true;
-            validGame.HomeTeam.Hand[0].Effects = [{ Type: 'rock'}];
+            validGame.HomeTeam.Hand[0].Effects = [{ Type: 'Rock', "Trigger": 'OnPitch', Target: "Self", "TeamId" : 1}];
             validGame.HomeTeam.Pitch.push({Id : 2, IsTargetable: true});
             validGame.HomeTeam.Pitch.push({Id : 3, IsTargetable: true});
             modifiedGame = game.playTurn(validGame, 0, 1);
@@ -158,11 +163,12 @@ describe("Player To Pitch Logic", function() {
     describe(".PlayTurn with player with ~restore stamina~ effect targeting a valid player the pitch", function() {
         it("should result in the targeted players stamina being restored ", function(){
             validGame.WhosTurnIsIt = 0;
+            validGame.HomeTeam.Id = 1;
             validGame.HomeTeam.Mana = 3
             validGame.HomeTeam.Hand[0].Id = 1;
             validGame.HomeTeam.Hand[0].Cost = 2;
             validGame.HomeTeam.Hand[0].IsWarmingUp = true;
-            validGame.HomeTeam.Hand[0].Effects = [{ Type: "Restore Stamina", Value: 2 }];
+            validGame.HomeTeam.Hand[0].Effects = [{ Type: "Restore Stamina", Value: 2, "Trigger": 'OnPitch', "Target": 2, "TeamId": 1 }];
             validGame.HomeTeam.Pitch.push({Id : 2, IsTargetable: true, Stamina: 1, OriginalStamina: 3 });
             modifiedGame = game.playTurn(validGame, 0, 1, 2);
             DeckHelper.findCardInDeck(2, modifiedGame.HomeTeam.Pitch)[0].should.have.property('Stamina', 3);

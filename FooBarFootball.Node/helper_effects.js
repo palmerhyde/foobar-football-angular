@@ -1,35 +1,36 @@
 var DeckHelper = require('./helper_deck.js');
+var GameHelper = require('./helper_game.js');
+var ValidationHelper = require('./helper_validation.js');
 
 /*
  * This is documentation, we need to experiment on how to 
  * generate documentation
  */
-function PlayEffects(card, game, targetCard) {
+function PlayEffects(game) {
     var Pressure = require('./effect_pressure');
     var Rock = require('./effect_rock');
     var RestoreStamina = require('./effect_restore_stamina');
-
-    if (typeof card == 'undefined') {
-    	throw new Error('card argument missing');
-    }
+    var DealDamage = require('./effect_deal_damage');
 
     if (typeof game == 'undefined') {
     	throw new Error('game argument missing');
     }
 
     // Put the effect on the games stack of effects.
-    if (card.Effects) {
-        for (var i=0; i < card.Effects.length; i++) {
-            var effect = card.Effects[i].Type;
-            switch (effect) {
-                case 'pressure':
-                  Pressure.applyEffect(card);
+    if (game.Effects) {
+        for (var i=0; i < game.Effects.length; i++) {
+            switch (game.Effects[i].Type) {
+                case 'Pressure':
+                  Pressure.applyEffect(game, game.Effects[i]);
                   break;
-                case 'rock':
-                  Rock.applyEffect(card, game);
+                case 'Rock':
+                  Rock.applyEffect(game, game.Effects[i]);
                   break;
                 case 'Restore Stamina':
-                    RestoreStamina.applyEffect(card.Effects[i], targetCard);
+                  RestoreStamina.applyEffect(game, game.Effects[i]);
+                  break;
+                case 'Deal Damage':
+                    DealDamage.applyEffect(game, game.Effects[i]);
                     break;
             }
         }
@@ -39,11 +40,49 @@ function PlayEffects(card, game, targetCard) {
 }
 
 /*
+ * Place an effect on the games effect stack
+ */
+function AddEffectToGameEffectStack(game, effect, team, card) {
+    if (typeof game == 'undefined') {
+        throw new Error('game argument missing');
+    }
+
+    if (typeof effect == 'undefined') {
+        throw new Error('effect argument missing');
+    }
+
+    if (typeof team == 'undefined') {
+        throw new Error('team argument missing');
+    }
+
+    if (typeof card == 'undefined') {
+        throw new Error('card argument missing');
+    }
+
+    if (typeof game.Effects == 'undefined') {
+        game.Effects = [];
+    }
+
+    if (!ValidationHelper.validateEffect(effect)) {
+        throw new Error('invalid effect');
+    }
+
+    effect.TeamId = team.Id;
+
+    if (effect.Target == 'Self') {
+        effect.Target = card.Id;
+    }
+
+    game.Effects.push(effect);
+    return game;
+}
+
+/*
  * Place a card into an inital state before effects are applied
  */
 function InitialEffects(card, game) {
     var WarmUp = require('./effect_warmup');
-    
+
     if (typeof card == 'undefined') {
         throw new Error('card argument missing');
     }
@@ -60,43 +99,50 @@ function InitialEffects(card, game) {
     return game;
 }
 
-function UpdateEffects(yourTeam) {
-    UpdateTargetablePlayers(yourTeam);
-    UpdatePlayersWhoCanAttack(yourTeam);
-    return yourTeam
+
+function UpdateEffects(game) {
+    UpdateTargetablePlayers(game);
+    UpdatePlayersWhoCanAttack(game);
+    return game
 }
 
-function UpdateEffects(yourTeam) {
-    UpdateTargetablePlayers(yourTeam);
-    UpdatePlayersWhoCanAttack(yourTeam);
-    return yourTeam
-}
-
-function UpdateTargetablePlayers(yourTeam) {
-    if (DeckHelper.deckContainsEffect("rock", yourTeam.Pitch)) {
-        for (var i = 0; i < yourTeam.Pitch.length; i++) {
-            if (yourTeam.Pitch[i].IsRock) {
-                yourTeam.Pitch[i].IsTargetable = true;
+function UpdateTargetablePlayers(game) {
+    if (GameHelper.homeTeamHasRocks(game)) {
+        for (var i = 0; i < game.HomeTeam.Pitch.length; i++) {
+            if (game.HomeTeam.Pitch[i].IsRock) {
+                game.HomeTeam.Pitch[i].IsTargetable = true;
             }
             else {
-                yourTeam.Pitch[i].IsTargetable = false;
+                game.HomeTeam.Pitch[i].IsTargetable = false;
             }
         }
     }
 
-    return yourTeam
+    if (GameHelper.awayTeamHasRocks(game)) {
+        for (var i = 0; i < game.AwayTeam.Pitch.length; i++) {
+            if (game.AwayTeam.Pitch[i].IsRock) {
+                game.AwayTeam.Pitch[i].IsTargetable = true;
+            }
+            else {
+                game.AwayTeam.Pitch[i].IsTargetable = false;
+            }
+        }
+    }
+
+    return game
 }
 
-function UpdatePlayersWhoCanAttack(yourTeam) {
+function UpdatePlayersWhoCanAttack(game) {
     // foreach (var player in game.Pitch)
     //  if (player is not warming up || player is not marked)
     //    player.CanAttack = true
     //  else
     //    player.CanAttack = false
 
-    return yourTeam;
+    return game;
 }
 
 exports.playEffects = PlayEffects;
 exports.initalEffects = InitialEffects;
 exports.updateEffects = UpdateEffects;
+exports.addEffectToGameEffectStack = AddEffectToGameEffectStack;
