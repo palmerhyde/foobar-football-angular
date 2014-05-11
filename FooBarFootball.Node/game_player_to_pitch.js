@@ -3,6 +3,7 @@ var playTurn = function playTurn(game, userId, cardId, targetCardId) {
     var _ = require('underscore');
     var Validate = require('./helper_validation.js');
     var DeckHelper = require('./helper_deck.js');
+    var GameHelper = require('./helper_game.js');
     var EffectsHelper = require('./helper_effects.js');
     var yourTeam;
 
@@ -72,6 +73,7 @@ var playTurn = function playTurn(game, userId, cardId, targetCardId) {
     yourTeam.Mana = yourTeam.Mana - card[0].Cost;
     EffectsHelper.playEffects(game);
     EffectsHelper.updateEffects(game);
+    GameHelper.removeFatiguedPlayers(game);
     return game;
 }
 

@@ -3,6 +3,7 @@ var playTurn = function playTurn(game, userId, cardId, targetCardId) {
     var WarmUp = require('./effect_warmup');
     var Validate = require('./helper_validation.js');
     var DeckHelper = require('./helper_deck.js');
+    var GameHelper = require('./helper_game.js');
     var EffectsHelper = require('./helper_effects.js');
     var yourTeam;
     var opponentsTeam;
@@ -65,21 +66,13 @@ var playTurn = function playTurn(game, userId, cardId, targetCardId) {
         throw new Error('card cannot attack');
     }
 
-    // play the move;
     card[0].Stamina = card[0].Stamina - targetCard[0].Attack;
     targetCard[0].Stamina = targetCard[0].Stamina - card[0].Attack;
 
-    if (card[0].Stamina <= 0) {
-        yourTeam.Pitch = _.without(yourTeam.Pitch, card[0]);
-        // TODO: move to discard pile.
-    }
+    // TODO: move to remove players effects helper
+    GameHelper.removeFatiguedPlayers(game);
 
-    if (targetCard[0].Stamina <= 0) {
-        opponentsTeam.Pitch = _.without(opponentsTeam.Pitch, targetCard[0]);
-        // TODO: move to discard pile.
-    }
-
-    // Move warmup to Effects Helper
+    // TODO: Move warmup to Effects Helper
     WarmUp.warmUpPlayer(card[0]);
     EffectsHelper.updateEffects(game);
 
