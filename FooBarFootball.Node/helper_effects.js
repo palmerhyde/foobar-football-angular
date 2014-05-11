@@ -11,6 +11,7 @@ function PlayEffects(game) {
     var Rock = require('./effect_rock');
     var RestoreStamina = require('./effect_restore_stamina');
     var DealDamage = require('./effect_deal_damage');
+    var IncreaseAttack = require('./effect_increase_attack');
 
     if (typeof game == 'undefined') {
     	throw new Error('game argument missing');
@@ -31,6 +32,10 @@ function PlayEffects(game) {
                   break;
                 case 'Deal Damage':
                     DealDamage.applyEffect(game, game.Effects[i]);
+                    break;
+                case 'Increase Attack':
+                    // TODO: this is an AOE type attack. How do we deal with it?
+                    IncreaseAttack.applyEffect(game, game.Effects[i]);
                     break;
             }
         }
@@ -67,11 +72,15 @@ function AddEffectToGameEffectStack(game, effect, team, card) {
         throw new Error('invalid effect');
     }
 
-    effect.TeamId = team.Id;
-
     if (effect.Target == 'Self') {
         effect.Target = card.Id;
     }
+
+    if (effect.Target == 'Midfielders') {
+        effect.Targets = DeckHelper.GetMidfiedlers(game);
+    }
+
+    // TODO: should we deal with AOE type attacks here for multiple targets?
 
     game.Effects.push(effect);
     return game;
