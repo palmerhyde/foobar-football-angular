@@ -93,7 +93,8 @@
 .card .defence, 
 .card .title .score,
 .card-pitch .attack,
-.card-pitch .defence {
+.card-pitch .defence,
+.card .suit-container {
     background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
     background-color: red;
     border: 2px solid white;
@@ -142,9 +143,16 @@
     top: 22px;
 }
 
+.card .suit-container.top {
+	top: 0px;
+}
 
 .card .type {
     /*margin-top: -4px;*/
+}
+
+.card .suit-container.pull-right {
+	right: 14px;
 }
 
 .card .attrs {
@@ -193,4 +201,21 @@
     position: absolute;
     color: #fff;
     font-size: 30px;
+}
+
+.poker .suit {
+	font-size: 20px;
+}
+
+.poker .spacer {
+	height: 20px;
+}
+
+.poker .photo {
+	border: 2px solid black;
+	border-bottom: none;
+}
+
+.poker .attrs {
+	height: 108px;	
 }
