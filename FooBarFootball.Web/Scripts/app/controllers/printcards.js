@@ -70,4 +70,10 @@ fooBarControllers.controller('PrintCardsController', ['$scope', '$http', '$fireb
             $(this).remove();
         });
     };
+    
+    $scope.selectAll = function() {
+    	$('input[type=checkbox]').each(function () {
+             this.checked = true;
+        });
+    };
 }]);
