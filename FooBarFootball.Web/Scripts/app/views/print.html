@@ -9,6 +9,11 @@
             <button ng-click="print()">Print</button>
         </div>
         <div class="clear"></div>
+        <div ng-repeat="player in pokerPlayers | filter: {prototype.name: searchTerm}" class="card {{player.Style}} poker" >
+            <card-player-poker data="player"></card-player-poker>
+            <input type="checkbox" name="card" />
+        </div>
+        <div class="clear"></div>
         <div ng-repeat="player in players2 | filter: {prototype.name: searchTerm}" class="card {{player.prototype.style}}" >
             <card-player2 data="player"></card-player2>
             <input type="checkbox" name="card" />

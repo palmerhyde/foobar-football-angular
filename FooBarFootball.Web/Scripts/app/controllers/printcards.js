@@ -1,5 +1,4 @@
-fooBarControllers.controller('PrintCardsController', ['$scope', '$http', 'ConfigPlayerAttributes', function ($scope, $http, ConfigPlayerAttributes) {
-    var atts = ConfigPlayerAttributes.attributes;
+fooBarControllers.controller('PrintCardsController', ['$scope', '$http', '$firebase', function ($scope, $http, $firebase) {
     $scope.title = "FooBar Football - Cards";
     $scope.searchTerm = "";
     $scope.players2 = [];
@@ -16,15 +15,13 @@ fooBarControllers.controller('PrintCardsController', ['$scope', '$http', 'Config
         $scope.tactics = tacticsArr;
     });
     
-    atts.then(function (result) {
-        $http.get('/api/moves').then(function (data) {
-            var movesArr = [];
-            for (var i = 0; i < data.data.length; i++) {
-                var move = new ModelMove(data.data[i], result);
-                movesArr.push(move);
-            }
-            $scope.moves = movesArr;
-        });
+    $http.get('/api/moves').then(function (data) {
+        var movesArr = [];
+        for (var i = 0; i < data.data.length; i++) {
+            var move = new ModelMove(data.data[i]);
+            movesArr.push(move);
+        }
+        $scope.moves = movesArr;
     });
     
     $http.get('/api/players2').then(function (data) {
@@ -45,6 +42,9 @@ fooBarControllers.controller('PrintCardsController', ['$scope', '$http', 'Config
         }
         $scope.managers = managersArr;
     });
+    
+    var pokerCardsRef = new Firebase("https://foobarfootball.firebaseio.com/PokerCards");
+    $scope.pokerPlayers = $firebase(pokerCardsRef);
 
     $scope.print = function () {
         var num = 0;
