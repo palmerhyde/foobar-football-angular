@@ -4,7 +4,7 @@
 </div>
 <div class="clear"></div>
 <div class="spacer"></div>
-<span class="pull-left suit-container top">{{player.Rank}}
+<span class="pull-left suit-container top {{player.Suit}}">{{player.Rank}}
 	<span class="suit" ng-switch="player.Suit">
 		<span ng-switch-when="Spades">&spades;</span>
 		<span ng-switch-when="Clubs">&clubs;</span>
@@ -27,7 +27,7 @@
 <div class="attrs">
     {{player.Description}}
 </div>
-<span class="pull-right suit-container">{{player.Rank}}
+<span class="pull-right suit-container {{player.Suit}}">{{player.Rank}}
 	<span class="suit" ng-switch="player.Suit">
 		<span ng-switch-when="Spades">&spades;</span>
 		<span ng-switch-when="Clubs">&clubs;</span>

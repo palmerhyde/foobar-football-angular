@@ -219,3 +219,8 @@
 .poker .attrs {
 	height: 108px;	
 }
+
+.card .suit-container.Spades, 
+.card .suit-container.Clubs {
+	background-color: #000;
+}
