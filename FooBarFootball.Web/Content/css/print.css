@@ -73,13 +73,26 @@ body.print .cards .card {
         background-image:url('../images/cards/counterbg.jpg') !important;
     }
 
-      body.print  .card .attack,  body.print  .card .defence,  body.print  .card .title .score {
+      body.print  .card .attack,  body.print  .card .defence,  body.print  .card .title .score, body.print .card .suit-container {
         background: radial-gradient( 5px -9px, circle, white 8%, red 26px )!important;
         background-color: red!important;
         border: 2px solid white!important;
         box-shadow: 1px 1px 1px black!important;
         color: white!important;
     }
+    
+    body.print .poker .photo {
+		border: 2px solid black!important;
+		border-bottom: none!important;
+	}
+	
+	
+	body.print .card .suit-container.Spades, 
+	body.print .card .suit-container.Clubs {
+		background-color: #000!important;
+	}
+	
+	
 
      body.print .card .title .score {
         background-color: blue!important;
@@ -97,3 +110,9 @@ body.print .cards .card {
         right: 0px;
     }
 }
+
+body.print .card.poker .suit-container .suit {
+		color: white!important;
+		background-color: transparentimportant;
+		 -webkit-print-color-adjust: exact; 
+	}
