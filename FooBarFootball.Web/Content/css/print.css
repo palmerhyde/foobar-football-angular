@@ -73,7 +73,7 @@ body.print .cards .card {
         background-image:url('../images/cards/counterbg.jpg') !important;
     }
 
-      body.print  .card .attack,  body.print  .card .defence,  body.print  .card .title .score, body.print .card .suit-container {
+      body.print  .card .attack,  body.print  .card .defence,  body.print  .card .title .score, body.print .card .suit-container, body.print .card .movement {
         background: radial-gradient( 5px -9px, circle, white 8%, red 26px )!important;
         background-color: red!important;
         border: 2px solid white!important;
@@ -94,10 +94,15 @@ body.print .cards .card {
 	
 	
 
-     body.print .card .title .score {
+     body.print .card .title .score, body.print .card .movement {
         background-color: blue!important;
         right: 7px;
         top: 7px;
+    }
+    
+    body.print .card .movement {
+    	top: 0;
+    	color: white!important;
     }
 
      body.print .card .attack {
