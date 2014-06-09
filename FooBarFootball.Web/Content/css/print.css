@@ -104,6 +104,10 @@ body.print .cards .card {
     	top: 0;
     	color: white!important;
     }
+    
+    body.print .card .movement .num {
+    	color: white!important;
+    }
 
      body.print .card .attack {
         background-color: green!important;
@@ -114,6 +118,10 @@ body.print .cards .card {
         background-color: red!important;
         right: 0px;
     }
+    
+    body.print [class^="icon-"], body.print [class*=" icon-"] {
+		color: white!important;
+	}
 }
 
 body.print .card.poker .suit-container .suit {
