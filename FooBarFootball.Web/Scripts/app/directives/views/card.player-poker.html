@@ -5,12 +5,15 @@
 <div class="clear"></div>
 <div class="spacer"></div>
 <span class="pull-left suit-container top {{player.Suit}}">{{player.Rank}}
-	<span class="suit" ng-switch="player.Suit">
-		<span ng-switch-when="Spades">&spades;</span>
-		<span ng-switch-when="Clubs">&clubs;</span>
-		<span ng-switch-when="Hearts">&hearts;</span>
-		<span ng-switch-when="Diamonds">&diams;</span>
-	</span>  	
+	<span class="suit">
+		<span class="icon-{{player.Suit}}"></span>
+	</span>    
+</span>
+<span class="movement">
+     <span ng-repeat="char in player.Movement.split('') track by $index">
+     	<span ng-if="$index < 2">{{char}}</span>
+     	<span ng-if="$index > 1" class="icon-{{char}}"></span>
+     </span>
 </span>
 <div class="photo">
     <img alt="picture" ng-src="{{player.PictureUrl}}"/>
@@ -23,15 +26,15 @@
     <span ng-if="player.Name.length > 16">
         {{player.ShortName}}
     </span>
+    <span>
+    	- {{player.Position}}
+    </span>
 </div>
 <div class="attrs">
     {{player.Description}}
 </div>
 <span class="pull-right suit-container {{player.Suit}}">{{player.Rank}}
-	<span class="suit" ng-switch="player.Suit">
-		<span ng-switch-when="Spades">&spades;</span>
-		<span ng-switch-when="Clubs">&clubs;</span>
-		<span ng-switch-when="Hearts">&hearts;</span>
-		<span ng-switch-when="Diamonds">&diams;</span>
+	<span class="suit">
+		<span class="icon-{{player.Suit}}"></span>
 	</span>    
 </span>

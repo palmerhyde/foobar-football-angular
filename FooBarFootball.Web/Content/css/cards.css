@@ -94,7 +94,8 @@
 .card .title .score,
 .card-pitch .attack,
 .card-pitch .defence,
-.card .suit-container {
+.card .suit-container,
+.card .movement {
     background: radial-gradient( 5px -9px, circle, white 8%, red 26px );
     background-color: red;
     border: 2px solid white;
@@ -155,6 +156,12 @@
 	right: 14px;
 }
 
+.card .movement {
+    background-color: blue;
+    right: 7px;
+    top: 0px;
+}
+
 .card .attrs {
     border: 2px solid black;
     padding: 2px 10px;
@@ -204,7 +211,7 @@
 }
 
 .poker .suit {
-	font-size: 20px;
+	font-size: 12px;
 }
 
 .poker .spacer {
