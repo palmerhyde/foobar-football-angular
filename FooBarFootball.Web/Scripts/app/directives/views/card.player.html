@@ -1,26 +1,55 @@
 ﻿<div>
-    <img alt="club" class="club" ng-src="{{player.Club}}"/>
-    <img alt="nation" class="nation" ng-src="{{player.Nation}}"/>
+    <img alt="club" class="club" ng-src="{{player.club.imgUrl}}"/>
+    <img alt="nation" class="nation" ng-src="{{player.nation.imgUrl}}"/>
 </div>
 <div class="clear"></div>
 <div class="title">
-    <span ng-if="player.Name.length <= 16">
-        {{player.Name}}
+    <span ng-if="player.name.length <= 16">
+        {{player.name}}
     </span>
-    <span ng-if="player.Name.length > 16">
-        {{player.ShortName}}
+    <span ng-if="player.name.length > 16">
+        {{player.shortName}}
     </span>
-    <span class="score total">{{player.Cost}}</span>
+    <span class="score total">1 / 10</span>
 </div>
 <div class="photo">
-    <img alt="picture" ng-src="{{player.PictureUrl}}"/>
+    <img alt="picture" ng-src="{{player.headshotImgUrl}}"/>
     
 </div>
 <div class="type">
-    {{player.CardType}} - {{player.Position}}
+    Player - {{player.position}}
 </div>
 <div class="attrs">
-    {{player.Description}}
+    <table class="liam" border="1">
+        <tr ng-if="player.positionFull == 'Goalkeeper'">
+            <td width="25%">GKD<br>{{player.gkdiving}}</td>
+            <td width="25%">GKH<br>{{player.gkhandling}}</td>
+            <td width="25%">GKP<br>{{player.gkpositioning}}</td>
+            <td width="25%">GKR<br>{{player.gkreflexes}}</td>
+        </tr>
+        <tr ng-if="player.positionFull != 'Goalkeeper'">
+            <td width="25%">STT<br>{{player.standingtackle}}</td>
+            <td width="25%">SLT<br>{{player.slidingtackle}}</td>
+            <td width="25%">MAR<br>{{player.marking}}</td>
+            <td width="25%">INT<br>{{player.interceptions}}</td>
+        </tr>
+        <tr ng-if="player.positionFull != 'Goalkeeper'">
+            <td width="25%">DRI<br>{{player.dribbling}}</td>
+            <td width="25%">SPA<br>{{player.shortpassing}}</td>
+            <td width="25%">LPA<br>{{player.longpassing}}</td>
+            <td width="25%">CRO<br>{{player.crossing}}</td>
+        </tr>
+        <tr ng-if="player.positionFull != 'Goalkeeper'">
+            <td width="25%">LON<br>{{player.longshots}}</td>
+            <td width="25%">POW<br>{{player.shotpower}}</td>
+            <td width="25%">FIN<br>{{player.finishing}}</td>
+            <td width="25%">VOL<br>{{player.volleys}}</td>
+        </tr>
+        <tr>
+            <td width="25%">HEA<br>{{player.headingaccuracy}}</td>
+            <td width="25%">VIS<br>{{player.vision}}</td>
+            <td width="25%">POS<br>{{player.positioning}}</td>
+            <td width="25%">STR<br>{{player.strength}}</td>
+        </tr>
+    </table>
 </div>
-<span class="attack">{{player.Attack}}</span>
-<span class="defence">{{player.Stamina}}</span>
