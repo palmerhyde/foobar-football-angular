@@ -87,7 +87,13 @@
     margin-right: auto;
 }
 
-
+.chalkpitch {
+    width: 193px;
+    height: 257px;
+    border: 2px solid black;
+    border-radius: 5px;
+    margin: 5px 0px;
+}
 
 .card .attack, 
 .card .defence, 
@@ -168,6 +174,13 @@
     margin-top: -2px;
     font-size: 11px;
     background-color: transparent;
+}
+
+.card .battle {
+    border: 0px solid black;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 table.liam {
